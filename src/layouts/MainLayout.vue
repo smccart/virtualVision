@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header
       elevated
-      :style="{ backgroundColor: '#0b2545' }"
+      :style="{ backgroundColor: '#0b2545', marginBottom: '1rem' }"
     >
       <q-toolbar>
         <q-btn
@@ -16,7 +16,38 @@
         <q-toolbar-title class="toolbar-title">
           Vision 2 Virtual
         </q-toolbar-title>
-        <div>Quasar v{{ $q.version }}</div>
+
+        <!-- Navigation links for desktop view -->
+        <div class="nav-links">
+          <q-btn
+            flat
+            label="Home"
+            to="/"
+          />
+          <q-btn
+            flat
+            label="About Us"
+            to="/about"
+          />
+          <q-btn
+            flat
+            label="Services"
+            to="/services"
+          />
+          <q-btn
+            flat
+            label="Portfolio"
+            to="/portfolio"
+          />
+          <q-btn
+            flat
+            label="Contact"
+            to="/contact"
+          />
+        </div>
+
+        <!-- Tagline for Vision2Virtual on the right -->
+        <div class="tagline">Bringing Your Vision to Life</div>
       </q-toolbar>
     </q-header>
 
@@ -107,13 +138,35 @@
     font-weight: bold; /* Make the text bold for authority */
     color: white; /* White text for contrast */
     font-size: 2em;
-    padding-left: 1em;
+    padding: 1rem;
+    margin-left: 2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem; /* Increased gap for better spacing */
+    flex: 2; /* Ensures the nav links take up available space */
+    white-space: nowrap;
+  }
+
+  .tagline {
+    color: white;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-left: auto; /* Pushes the tagline to the right */
+    padding-right: 3rem; /* Adjusted right padding */
+    white-space: nowrap;
   }
 
   .hero-section {
     padding: 3rem 6rem 0;
     text-align: center;
-    background-color: rgba(255, 166, 0, 0.032); /* Very light, low-saturation orange */
+    background-color: rgba(
+      255,
+      166,
+      0,
+      0.032
+    ); /* Very light, low-saturation orange */
     min-height: 300px;
     color: #0b2545;
     max-width: 75%; /* Adjusted width */
@@ -144,7 +197,8 @@
     border-radius: 999px; /* Making the buttons pill-shaped */
     font-weight: bold;
     color: white; /* Ensuring the text is white for contrast */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for all properties */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+      background-color 0.3s ease-in-out; /* Smooth transition for all properties */
   }
 
   .q-btn:hover {

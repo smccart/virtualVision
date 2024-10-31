@@ -1,6 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated :style="{ backgroundColor: '#0b2545' }">
+    <q-header
+      elevated
+      :style="{ backgroundColor: '#0b2545' }"
+    >
       <q-toolbar>
         <q-btn
           flat
@@ -10,9 +13,7 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-toolbar-title>
-          Vision 2 Virtual
-        </q-toolbar-title>
+        <q-toolbar-title> Vision 2 Virtual </q-toolbar-title>
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
@@ -44,11 +45,18 @@
     <q-page-container>
       <div class="hero-section">
         <h1 class="hero-title">
-          Vision 2 Virtual brings your ideas to life, creating impactful, custom websites that inspire, engage, and deliver results.
+          Vision 2 Virtual brings your ideas to life, creating impactful, custom
+          websites that inspire, engage, and deliver results.
         </h1>
         <div class="hero-buttons">
-          <q-btn label="Explore" :style="exploreButtonStyle" />
-          <q-btn label="Learn More" :style="learnMoreButtonStyle" />
+          <q-btn
+            label="Explore"
+            :style="exploreButtonStyle"
+          />
+          <q-btn
+            label="Learn More"
+            :style="learnMoreButtonStyle"
+          />
         </div>
       </div>
       <router-view />
@@ -57,65 +65,69 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+  import { ref } from 'vue';
 
-defineOptions({
-  name: 'MainLayout'
-});
+  defineOptions({
+    name: 'MainLayout',
+  });
 
-const leftDrawerOpen = ref(false);
+  const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-}
+  function toggleLeftDrawer() {
+    leftDrawerOpen.value = !leftDrawerOpen.value;
+  }
 
-// Styles for hero section and buttons
-const exploreButtonStyle = {
-  backgroundColor: '#0b2545', // Dark blue background
-  borderRadius: '20px', // Pill shape
-  color: '#ffffff', // White text for high contrast
-  padding: '0.5rem 1.5rem'
-};
+  // Styles for hero section and buttons
+  const exploreButtonStyle = {
+    backgroundColor: '#0b2545', // Dark blue background
+    borderRadius: '999px', // Maximum border-radius to make it oval
+    color: '#ffffff', // White text for high contrast
+    padding: '0.5rem 1.5rem', // Padding for inner spacing
+    fontSize: '1.2rem', // Larger font size for visibility
+    width: '240px', // Fixed width for consistency
+    textAlign: 'center'
+  };
 
-const learnMoreButtonStyle = {
-  backgroundColor: '#8b0000', // Deep red background
-  borderRadius: '20px', // Pill shape
-  color: '#ffffff', // White text for high contrast
-  padding: '0.5rem 1.5rem'
-};
+  const learnMoreButtonStyle = {
+    backgroundColor: '#8b0000', // Deep red background
+    borderRadius: '999px', // Maximum border-radius to make it oval
+    color: '#ffffff', // White text for high contrast
+    padding: '0.5rem 1.5rem', // Padding for inner spacing
+    fontSize: '1.2rem', // Larger font size for visibility
+    width: '240px', // Fixed width for consistency
+    textAlign: 'center',
+  };
 </script>
 
 <style scoped>
-.hero-section {
-  padding: 2rem;
-  text-align: center;
-  background-color: rgba(255, 165, 0, 0.1); /* Very light, low-saturation orange */
-  min-height: 300px;
-  color: #503aa5; /* Dark gray for contrast */
-  max-width: 960px; /* Adjusting the width to be more centered */
-  margin: 0 auto; /* Centering the hero section */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .hero-section {
+    padding: 3rem 4rem;
+    text-align: center;
+    background-color: rgba(255, 166, 0, 0.032); /* Very light, low-saturation orange */
+    min-height: 300px;
+    color: #0b2545;
+    max-width: 80%; /* Updated to make the section wider */
+    margin: 0 auto; /* Centering the hero section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.hero-title {
-  color: #0b2545; /* Dark blue for contrast */
-  font-size: 2.1rem;
-  font-weight: 600; /* Bold */
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.05em;
-}
+  .hero-title {
+    color: #0b2545; /* Dark blue for contrast */
+    font-size: 2.3rem; /* Adjusted for better visibility */
+    font-weight: 700; /* Bold */
+    letter-spacing: 0.06em; /* Adjusted letter spacing */
+  }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
 
-.q-btn {
-  border-radius: 9999px; /* Making the buttons pill-shaped */
-  font-weight: bold;
-  color: white; /* Ensuring the text is white for contrast */
-}
+  .q-btn:hover {
+    background-color: #0a1f38; /* Darker shade on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Glow effect */
+  }
 </style>

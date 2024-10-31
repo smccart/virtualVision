@@ -12,14 +12,14 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-$primary   : #1976D2;
-$secondary : #26A69A;
-$accent    : #9C27B0;
+$primary : #0b2545; // Muted Blue
+$secondary : #5dbb63; // Muted Green
+$accent : #FA8128; // Muted Orange
 
-$dark      : #1D1D1D;
+$dark : #1D1D1D;
 $dark-page : #121212;
 
-$positive  : #21BA45;
-$negative  : #C10015;
-$info      : #31CCEC;
-$warning   : #F2C037;
+$positive : #72B043; // Muted Green for positive actions
+$negative : #680c07; // Muted Red for negative actions
+$info : #1f456e; // Muted Blue for informational elements
+$warning : #F2C037; // Muted Yellow-Orange for warnings

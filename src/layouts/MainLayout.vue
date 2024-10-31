@@ -13,7 +13,9 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-toolbar-title> Vision 2 Virtual </q-toolbar-title>
+        <q-toolbar-title class="toolbar-title">
+          Vision 2 Virtual
+        </q-toolbar-title>
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
@@ -50,12 +52,12 @@
         </h1>
         <div class="hero-buttons">
           <q-btn
-            label="Explore"
-            :style="exploreButtonStyle"
-          />
-          <q-btn
             label="Learn More"
             :style="learnMoreButtonStyle"
+          />
+          <q-btn
+            label="Explore"
+            :style="exploreButtonStyle"
           />
         </div>
       </div>
@@ -85,7 +87,7 @@
     padding: '0.5rem 1.5rem', // Padding for inner spacing
     fontSize: '1.2rem', // Larger font size for visibility
     width: '240px', // Fixed width for consistency
-    textAlign: 'center'
+    textAlign: 'center',
   };
 
   const learnMoreButtonStyle = {
@@ -100,18 +102,29 @@
 </script>
 
 <style scoped>
-  .hero-section {
-    padding: 3rem 4rem;
-    text-align: center;
-    background-color: rgba(255, 166, 0, 0.032); /* Very light, low-saturation orange */
-    min-height: 300px;
-    color: #0b2545;
-    max-width: 80%; /* Updated to make the section wider */
-    margin: 0 auto; /* Centering the hero section */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .toolbar-title {
+    font-family: inherit; /* Use the same font from the app's stylesheet */
+    font-weight: bold; /* Make the text bold for authority */
+    color: white; /* White text for contrast */
+    font-size: 2em;
+    padding-left: 1em;
+
   }
+
+  .hero-section {
+  padding: 3rem 6rem 0;
+  text-align: center;
+  background-color: rgba(255, 166, 0, 0.032); /* Very light, low-saturation orange */
+  min-height: 300px;
+  color: #0b2545;
+  max-width: 75%; /* Adjusted width */
+  margin: 0 auto; /* Centering the hero section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px; /* Rounded edges */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
+}
 
   .hero-title {
     color: #0b2545; /* Dark blue for contrast */
@@ -124,18 +137,15 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+
+    padding: 1rem;
+    margin-bottom: 5rem;
   }
 
-.q-btn {
-  background-color: #0b2545; /* Base blue color */
-  border-radius: 999px; /* Pill shape */
-  font-weight: bold;
-  color: white; /* White text for contrast */
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Custom easing */
-}
-
-.q-btn:hover {
-  background-color: #091b35; /* Darker variation of blue on hover */
-  box-shadow: 0 0 10px rgba(133, 133, 133, 0.5); /* Subtle glow effect */
-}
+  .q-btn:hover {
+    background-color: #091b35; /* Richer, darker shade on hover */
+    box-shadow: 0 0 10px rgba(133, 133, 133, 0.5); /* Glow effect */
+    transform: scale(1.1); /* Increase font size on hover */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+  }
 </style>

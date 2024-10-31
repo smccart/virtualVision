@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="header-background">
       <q-toolbar>
         <q-btn
           flat
@@ -52,8 +52,16 @@
           Vision2Virtual brings your ideas to life, creating impactful, custom websites that inspire, engage, and deliver results.
         </h1>
         <div class="hero-buttons">
-          <q-btn label="Explore" color="primary" flat />
-          <q-btn label="Learn More" color="secondary" flat />
+          <q-btn
+            label="Explore"
+            class="pill-button blue-pill"
+            flat
+          />
+          <q-btn
+            label="Learn More"
+            class="pill-button red-pill"
+            flat
+          />
         </div>
       </div>
       <router-view />
@@ -70,7 +78,7 @@ defineOptions({
 
 const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer () {
+function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 
@@ -87,10 +95,14 @@ const heroGradient = {
 </script>
 
 <style scoped>
+.header-background {
+  background-color: #00008b; /* Dark Blue */
+}
+
 .hero-section {
   padding: 2rem;
   text-align: center;
-  color: white;
+  color: #333; /* Dark gray for better contrast */
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -106,5 +118,26 @@ const heroGradient = {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.pill-button {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.blue-pill {
+  background-color: #00008b; /* Dark Blue */
+  color: #ffea85; /* Light yellow-orange text */
+}
+
+.red-pill {
+  background-color: #8b0000; /* Dark Red */
+  color: #98fb98; /* Super light green text */
+}
+
+.pill-button:hover {
+  opacity: 0.8; /* Hover effect */
 }
 </style>

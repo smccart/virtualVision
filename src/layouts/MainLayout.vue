@@ -142,10 +142,16 @@
     margin-bottom: 5rem;
   }
 
-  .q-btn:hover {
-    background-color: #091b35; /* Richer, darker shade on hover */
-    box-shadow: 0 0 10px rgba(133, 133, 133, 0.5); /* Glow effect */
-    transform: scale(1.1); /* Increase font size on hover */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-  }
+.q-btn {
+  border-radius: 999px; /* Making the buttons pill-shaped */
+  font-weight: bold;
+  color: white; /* Ensuring the text is white for contrast */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smooth transition for both properties */
+}
+
+.q-btn:hover {
+  background-color: #091b35; /* Richer, darker shade on hover */
+  box-shadow: 0 0 10px rgba(133, 133, 133, 0.5); /* Glow effect */
+  transform: translateY(-5px); /* Moves the button up smoothly */
+}
 </style>

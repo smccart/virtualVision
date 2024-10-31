@@ -10,12 +10,20 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-toolbar-title>Vision 2 Virtual</q-toolbar-title>
+
+        <q-toolbar-title>
+          Vision 2 Virtual
+        </q-toolbar-title>
+
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+    >
       <q-list>
         <q-item to="/">
           <q-item-section>Home</q-item-section>
@@ -36,10 +44,12 @@
     </q-drawer>
 
     <q-page-container>
-      <div class="hero-section">
+      <div
+        class="hero-section"
+        :style="heroGradient"
+      >
         <h1 class="hero-title">
-          Vision2Virtual brings your ideas to life, creating impactful, custom
-          websites that inspire, engage, and deliver results.
+          Vision2Virtual brings your ideas to life, creating impactful, custom websites that inspire, engage, and deliver results.
         </h1>
         <div class="hero-buttons">
           <q-btn label="Explore" :style="exploreButtonStyle" />
@@ -60,22 +70,23 @@ defineOptions({
 
 const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer() {
+function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 
 // Styles for hero section and buttons
+// Using HSL for more control
 const exploreButtonStyle = {
-  backgroundColor: '#0b2545',
-  borderRadius: '20px', // Make it pill-shaped
-  color: 'rgba(255, 255, 255, 0.7)', // Almost white, low saturation
+  backgroundColor: '#0b2545', // Dark blue background
+  borderRadius: '20px', // Pill shape
+  color: '#ffffff', // White text for high contrast
   padding: '0.5rem 1.5rem'
 };
 
 const learnMoreButtonStyle = {
-  backgroundColor: '#8b0000',
-  borderRadius: '20px', // Make it pill-shaped
-  color: 'rgba(255, 255, 255, 0.7)', // Almost white, low saturation
+  backgroundColor: '#8b0000', // Deep red background
+  borderRadius: '20px', // Pill shape
+  color: '#ffffff', // White text for high contrast
   padding: '0.5rem 1.5rem'
 };
 </script>
@@ -84,8 +95,12 @@ const learnMoreButtonStyle = {
 .hero-section {
   padding: 2rem;
   text-align: center;
-  background-color: rgba(255, 165, 0, 0.1); /* Very light, low-saturation orange */
+    background-color: rgba(255, 165, 0, 0.1); /* Very light, low-saturation orange */
   min-height: 300px;
+
+  color: white;
+  max-width: 960px; /* Adjusting the width to be more centered */
+  margin: 0 auto; /* Centering the hero section */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +108,9 @@ const learnMoreButtonStyle = {
 }
 
 .hero-title {
+  font-family: 'YourChosenFont', sans-serif; /* Update with authoritative font */
   font-size: 2.5rem;
+  font-weight: bold; /* Making the text bolder */
   margin-bottom: 1.5rem;
 }
 
@@ -101,5 +118,11 @@ const learnMoreButtonStyle = {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.q-btn {
+  border-radius: 9999px; /* Making the buttons pill-shaped */
+  font-weight: bold;
+  color: white; /* Ensuring the text is nearly white for contrast */
 }
 </style>

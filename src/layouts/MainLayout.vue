@@ -126,8 +126,16 @@
     gap: 1rem;
   }
 
-  .q-btn:hover {
-    background-color: #0a1f38; /* Darker shade on hover */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Glow effect */
-  }
+.q-btn {
+  background-color: #0b2545; /* Base blue color */
+  border-radius: 999px; /* Pill shape */
+  font-weight: bold;
+  color: white; /* White text for contrast */
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Custom easing */
+}
+
+.q-btn:hover {
+  background-color: #091b35; /* Darker variation of blue on hover */
+  box-shadow: 0 0 10px rgba(133, 133, 133, 0.5); /* Subtle glow effect */
+}
 </style>

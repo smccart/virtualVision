@@ -108,23 +108,22 @@
     color: white; /* White text for contrast */
     font-size: 2em;
     padding-left: 1em;
-
   }
 
   .hero-section {
-  padding: 3rem 6rem 0;
-  text-align: center;
-  background-color: rgba(255, 166, 0, 0.032); /* Very light, low-saturation orange */
-  min-height: 300px;
-  color: #0b2545;
-  max-width: 75%; /* Adjusted width */
-  margin: 0 auto; /* Centering the hero section */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 15px; /* Rounded edges */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
-}
+    padding: 3rem 6rem 0;
+    text-align: center;
+    background-color: rgba(255, 166, 0, 0.032); /* Very light, low-saturation orange */
+    min-height: 300px;
+    color: #0b2545;
+    max-width: 75%; /* Adjusted width */
+    margin: 0 auto; /* Centering the hero section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
+  }
 
   .hero-title {
     color: #0b2545; /* Dark blue for contrast */
@@ -137,21 +136,20 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-
     padding: 1rem;
     margin-bottom: 5rem;
   }
 
-.q-btn {
-  border-radius: 999px; /* Making the buttons pill-shaped */
-  font-weight: bold;
-  color: white; /* Ensuring the text is white for contrast */
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smooth transition for both properties */
-}
+  .q-btn {
+    border-radius: 999px; /* Making the buttons pill-shaped */
+    font-weight: bold;
+    color: white; /* Ensuring the text is white for contrast */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for all properties */
+  }
 
-.q-btn:hover {
-  background-color: #091b35; /* Richer, darker shade on hover */
-  box-shadow: 0 0 10px rgba(133, 133, 133, 0.5); /* Glow effect */
-  transform: translateY(-5px); /* Moves the button up smoothly */
-}
+  .q-btn:hover {
+    background-color: #07172b; /* Darker, richer shade on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Stronger shadow effect */
+    transform: translateY(-1px); /* Moves the button up smoothly */
+  }
 </style>

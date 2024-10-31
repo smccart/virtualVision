@@ -1,1 +1,18 @@
-// app global css in SCSS form
+// Import the STIX Two Text font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+
+// Apply the font family to the entire site
+body {
+  font-family: "STIX Two Text", serif;
+  font-weight: 400; // Default weight
+  font-optical-sizing: auto; // Ensure consistent rendering
+}
+
+// Example class for using different font weights
+.stix-two-text-bold {
+  font-weight: 700; // Bold weight
+}
+
+.stix-two-text-italic {
+  font-style: italic; // Italic style
+}

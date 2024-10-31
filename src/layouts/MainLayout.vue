@@ -10,11 +10,9 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-
         <q-toolbar-title>
           Vision 2 Virtual
         </q-toolbar-title>
-
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
@@ -44,12 +42,9 @@
     </q-drawer>
 
     <q-page-container>
-      <div
-        class="hero-section"
-        :style="heroGradient"
-      >
+      <div class="hero-section">
         <h1 class="hero-title">
-          Vision2Virtual brings your ideas to life, creating impactful, custom websites that inspire, engage, and deliver results.
+          Vision 2 Virtual brings your ideas to life, creating impactful, custom websites that inspire, engage, and deliver results.
         </h1>
         <div class="hero-buttons">
           <q-btn label="Explore" :style="exploreButtonStyle" />
@@ -70,12 +65,11 @@ defineOptions({
 
 const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer () {
+function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 
 // Styles for hero section and buttons
-// Using HSL for more control
 const exploreButtonStyle = {
   backgroundColor: '#0b2545', // Dark blue background
   borderRadius: '20px', // Pill shape
@@ -95,23 +89,22 @@ const learnMoreButtonStyle = {
 .hero-section {
   padding: 2rem;
   text-align: center;
-    background-color: rgba(255, 165, 0, 0.1); /* Very light, low-saturation orange */
+  background-color: rgba(255, 165, 0, 0.1); /* Very light, low-saturation orange */
   min-height: 300px;
-
-  color: white;
+  color: #503aa5; /* Dark gray for contrast */
   max-width: 960px; /* Adjusting the width to be more centered */
   margin: 0 auto; /* Centering the hero section */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #333; /* Dark gray for contrast */
 }
 
 .hero-title {
-  font-family: 'YourChosenFont', sans-serif; /* Update with authoritative font */
-  font-size: 2.5rem;
-  font-weight: bold; /* Making the text bolder */
+  color: #0b2545; /* Dark blue for contrast */
+  font-size: 2.1rem;
+  font-weight: 600; /* Bold */
   margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
 }
 
 .hero-buttons {
@@ -123,6 +116,6 @@ const learnMoreButtonStyle = {
 .q-btn {
   border-radius: 9999px; /* Making the buttons pill-shaped */
   font-weight: bold;
-  color: white; /* Ensuring the text is nearly white for contrast */
+  color: white; /* Ensuring the text is white for contrast */
 }
 </style>

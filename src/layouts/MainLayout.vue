@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Vision 2 Virtual
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -25,21 +25,37 @@
       bordered
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item to="/">
+          <q-item-section>Home</q-item-section>
+        </q-item>
+        <q-item to="/about">
+          <q-item-section>About Us</q-item-section>
+        </q-item>
+        <q-item to="/services">
+          <q-item-section>Services</q-item-section>
+        </q-item>
+        <q-item to="/portfolio">
+          <q-item-section>Portfolio</q-item-section>
+        </q-item>
+        <q-item to="/contact">
+          <q-item-section>Contact</q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
     <q-page-container>
+      <div
+        class="hero-section"
+        :style="heroGradient"
+      >
+        <h1 class="hero-title">
+          Vision2Virtual brings your ideas to life, creating impactful, custom websites that inspire, engage, and deliver results.
+        </h1>
+        <div class="hero-buttons">
+          <q-btn label="Explore" color="primary" flat />
+          <q-btn label="Learn More" color="secondary" flat />
+        </div>
+      </div>
       <router-view />
     </q-page-container>
   </q-layout>
@@ -47,60 +63,48 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
 
 defineOptions({
   name: 'MainLayout'
 });
-
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
 
 const leftDrawerOpen = ref(false);
 
 function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
+
+// Gradient background for hero section
+const heroGradient = {
+  background: `linear-gradient(
+    to bottom right,
+    rgba(0, 0, 139, 0.2) 0%,  /* Dark blue, subtle transparency */
+    rgba(139, 0, 0, 0.2) 25%,  /* Blood red, subtle transparency */
+    rgba(34, 139, 34, 0.2) 50%, /* Light green, peaceful tone */
+    rgba(255, 165, 0, 0.2) 100% /* Orange-yellow, complementary */
+  )`
+};
 </script>
+
+<style scoped>
+.hero-section {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+</style>

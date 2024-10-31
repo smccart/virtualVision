@@ -17,7 +17,6 @@
           Vision 2 Virtual
         </q-toolbar-title>
 
-        <!-- Navigation links for desktop view -->
         <div class="nav-links">
           <q-btn
             flat
@@ -55,6 +54,7 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
+      :style="{ width: '100px', padding: '1rem' }"
     >
       <q-list>
         <q-item to="/">
@@ -119,6 +119,7 @@
     fontSize: '1.2rem', // Larger font size for visibility
     width: '240px', // Fixed width for consistency
     textAlign: 'center',
+    whiteSpace: 'nowrap', // Prevents text from wrapping
   };
 
   const learnMoreButtonStyle = {
@@ -129,6 +130,7 @@
     fontSize: '1.2rem', // Larger font size for visibility
     width: '240px', // Fixed width for consistency
     textAlign: 'center',
+    whiteSpace: 'nowrap', // Prevents text from wrapping
   };
 </script>
 
@@ -144,7 +146,7 @@
 
   .nav-links {
     display: flex;
-    gap: 2rem; /* Increased gap for better spacing */
+    gap: 1.5rem; /* Adjusted gap for better spacing */
     flex: 2; /* Ensures the nav links take up available space */
     white-space: nowrap;
   }
@@ -188,7 +190,7 @@
   .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 4rem; /* Increased space between buttons */
     padding: 1rem;
     margin-bottom: 5rem;
   }

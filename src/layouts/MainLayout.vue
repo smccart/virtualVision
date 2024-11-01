@@ -122,7 +122,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
 
   defineOptions({
     name: 'MainLayout',
@@ -133,6 +133,10 @@
   function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value;
   }
+
+  onMounted(() => {
+    leftDrawerOpen.value = false; // Ensure the drawer is closed on mount
+  });
 
   const toolbarTitle = 'Vision 2 Virtual';
   const tagline = 'Bringing Your Vision to Life';
@@ -240,7 +244,8 @@
     width: 240px;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .explore-btn {
@@ -252,7 +257,8 @@
     width: 240px;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .q-btn:hover {

@@ -21,26 +21,31 @@
             flat
             :label="homeLabel"
             to="/"
+            class="nav-text"
           />
           <q-btn
             flat
             :label="aboutLabel"
             to="/about"
+            class="nav-text"
           />
           <q-btn
             flat
             :label="servicesLabel"
             to="/services"
+            class="nav-text"
           />
           <q-btn
             flat
             :label="portfolioLabel"
             to="/portfolio"
+            class="nav-text"
           />
           <q-btn
             flat
             :label="contactLabel"
             to="/contact"
+            class="nav-text"
           />
         </div>
         <div class="tagline">{{ tagline }}</div>
@@ -58,41 +63,41 @@
           to="/"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">{{
-            homeLabel
-          }}</q-item-section>
+          <q-item-section class="custom-drawer-item-section">
+            {{ homeLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/about"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">{{
-            aboutLabel
-          }}</q-item-section>
+          <q-item-section class="custom-drawer-item-section">
+            {{ aboutLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/services"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">{{
-            servicesLabel
-          }}</q-item-section>
+          <q-item-section class="custom-drawer-item-section">
+            {{ servicesLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/portfolio"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">{{
-            portfolioLabel
-          }}</q-item-section>
+          <q-item-section class="custom-drawer-item-section">
+            {{ portfolioLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/contact"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">{{
-            contactLabel
-          }}</q-item-section>
+          <q-item-section class="custom-drawer-item-section">
+            {{ contactLabel }}
+          </q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
@@ -168,6 +173,10 @@
     white-space: nowrap;
   }
 
+  .nav-text {
+    color: lighten($textHintOrange, 99%); // Dramatically lighten text color
+  }
+
   .tagline {
     color: $textWhite;
     font-size: 1.3em;
@@ -195,18 +204,15 @@
   .hero-section {
     padding: 3rem 6rem 0;
     text-align: center;
-    background-color: rgba(
-      $orangeDark,
-      0.032
-    ); // Using the accent color for hero background
+    background-color: rgba($orangeLight, 0.01);
     min-height: 300px;
     color: $blueDark;
-    max-width: 75%;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 1em;
+    // border-radius: 1em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
@@ -228,7 +234,7 @@
 
   .learn-more-btn {
     background-color: $redDark;
-    color: $textWhite;
+    color: lighten($textHintGreen, 10px); // Dramatically lighten text color
     border-radius: 999px;
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
@@ -241,7 +247,7 @@
 
   .explore-btn {
     background-color: $blueDark;
-    color: $textWhite;
+    color: lighten($textHintOrange, 99%); // Dramatically lighten text color
     border-radius: 999px;
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;

@@ -13,37 +13,37 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-toolbar-title class="toolbar-title"
-          >Vision 2 Virtual</q-toolbar-title
-        >
+        <q-toolbar-title class="toolbar-title">
+          {{ toolbarTitle }}
+        </q-toolbar-title>
         <div class="nav-links">
           <q-btn
             flat
-            label="Home"
+            :label="homeLabel"
             to="/"
           />
           <q-btn
             flat
-            label="About Us"
+            :label="aboutLabel"
             to="/about"
           />
           <q-btn
             flat
-            label="Services"
+            :label="servicesLabel"
             to="/services"
           />
           <q-btn
             flat
-            label="Portfolio"
+            :label="portfolioLabel"
             to="/portfolio"
           />
           <q-btn
             flat
-            label="Contact"
+            :label="contactLabel"
             to="/contact"
           />
         </div>
-        <div class="tagline">Bringing Your Vision to Life</div>
+        <div class="tagline">{{ tagline }}</div>
       </q-toolbar>
     </q-header>
 
@@ -59,41 +59,41 @@
           to="/"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section"
-            >Home</q-item-section
-          >
+          <q-item-section class="custom-drawer-item-section">
+            {{ homeLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/about"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section"
-            >About Us</q-item-section
-          >
+          <q-item-section class="custom-drawer-item-section">
+            {{ aboutLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/services"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section"
-            >Services</q-item-section
-          >
+          <q-item-section class="custom-drawer-item-section">
+            {{ servicesLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/portfolio"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section"
-            >Portfolio</q-item-section
-          >
+          <q-item-section class="custom-drawer-item-section">
+            {{ portfolioLabel }}
+          </q-item-section>
         </q-item>
         <q-item
           to="/contact"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section"
-            >Contact</q-item-section
-          >
+          <q-item-section class="custom-drawer-item-section">
+            {{ contactLabel }}
+          </q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
@@ -101,15 +101,15 @@
     <q-page-container>
       <div class="hero-section">
         <h1 class="hero-title">
-          Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.
+          {{ heroTitle }}
         </h1>
         <div class="hero-buttons">
           <q-btn
-            label="Learn More"
+            :label="learnMoreLabel"
             :style="learnMoreButtonStyle"
           />
           <q-btn
-            label="Explore"
+            :label="exploreLabel"
             :style="exploreButtonStyle"
           />
         </div>
@@ -128,9 +128,26 @@
 
   const leftDrawerOpen = ref(false);
 
+  // Function to toggle the drawer
   function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value;
   }
+
+  // Toolbar and hero text content
+  const toolbarTitle = 'Vision 2 Virtual';
+  const tagline = 'Bringing Your Vision to Life';
+  const heroTitle = 'Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.';
+
+  // Navigation labels
+  const homeLabel = 'Home';
+  const aboutLabel = 'About Us';
+  const servicesLabel = 'Services';
+  const portfolioLabel = 'Portfolio';
+  const contactLabel = 'Contact';
+
+  // Hero button labels
+  const learnMoreLabel = 'Learn More';
+  const exploreLabel = 'Explore';
 
   // Styles for hero section and buttons
   const exploreButtonStyle = {

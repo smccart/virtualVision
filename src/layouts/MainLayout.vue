@@ -101,8 +101,7 @@
     <q-page-container>
       <div class="hero-section">
         <h1 class="hero-title">
-          Vision 2 Virtual brings your ideas to life, creating impactful, custom
-          websites that inspire, engage, and deliver results.
+          Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.
         </h1>
         <div class="hero-buttons">
           <q-btn
@@ -209,21 +208,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 15px;
+    border-radius: 1em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
   .hero-title {
     color: #0b2545;
-    font-size: 2.3rem;
+    font-size: 1.9rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.03em;
+    line-height: 2.2;
   }
 
   .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 4rem;
     padding: 1rem;
     margin-bottom: 5rem;
   }

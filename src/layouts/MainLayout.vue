@@ -174,7 +174,7 @@
   }
 
   .nav-text {
-    color: lighten($textHintOrange, 99%); // Dramatically lighten text color
+    color: mix($textWhite, $textHintOrange, 99%);
   }
 
   .tagline {
@@ -212,7 +212,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // border-radius: 1em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
@@ -234,28 +233,26 @@
 
   .learn-more-btn {
     background-color: $redDark;
-    color: lighten($textHintGreen, 10px); // Dramatically lighten text color
+    color: mix($textWhite, $textHintGreen, 99%);
     border-radius: 999px;
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
     width: 240px;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease,
-      background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   }
 
   .explore-btn {
     background-color: $blueDark;
-    color: lighten($textHintOrange, 99%); // Dramatically lighten text color
+    color: mix($textWhite, $textHintOrange, 99%);
     border-radius: 999px;
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
     width: 240px;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease,
-      background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   }
 
   .q-btn:hover {

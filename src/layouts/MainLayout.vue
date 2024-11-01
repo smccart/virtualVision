@@ -1,8 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header
+      class="custom-header"
       elevated
-      :style="{ backgroundColor: '#0b2545', marginBottom: '1rem' }"
     >
       <q-toolbar>
         <q-btn
@@ -47,7 +47,6 @@
       </q-toolbar>
     </q-header>
 
-    <!-- Adjusted q-drawer with modified properties -->
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
@@ -59,58 +58,56 @@
           to="/"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">
-            {{ homeLabel }}
-          </q-item-section>
+          <q-item-section class="custom-drawer-item-section">{{
+            homeLabel
+          }}</q-item-section>
         </q-item>
         <q-item
           to="/about"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">
-            {{ aboutLabel }}
-          </q-item-section>
+          <q-item-section class="custom-drawer-item-section">{{
+            aboutLabel
+          }}</q-item-section>
         </q-item>
         <q-item
           to="/services"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">
-            {{ servicesLabel }}
-          </q-item-section>
+          <q-item-section class="custom-drawer-item-section">{{
+            servicesLabel
+          }}</q-item-section>
         </q-item>
         <q-item
           to="/portfolio"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">
-            {{ portfolioLabel }}
-          </q-item-section>
+          <q-item-section class="custom-drawer-item-section">{{
+            portfolioLabel
+          }}</q-item-section>
         </q-item>
         <q-item
           to="/contact"
           class="custom-drawer-item"
         >
-          <q-item-section class="custom-drawer-item-section">
-            {{ contactLabel }}
-          </q-item-section>
+          <q-item-section class="custom-drawer-item-section">{{
+            contactLabel
+          }}</q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
 
     <q-page-container>
       <div class="hero-section">
-        <h1 class="hero-title">
-          {{ heroTitle }}
-        </h1>
+        <h1 class="hero-title">{{ heroTitle }}</h1>
         <div class="hero-buttons">
           <q-btn
             :label="learnMoreLabel"
-            :style="learnMoreButtonStyle"
+            class="learn-more-btn"
           />
           <q-btn
             :label="exploreLabel"
-            :style="exploreButtonStyle"
+            class="explore-btn"
           />
         </div>
       </div>
@@ -128,56 +125,37 @@
 
   const leftDrawerOpen = ref(false);
 
-  // Function to toggle the drawer
   function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value;
   }
 
-  // Toolbar and hero text content
   const toolbarTitle = 'Vision 2 Virtual';
   const tagline = 'Bringing Your Vision to Life';
-  const heroTitle = 'Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.';
+  const heroTitle =
+    'Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.';
 
-  // Navigation labels
   const homeLabel = 'Home';
   const aboutLabel = 'About Us';
   const servicesLabel = 'Services';
   const portfolioLabel = 'Portfolio';
   const contactLabel = 'Contact';
 
-  // Hero button labels
   const learnMoreLabel = 'Learn More';
   const exploreLabel = 'Explore';
-
-  // Styles for hero section and buttons
-  const exploreButtonStyle = {
-    backgroundColor: '#0b2545',
-    borderRadius: '999px',
-    color: '#ffffff',
-    padding: '0.5rem 1.5rem',
-    fontSize: '1.2rem',
-    width: '240px',
-    textAlign: 'center',
-    whiteSpace: 'nowrap',
-  };
-
-  const learnMoreButtonStyle = {
-    backgroundColor: '#8b0000',
-    borderRadius: '999px',
-    color: '#ffffff',
-    padding: '0.5rem 1.5rem',
-    fontSize: '1.2rem',
-    width: '240px',
-    textAlign: 'center',
-    whiteSpace: 'nowrap',
-  };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import 'src/css/quasar.variables.scss';
+
+  .custom-header {
+    background-color: $blueDark;
+    margin-bottom: 1rem;
+  }
+
   .toolbar-title {
     font-family: inherit;
     font-weight: bold;
-    color: white;
+    color: $textWhite;
     font-size: 2em;
     padding: 1rem;
     margin-left: 2rem;
@@ -191,7 +169,7 @@
   }
 
   .tagline {
-    color: white;
+    color: $textWhite;
     font-size: 1.3em;
     font-weight: 500;
     margin-left: auto;
@@ -200,16 +178,16 @@
   }
 
   .custom-drawer-list {
-    padding: 2em !important; /* Removes extra padding */
-    margin: 0em !important;
+    padding: 2em !important;
+    margin: 0 !important;
   }
 
   .custom-drawer-item {
-    padding: 0.5rem 3rem !important; /* Reduces padding */
+    padding: 0.5rem 3rem !important;
   }
 
   .custom-drawer-item-section {
-    max-width: 180px !important; /* Sets a reasonable max width */
+    max-width: 180px !important;
     overflow: hidden;
     white-space: nowrap;
   }
@@ -217,9 +195,12 @@
   .hero-section {
     padding: 3rem 6rem 0;
     text-align: center;
-    background-color: rgba(255, 166, 0, 0.032);
+    background-color: rgba(
+      $orangeDark,
+      0.032
+    ); // Using the accent color for hero background
     min-height: 300px;
-    color: #0b2545;
+    color: $blueDark;
     max-width: 75%;
     margin: 0 auto;
     display: flex;
@@ -230,7 +211,7 @@
   }
 
   .hero-title {
-    color: #0b2545;
+    color: $blueDark;
     font-size: 1.9rem;
     font-weight: 700;
     letter-spacing: 0.03em;
@@ -245,16 +226,33 @@
     margin-bottom: 5rem;
   }
 
-  .q-btn {
+  .learn-more-btn {
+    background-color: $redDark;
+    color: $textWhite;
     border-radius: 999px;
-    font-weight: bold;
-    color: white;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
-      background-color 0.3s ease-in-out;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    width: 240px;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .explore-btn {
+    background-color: $blueDark;
+    color: $textWhite;
+    border-radius: 999px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    width: 240px;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .q-btn:hover {
-    background-color: #07172b;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-1px);
   }

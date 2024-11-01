@@ -1,25 +1,36 @@
 // Quasar SCSS (& Sass) Variables
 // --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
 
-// Check documentation for full list of Quasar variables
+// Primary color variations
+$blueDark: #0b2545; // Dark Muted Blue
+$blueMid: adjust-color($blueDark, $lightness: 10%); // Mid-tone Blue
+$blueLight: adjust-color($blueDark, $lightness: 20%); // Light Blue
 
-// Your own variables (that are declared here) and Quasar's own
-// ones will be available out of the box in your .vue/.scss/.sass files
+// Highlight color variations
+$greenDark: #5dbb63; // Dark Muted Green
+$greenMid: adjust-color($greenDark, $lightness: 10%); // Mid-tone Green
+$greenLight: adjust-color($greenDark, $lightness: 20%); // Light Green
 
-// It's highly recommended to change the default colors
-// to match your app's branding.
-// Tip: Use the "Theme Builder" on Quasar's documentation website.
+// Accent color variations
+$orangeDark: #FA8128; // Dark Muted Orange
+$orangeMid: adjust-color($orangeDark, $lightness: 10%); // Mid-tone Orange
+$orangeLight: adjust-color($orangeDark, $lightness: 20%); // Light Orange
 
-$primary : #0b2545; // Muted Blue
-$secondary : #5dbb63; // Muted Green
-$accent : #FA8128; // Muted Orange
+// Support color variations
+$redDark: #680c07; // Dark Muted Red
+$redMid: adjust-color($redDark, $lightness: 10%); // Mid-tone Red
+$redLight: adjust-color($redDark, $lightness: 20%); // Light Red
 
-$dark : #1D1D1D;
-$dark-page : #121212;
+// Neutral grays
+$grayDark: #1D1D1D; // Dark Gray
+$grayMid: #4F4F4F; // Mid Gray
+$grayLight: #E0E0E0; // Light Gray
 
-$positive : #72B043; // Muted Green for positive actions
-$negative : #680c07; // Muted Red for negative actions
-$info : #1f456e; // Muted Blue for informational elements
-$warning : #F2C037; // Muted Yellow-Orange for warnings
+// Text colors for buttons
+$textWhite: #ffffff; // Base white
+
+// New text hint colors for buttons
+$textHintOrange: mix($textWhite, $orangeDark, 10%); // White with a hint of Orange
+$textHintGreen: adjust-color($greenLight, $lightness: 10%); // Lightened Green for text
+$textHintBlue: mix($textWhite, $blueDark, 10%); // White with a hint of Blue
+$textHintRed: mix($textWhite, $redDark, 10%); // White with a hint of Red

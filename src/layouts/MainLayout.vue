@@ -154,7 +154,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import 'src/css/quasar.variables.scss';
+  @import '/src/css/app.scss';
 
   .custom-header {
     background-color: $blueDark;
@@ -178,7 +178,9 @@
   }
 
   .nav-text {
-    color: mix($textWhite, $textHintOrange, 99%);
+    color: $orangeVeryLight;
+
+    color: mix($textWhite, $orangeVeryLight, 99%);
   }
 
   .tagline {
@@ -223,7 +225,7 @@
     color: $blueDark;
     font-size: 1.9rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.0001em;
     line-height: 2.2;
   }
 
@@ -237,7 +239,7 @@
 
   .learn-more-btn {
     background-color: $redDark;
-    color: mix($textWhite, $textHintGreen, 99%);
+    color: mix($textWhite, $greenVeryLight, 99%);
     border-radius: 999px;
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
@@ -250,7 +252,7 @@
 
   .explore-btn {
     background-color: $blueDark;
-    color: mix($textWhite, $textHintOrange, 99%);
+    color: mix($textWhite, $orangeVeryLight, 99%);
     border-radius: 999px;
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;

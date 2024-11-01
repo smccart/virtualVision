@@ -1,36 +1,14 @@
 // Quasar SCSS (& Sass) Variables
 // --------------------------------------------------
 
-// Primary color variations
-$blueDark: #0b2545; // Dark Muted Blue
-$blueMid: adjust-color($blueDark, $lightness: 10%); // Mid-tone Blue
-$blueLight: adjust-color($blueDark, $lightness: 20%); // Light Blue
+// Quasar Default Variable Overrides
+$primary: #0b2545; // Dark Muted Blue
+$secondary: #5dbb63; // Dark Muted Green
+$accent: #FA8128; // Dark Muted Orange
+$dark: #1D1D1D; // Dark Gray
+$positive: #5dbb63; // Same as green for success indicators
+$negative: #680c07; // Dark Muted Red
+$info: #0b2545; // Blue for informational elements
+$warning: #FFAE1A; // Mid-tone Orange for warnings
 
-// Highlight color variations
-$greenDark: #5dbb63; // Dark Muted Green
-$greenMid: adjust-color($greenDark, $lightness: 10%); // Mid-tone Green
-$greenLight: adjust-color($greenDark, $lightness: 20%); // Light Green
-
-// Accent color variations
-$orangeDark: #FA8128; // Dark Muted Orange
-$orangeMid: adjust-color($orangeDark, $lightness: 10%); // Mid-tone Orange
-$orangeLight: adjust-color($orangeDark, $lightness: 20%); // Light Orange
-
-// Support color variations
-$redDark: #680c07; // Dark Muted Red
-$redMid: adjust-color($redDark, $lightness: 10%); // Mid-tone Red
-$redLight: adjust-color($redDark, $lightness: 20%); // Light Red
-
-// Neutral grays
-$grayDark: #1D1D1D; // Dark Gray
-$grayMid: #4F4F4F; // Mid Gray
-$grayLight: #E0E0E0; // Light Gray
-
-// Text colors for buttons
-$textWhite: #ffffff; // Base white
-
-// New text hint colors for buttons
-$textHintOrange: mix($textWhite, $orangeDark, 10%); // White with a hint of Orange
-$textHintGreen: adjust-color($greenLight, $lightness: 10%); // Lightened Green for text
-$textHintBlue: mix($textWhite, $blueDark, 10%); // White with a hint of Blue
-$textHintRed: mix($textWhite, $redDark, 10%); // White with a hint of Red
+// Additional Custom Variables (if needed)

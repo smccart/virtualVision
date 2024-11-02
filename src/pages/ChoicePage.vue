@@ -4,16 +4,17 @@
       <h1 class="hero-title">{{ heroTitle }}</h1>
     </div>
 
-    <div class="hero-buttons">
-      <q-btn :label="learnMoreLabel" class="learn-more-btn" />
-      <q-btn :label="exploreLabel" class="explore-btn" />
-    </div>
-
     <div class="choice-container">
-      <div class="choice-window" v-for="(choice, index) in binaryChoices" :key="index">
-        <h3>{{ choice.title }}</h3>
-        <p>{{ choice.description }}</p>
-      </div>
+      <q-btn
+        @click="showChoice(binaryChoices[0].title)"
+        class="learn-more-btn"
+        :label="binaryChoices[0].title"
+      />
+      <q-btn
+        @click="showChoice(binaryChoices[1].title)"
+        class="explore-btn"
+        :label="binaryChoices[1].title"
+      />
     </div>
   </q-page>
 </template>
@@ -21,31 +22,38 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+defineOptions({
+  name: 'ChoicePage'
+});
+
 // Hero section data
 const heroTitle =
   'Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.';
 
-const learnMoreLabel = 'Learn More';
-const exploreLabel = 'Explore';
-
 // Define binary choices data
 const binaryChoices = ref([
   {
-    title: 'Choice 1',
-    description: 'This is ChoicePage.vue.'
+    title: 'Learn More',
+    description: 'Your dreams matter, and we bring bold ideas to life.'
   },
   {
-    title: 'Choice 2',
-    description: 'This is a description of the second choice.'
+    title: 'Explore',
+    description: 'Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.'
   }
 ]);
+
+const selectedChoice = ref('');
+
+function showChoice(choice: string) {
+  selectedChoice.value = choice;
+}
 </script>
 
 <style scoped lang="scss">
 @import '/src/css/app.scss';
 
 .hero-section {
-  padding: 1rem 8rem 0;
+  padding: 1rem 7rem 0;
   text-align: center;
   background-color: rgba($orangeLight, 0.01);
   min-height: 300px;
@@ -66,20 +74,21 @@ const binaryChoices = ref([
   line-height: 2.2;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  padding: 1rem;
-  margin-bottom: 2rem; /* Ensure spacing below buttons */
+.choice-container {
+  display: flex; /* Change to flex */
+  flex-direction: row; /* Align buttons side by side */
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 2rem; /* Space between buttons */
+  margin-top: 2rem;
 }
 
 .learn-more-btn,
 .explore-btn {
   border-radius: 999px;
-  padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
-  width: 240px;
+  padding: 1rem; /* Adjust padding */
+  font-size: 1.5rem; /* Increase font size */
+  width: 400px; /* 5 times wider */
+  height: 80px; /* 2 times taller */
   text-align: center;
   white-space: nowrap;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
@@ -98,24 +107,5 @@ const binaryChoices = ref([
 .q-btn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
-}
-
-.choice-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2rem;
-}
-
-.choice-window {
-  width: 40%;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 1em;
-  text-align: center;
-}
-
-q-page {
-  padding: 0;
-  margin: 0;
 }
 </style>

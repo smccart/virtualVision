@@ -83,18 +83,18 @@
   }
 
   .message-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
+    display: flex; /* Set display to flex */
+    flex-direction: row; /* Set direction to row */
+    justify-content: center; /* Center items horizontally */
+    gap: 3rem; /* Space between message boxes */
+    max-width: 800px; /* Limit width for better centering */
+    margin: 0 auto; /* Center the message container */
+    padding: 1rem; /* Add padding for a more spacious look */
   }
 
   .message-box {
-    flex: 1;
-    min-width: 18rem;
+    flex: 1; /* Allow message boxes to grow equally */
+    min-width: 18rem; /* Minimum width for message boxes */
     padding: 1rem;
     padding-top: 2rem;
     border: 15px solid; /* Add border style */
@@ -104,7 +104,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
     font-weight: 600;
-    word-wrap: break-word;
+    word-wrap: break-word; /* Allow long words to break */
     text-align: center;
   }
 

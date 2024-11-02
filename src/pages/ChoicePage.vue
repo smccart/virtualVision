@@ -25,95 +25,97 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+  import { computed } from 'vue';
+  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
 
-defineOptions({
-  name: 'ChoicePage'
-});
+  defineOptions({
+    name: 'ChoicePage',
+  });
 
-const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-const currentMessage = computed(() => getCurrentMessages);
+  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
+  const currentMessage = computed(() => getCurrentMessages);
 
-const binaryChoices = [
-  {
-    title: 'Take Action',
-    description: 'Focus on functionality and structure.'
-  },
-  {
-    title: 'Inspire Change',
-    description: 'Enhance user engagement and interaction.'
+  const binaryChoices = [
+    {
+      title: 'Take Action',
+      description: 'Focus on functionality and structure.',
+    },
+    {
+      title: 'Inspire Change',
+      description: 'Enhance user engagement and interaction.',
+    },
+  ];
+
+  function showChoice(choice: string) {
+    setCurrentLevel(choice === 'SDC' ? 1 : 2);
   }
-];
-
-function showChoice(choice: string) {
-  setCurrentLevel(choice === 'SDC' ? 1 : 2);
-}
 </script>
 
 <style scoped lang="scss">
-@import '/src/css/app.scss';
+  @import '/src/css/app.scss';
 
-.hero-section {
-  padding: 1rem 7rem 0;
-  text-align: center;
-  background-color: rgba($orangeLight, 0.01);
-  min-height: 300px;
-  color: $blueDark;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+  .hero-section {
+    padding: 0.5rem 7rem 0; /* Adjust padding to reduce gap */
+    text-align: center;
+    background-color: rgba($orangeLight, 0.5);
+    min-height: 300px;
+    color: $blueDark;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Apply border radius to the hero section */
+  }
 
-.message-container {
-  display: flex; /* Use flexbox to arrange messages side by side */
-  flex-wrap: wrap; /* Allow messages to wrap */
-  justify-content: space-around; /* Space between messages */
-}
+  .message-container {
+    display: flex; /* Use flexbox to arrange messages side by side */
+    flex-wrap: wrap; /* Allow messages to wrap */
+    justify-content: space-around; /* Space between messages */
+  }
 
-.hero-message {
-  color: $blueDark;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.8;
-  margin: 0.5rem;
-  max-width: 200px; /* Limit width for readability */
-}
+  .hero-message {
+    color: $blueDark;
+    font-size: 1.2rem; /* Reduce font size */
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 1rem; /* Increase margin for spacing */
+    max-width: 200px; /* Limit width for readability */
+  }
 
-.choice-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
+  .choice-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
-.learn-more-btn,
-.explore-btn {
-  border-radius: 999px;
-  padding: 1rem;
-  font-size: 1.5rem;
-  width: 400px;
-  height: 80px;
-  text-align: center;
-  white-space: nowrap;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
+  .learn-more-btn,
+  .explore-btn {
+    border-radius: 999px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    width: 400px;
+    height: 80px;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
+  }
 
-.learn-more-btn {
-  background-color: $redDark;
-  color: mix($textWhite, $greenVeryLight, 99%);
-}
+  .learn-more-btn {
+    background-color: $redDark;
+    color: mix($textWhite, $greenVeryLight, 99%);
+  }
 
-.explore-btn {
-  background-color: $blueDark;
-  color: mix($textWhite, $orangeVeryLight, 99%);
-}
+  .explore-btn {
+    background-color: $blueDark;
+    color: mix($textWhite, $orangeVeryLight, 99%);
+  }
 
-.q-btn:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transform: translateY(-1px);
-}
+  .q-btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
 </style>

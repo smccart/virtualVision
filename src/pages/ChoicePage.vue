@@ -2,13 +2,13 @@
   <q-page class="row items-center justify-evenly">
     <div class="hero-section">
       <h1 class="hero-title">{{ heroTitle }}</h1>
-      <div class="hero-buttons">
-        <q-btn :label="learnMoreLabel" class="learn-more-btn" />
-        <q-btn :label="exploreLabel" class="explore-btn" />
-      </div>
     </div>
 
-    <!-- Binary choices using data from the script section -->
+    <div class="hero-buttons">
+      <q-btn :label="learnMoreLabel" class="learn-more-btn" />
+      <q-btn :label="exploreLabel" class="explore-btn" />
+    </div>
+
     <div class="choice-container">
       <div class="choice-window" v-for="(choice, index) in binaryChoices" :key="index">
         <h3>{{ choice.title }}</h3>
@@ -20,10 +20,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-
-defineOptions({
-  name: 'ChoicePage'
-});
 
 // Hero section data
 const heroTitle =
@@ -49,7 +45,7 @@ const binaryChoices = ref([
 @import '/src/css/app.scss';
 
 .hero-section {
-  padding: 1rem 7rem 0;
+  padding: 1rem 8rem 0;
   text-align: center;
   background-color: rgba($orangeLight, 0.01);
   min-height: 300px;

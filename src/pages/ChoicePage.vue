@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="page-container">
     <div class="hero-section">
       <p class="hero-message">{{ currentMessage.supportive }}</p>
       <p class="hero-message">{{ currentMessage.dominant }}</p>
@@ -31,7 +31,7 @@ defineOptions({
 });
 
 const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-const currentMessage = computed(() => getCurrentMessages); // Access as a property
+const currentMessage = computed(() => getCurrentMessages);
 
 const binaryChoices = [
   {
@@ -45,21 +45,28 @@ const binaryChoices = [
 ];
 
 function showChoice(choice: string) {
-  setCurrentLevel(choice === 'SDC' ? 1 : 2); // Update level based on choice
+  setCurrentLevel(choice === 'SDC' ? 1 : 2);
 }
 </script>
 
 <style scoped lang="scss">
 @import '/src/css/app.scss';
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; /* Use full viewport height */
+  padding: 2rem;
+}
+
 .hero-section {
-  padding: 1rem 7rem 0;
   text-align: center;
   background-color: rgba($orangeLight, 0.01);
-  min-height: 300px;
   color: $blueDark;
-  max-width: 100%;
   margin: 0 auto;
+  padding: 1rem 7rem;
+  flex: 1 0 55%; /* Take 55% of the height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,16 +86,17 @@ function showChoice(choice: string) {
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  flex: 0 0 40%; /* Take 40% of the height */
+  align-items: center;
 }
 
 .learn-more-btn,
 .explore-btn {
   border-radius: 999px;
-  padding: 1rem;
-  font-size: 1.5rem;
-  width: 400px;
-  height: 80px;
+  padding: 1.5rem; /* Increase padding */
+  font-size: 1.8rem; /* Increase font size */
+  width: 450px; /* Make buttons wider */
+  height: 90px; /* Make buttons taller */
   text-align: center;
   white-space: nowrap;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;

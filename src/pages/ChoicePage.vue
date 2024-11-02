@@ -83,18 +83,18 @@
   }
 
   .message-container {
-    display: flex; /* Set display to flex */
-    flex-direction: row; /* Set direction to row */
-    justify-content: center; /* Center items horizontally */
-    gap: 3rem; /* Space between message boxes */
-    max-width: 800px; /* Limit width for better centering */
-    margin: 0 auto; /* Center the message container */
-    padding: 1rem; /* Add padding for a more spacious look */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
   }
 
   .message-box {
-    flex: 1; /* Allow message boxes to grow equally */
-    min-width: 18rem; /* Minimum width for message boxes */
+    flex: 1;
+    min-width: 18rem;
     padding: 1rem;
     padding-top: 2rem;
     border: 15px solid; /* Add border style */
@@ -104,14 +104,14 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
     font-weight: 600;
-    word-wrap: break-word; /* Allow long words to break */
+    word-wrap: break-word;
     text-align: center;
   }
 
-  .supportive { border-color: $greenMid; }
-  .dominant { border-color: $redMid; }
-  .influential { border-color: $orangeMid; }
-  .conscientious { border-color: $blueMid; }
+  .supportive { border-color: $blueMid; } /* Green border */
+  .dominant { border-color: $greenMid; } /* Red border */
+  .influential { border-color: $orangeMid; } /* Orange border */
+  .conscientious { border-color: $redMid; } /* Blue border */
 
   .choice-container {
     display: flex;

@@ -108,4 +108,21 @@ function showChoice(choice: string) {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
 }
+
+q-page {
+  padding: 0; /* No padding */
+  margin: 0; /* No margin */
+  display: flex;
+  flex-direction: column; /* Stack elements */
+}
+
+.hero-section {
+  margin-bottom: 0; /* Remove bottom margin if needed */
+}
+
+.choice-container {
+  margin-top: 2rem; /* Space between hero and buttons */
+  display: flex;
+  justify-content: center; /* Center buttons */
+}
 </style>

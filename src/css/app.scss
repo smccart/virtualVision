@@ -51,3 +51,7 @@ $redVeryLight: mix($textWhite, $redMid, 1%); // 99% White, 1% Red
 $grayDark: #1D1D1D; // Dark Gray
 $grayMid: #4F4F4F; // Mid Gray
 $grayLight: #E0E0E0; // Light Gray
+
+.q-page-container {
+  padding-top: 0 !important; // Ensure no top padding is applied
+}

@@ -2,10 +2,10 @@
   <q-page class="row items-center justify-evenly">
     <div class="hero-section">
       <div class="message-container">
-        <p class="hero-message">{{ currentMessage.supportive }}</p>
-        <p class="hero-message">{{ currentMessage.dominant }}</p>
-        <p class="hero-message">{{ currentMessage.influential }}</p>
-        <p class="hero-message">{{ currentMessage.conscientious }}</p>
+        <SupportiveMessageBox :message="currentMessage.supportive" />
+        <DominantMessageBox :message="currentMessage.dominant" />
+        <InfluentialMessageBox :message="currentMessage.influential" />
+        <ConscientiousMessageBox :message="currentMessage.conscientious" />
       </div>
     </div>
 
@@ -27,6 +27,10 @@
 <script setup lang="ts">
   import { computed } from 'vue';
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+  import SupportiveMessageBox from '../components/SupportiveMessageBox.vue';
+  import DominantMessageBox from '../components/DominantMessageBox.vue';
+  import InfluentialMessageBox from '../components/InfluentialMessageBox.vue';
+  import ConscientiousMessageBox from '../components/ConscientiousMessageBox.vue';
 
   defineOptions({
     name: 'ChoicePage',
@@ -55,7 +59,7 @@
   @import '/src/css/app.scss';
 
   .hero-section {
-    padding: 0.5rem 7rem 0; /* Adjust padding to reduce gap */
+    padding: 1rem 7rem 0;
     text-align: center;
     background-color: rgba($orangeLight, 0.5);
     min-height: 300px;
@@ -65,22 +69,14 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Apply border radius to the hero section */
+    border-radius: 10px;
   }
 
   .message-container {
-    display: flex; /* Use flexbox to arrange messages side by side */
-    flex-wrap: wrap; /* Allow messages to wrap */
-    justify-content: space-around; /* Space between messages */
-  }
-
-  .hero-message {
-    color: $blueDark;
-    font-size: 1.2rem; /* Reduce font size */
-    font-weight: 400;
-    line-height: 1.8;
-    margin: 1rem; /* Increase margin for spacing */
-    max-width: 200px; /* Limit width for readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center messages vertically */
+    gap: 2rem; /* Space between message boxes */
   }
 
   .choice-container {

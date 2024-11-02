@@ -77,53 +77,41 @@
     color: $blueDark;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center contents horizontally */
+    align-items: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
 
   .message-container {
     display: flex;
-    flex-wrap: wrap; /* Allow messages to wrap */
-    justify-content: center; /* Center items horizontally */
-    gap: 3rem; /* Space between message boxes */
-    max-width: 800px; /* Limit width for better centering */
-    margin: 0 auto; /* Center the message container */
-    padding: 1rem; /* Add padding for a more spacious look */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
   }
 
   .message-box {
-    max-width: 24rem; /* Limit width of message boxes */
+    flex: 1;
+    min-width: 18rem;
     padding: 1rem;
     padding-top: 2rem;
+    border: 15px solid; /* Add border style */
+    background-color: white; /* Set background to white */
+    color: black; /* Set text color to black */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    color: $grayDark;
     font-size: 1.5rem;
     font-weight: 600;
-    word-wrap: break-word; /* Allow long words to break */
+    word-wrap: break-word;
     text-align: center;
   }
 
-  .supportive {
-    background-color: $greenLight;
-    color: white; // Change this to white
-  }
-
-  .dominant {
-    background-color: $redLight;
-    color: white; // Change this to white
-  }
-
-  .influential {
-    background-color: $orangeLight;
-    color: white; // Change this to white
-  }
-
-  .conscientious {
-    background-color: $blueLight;
-    color: white; // Change this to white
-  }
+  .supportive { border-color: $greenMid; }
+  .dominant { border-color: $redMid; }
+  .influential { border-color: $orangeMid; }
+  .conscientious { border-color: $blueMid; }
 
   .choice-container {
     display: flex;
@@ -142,8 +130,7 @@
     height: 80px;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease,
-      background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   }
 
   .learn-more-btn {

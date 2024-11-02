@@ -70,11 +70,10 @@
   @import '/src/css/app.scss';
 
   .hero-section {
-    padding: 4rem;
+    padding: 3rem;
     margin-top: 4rem;
     text-align: center;
-    background-color: rgba($grayLight, 0.5);
-    color: $blueDark;
+    background-color: rgba($grayLight, 0.99);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,31 +93,39 @@
 
   .message-box {
     flex: 1;
-    min-width: 18rem;
+    min-width: 17rem;
     padding: 1rem;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
     border: 15px solid; /* Add border style */
     background-color: white; /* Set background to white */
-    color: black; /* Set text color to black */
+    color: $grayDark; /* Set text color to black */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     word-wrap: break-word;
     text-align: center;
   }
 
-  .supportive { border-color: $blueMid; } /* Green border */
-  .dominant { border-color: $greenMid; } /* Red border */
-  .influential { border-color: $orangeMid; } /* Orange border */
-  .conscientious { border-color: $redMid; } /* Blue border */
+  .supportive {
+    border-color: $blueMid;
+  }
+  .dominant {
+    border-color: $greenMid;
+  }
+  .influential {
+    border-color: $orangeMid;
+  }
+  .conscientious {
+    border-color: $redMid;
+  }
 
   .choice-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 3rem;
+    margin-top: 3rem;
   }
 
   .learn-more-btn,
@@ -126,21 +133,22 @@
     border-radius: 999px;
     padding: 1rem;
     font-size: 1.5rem;
-    width: 400px;
-    height: 80px;
+    width: 25rem;
+    height: 10rem;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .learn-more-btn {
     background-color: $redMid;
-    color: mix($textWhite, $greenVeryLight, 99%);
+    color:  $textWhite;
   }
 
   .explore-btn {
     background-color: $blueDark;
-    color: mix($textWhite, $orangeVeryLight, 99%);
+    color:  $textWhite;
   }
 
   .q-btn:hover {

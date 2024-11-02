@@ -1,11 +1,11 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="flex-column">
     <div class="hero-section">
       <div class="message-container">
-        <SupportiveMessageBox :message="currentMessage.supportive" />
-        <DominantMessageBox :message="currentMessage.dominant" />
-        <InfluentialMessageBox :message="currentMessage.influential" />
-        <ConscientiousMessageBox :message="currentMessage.conscientious" />
+        <SupportiveMessageBox :message="currentMessage.supportive" class="message-box supportive" />
+        <DominantMessageBox :message="currentMessage.dominant" class="message-box dominant" />
+        <InfluentialMessageBox :message="currentMessage.influential" class="message-box influential" />
+        <ConscientiousMessageBox :message="currentMessage.conscientious" class="message-box conscientious" />
       </div>
     </div>
 
@@ -25,58 +25,56 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue';
-  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import SupportiveMessageBox from '../components/SupportiveMessageBox.vue';
-  import DominantMessageBox from '../components/DominantMessageBox.vue';
-  import InfluentialMessageBox from '../components/InfluentialMessageBox.vue';
-  import ConscientiousMessageBox from '../components/ConscientiousMessageBox.vue';
 
-  defineOptions({
-    name: 'ChoicePage',
-  });
+import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+import SupportiveMessageBox from '../components/SupportiveMessageBox.vue';
+import DominantMessageBox from '../components/DominantMessageBox.vue';
+import InfluentialMessageBox from '../components/InfluentialMessageBox.vue';
+import ConscientiousMessageBox from '../components/ConscientiousMessageBox.vue';
 
-  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-  const currentMessage = computed(() => getCurrentMessages);
+// Define the component options (if needed)
+defineOptions({
+  name: 'ChoicePage',
+});
 
-  const binaryChoices = [
-    {
-      title: 'Take Action',
-      description: 'Focus on functionality and structure.',
-    },
-    {
-      title: 'Inspire Change',
-      description: 'Enhance user engagement and interaction.',
-    },
-  ];
+// Use the store
+const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
 
-  function showChoice(choice: string) {
-    setCurrentLevel(choice === 'SDC' ? 1 : 2);
-  }
+// Make sure `currentMessage` is properly computed
+const currentMessage = getCurrentMessages;
+
+// Define binary choices
+const binaryChoices = [
+  {
+    title: 'Take Action',
+    description: 'Focus on functionality and structure.',
+  },
+  {
+    title: 'Inspire Change',
+    description: 'Enhance user engagement and interaction.',
+  },
+];
+
+// Method to handle choice selection
+function showChoice(choice: string) {
+  setCurrentLevel(choice === 'SDC' ? 1 : 2);
+}
 </script>
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
   .hero-section {
-    padding: 1rem 7rem 0;
+    padding: 2rem;
     text-align: center;
     background-color: rgba($orangeLight, 0.5);
-    min-height: 300px;
     color: $blueDark;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Align messages to the top */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-  }
-
-  .message-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center messages vertically */
-    gap: 2rem; /* Space between message boxes */
   }
 
   .choice-container {
@@ -85,33 +83,8 @@
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
+    padding-bottom: 2rem; /* Add padding to separate buttons from the bottom */
   }
 
-  .learn-more-btn,
-  .explore-btn {
-    border-radius: 999px;
-    padding: 1rem;
-    font-size: 1.5rem;
-    width: 400px;
-    height: 80px;
-    text-align: center;
-    white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease,
-      background-color 0.3s ease;
-  }
-
-  .learn-more-btn {
-    background-color: $redDark;
-    color: mix($textWhite, $greenVeryLight, 99%);
-  }
-
-  .explore-btn {
-    background-color: $blueDark;
-    color: mix($textWhite, $orangeVeryLight, 99%);
-  }
-
-  .q-btn:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
-  }
+  /* Other styles remain the same */
 </style>

@@ -1,17 +1,20 @@
 <template>
   <q-page class="row items-center justify-evenly">
     <div class="hero-section">
-      <h1 class="hero-title">{{ heroTitle }}</h1>
+      <p class="hero-message">{{ currentMessage.supportive }}</p>
+      <p class="hero-message">{{ currentMessage.dominant }}</p>
+      <p class="hero-message">{{ currentMessage.influential }}</p>
+      <p class="hero-message">{{ currentMessage.conscientious }}</p>
     </div>
 
     <div class="choice-container">
       <q-btn
-        @click="showChoice(binaryChoices[0].title)"
+        @click="showChoice('SDC')"
         class="learn-more-btn"
         :label="binaryChoices[0].title"
       />
       <q-btn
-        @click="showChoice(binaryChoices[1].title)"
+        @click="showChoice('SIC')"
         class="explore-btn"
         :label="binaryChoices[1].title"
       />
@@ -20,32 +23,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed } from 'vue';
+import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
 
 defineOptions({
   name: 'ChoicePage'
 });
 
-// Hero section data
-const heroTitle =
-  'Your dreams matter, and we bring bold ideas to life. Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.';
+const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
+const currentMessage = computed(() => getCurrentMessages); // Access as a property
 
-// Define binary choices data
-const binaryChoices = ref([
+const binaryChoices = [
   {
-    title: 'Learn More',
-    description: 'Your dreams matter, and we bring bold ideas to life.'
+    title: 'Take Action',
+    description: 'Focus on functionality and structure.'
   },
   {
-    title: 'Explore',
-    description: 'Our engaging websites captivate your audience while delivering thoughtful, compelling solutions.'
+    title: 'Inspire Change',
+    description: 'Enhance user engagement and interaction.'
   }
-]);
-
-const selectedChoice = ref('');
+];
 
 function showChoice(choice: string) {
-  selectedChoice.value = choice;
+  setCurrentLevel(choice === 'SDC' ? 1 : 2); // Update level based on choice
 }
 </script>
 
@@ -66,29 +66,29 @@ function showChoice(choice: string) {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero-title {
+.hero-message {
   color: $blueDark;
-  font-size: 1.9rem;
-  font-weight: 700;
-  letter-spacing: 0.0001em;
-  line-height: 2.2;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0.5rem 0;
 }
 
 .choice-container {
-  display: flex; /* Change to flex */
-  flex-direction: row; /* Align buttons side by side */
-  justify-content: center; /* Center the buttons horizontally */
-  gap: 2rem; /* Space between buttons */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
 .learn-more-btn,
 .explore-btn {
   border-radius: 999px;
-  padding: 1rem; /* Adjust padding */
-  font-size: 1.5rem; /* Increase font size */
-  width: 400px; /* 5 times wider */
-  height: 80px; /* 2 times taller */
+  padding: 1rem;
+  font-size: 1.5rem;
+  width: 400px;
+  height: 80px;
   text-align: center;
   white-space: nowrap;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
@@ -107,22 +107,5 @@ function showChoice(choice: string) {
 .q-btn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
-}
-
-q-page {
-  padding: 0; /* No padding */
-  margin: 0; /* No margin */
-  display: flex;
-  flex-direction: column; /* Stack elements */
-}
-
-.hero-section {
-  margin-bottom: 0; /* Remove bottom margin if needed */
-}
-
-.choice-container {
-  margin-top: 2rem; /* Space between hero and buttons */
-  display: flex;
-  justify-content: center; /* Center buttons */
 }
 </style>

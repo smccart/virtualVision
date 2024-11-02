@@ -13,7 +13,15 @@ interface Messages {
 
 export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
-    messages: {} as Messages, // Initialize as an empty object
+    messages: {
+      level1: {
+        supportive: 'We believe in your vision.',
+        dominant: 'Take action to make it happen.',
+        influential: 'Your audience will be captivated.',
+        conscientious: 'Every detail is carefully crafted.',
+      },
+      // Add more levels as needed...
+    } as Messages,
     currentLevel: 1, // Track the current level
   }),
   actions: {

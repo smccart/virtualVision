@@ -7,51 +7,50 @@
 // Apply the font family to the entire site
 body {
   font-family: "STIX Two Text", serif;
-  font-weight: 400; // Default weight
-  font-optical-sizing: auto; // Ensure consistent rendering
+  font-weight: 400;
 }
 
 // Example class for using different font weights
 .stix-two-text-bold {
-  font-weight: 700; // Bold weight
+  font-weight: 700;
 }
 
 .stix-two-text-italic {
-  font-style: italic; // Italic style
+  font-style: italic;
 }
 
 // Text colors for buttons
-$textWhite: #ffffff; // Base white
+$textWhite: #ffffff;
 
 // Primary color variations
 $blueMid: #0b2545; // Mid-tone Blue
-$blueDark: mix($blueMid, #000000, 50%); // 50% Darker Blue
-$blueLight: mix($blueMid, #ffffff, 50%); // 50% Lighter Blue
-$blueVeryLight: mix($textWhite, $blueMid, 1%); // 99% White, 1% Blue
+$blueDark: #08182d; // Directly assigned darker shade
+$blueLight: #4c6bb0; // Directly assigned lighter shade
+$blueVeryLight: #e6f0fa; // Explicitly defined very light shade
 
 // Highlight color variations
-$greenMid: #58AF50; // Mid-tone Green
-$greenDark: mix($greenMid, #000000, 50%); // 50% Darker Green
-$greenLight: mix($greenMid, #ffffff, 50%); // 50% Lighter Green
-$greenVeryLight: mix($textWhite, $greenMid, 1%); // 99% White, 1% Green
+$greenMid: #58AF50;
+$greenDark: #3e7e3c;
+$greenLight: #9cdb8f;
+$greenVeryLight: #d5f5dc;
 
 // Accent color variations
-$orangeMid: #ffa600; // Mid-tone Orange
-$orangeDark: mix($orangeMid, #000000, 50%); // 50% Darker Orange
-$orangeLight: mix($orangeMid, #ffffff, 50%); // 50% Lighter Orange
-$orangeVeryLight: mix($textWhite, $orangeMid, 1%); // 99% White, 1% Orange
+$orangeMid: #FFA500;
+$orangeDark: #c67c00;
+$orangeLight: #ff9f4c;
+$orangeVeryLight: #ffebc4;
 
 // Support color variations
-$redMid: #ac0020; // Mid-tone Red
-$redDark: mix($redMid, #000000, 50%); // 50% Darker Red
-$redLight: mix($redMid, #ffffff, 50%); // 50% Lighter Red
-$redVeryLight: mix($textWhite, $redMid, 1%); // 99% White, 1% Red
+$redMid: #ac0020;
+$redDark: #7a0015;
+$redLight: #de4254;
+$redVeryLight: #f2c5cf;
 
 // Neutral grays
-$grayDark: #1D1D1D; // Dark Gray
-$grayMid: #777777; // Mid Gray
-$grayLight: #E0E0E0; // Light Gray
+$grayDark: #1D1D1D;
+$grayMid: #777777;
+$grayLight: #E0E0E0;
 
 .q-page-container {
-  padding-top: 0 !important; // Ensure no top padding is applied
+  padding-top: 0 !important;
 }

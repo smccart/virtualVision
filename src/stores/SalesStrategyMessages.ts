@@ -16,13 +16,13 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     messages: {
       level1: {
         supportive:
-          'We believe in your vision, inspiring you to reach new heights.',
+          'We believe in your vision, inspiring you to reach new heights and encouraging you to dream bigger.',
         dominant:
-          'Let’s take the next step together and bring your ideas to life.',
+          'Let’s take the next step together and bring your ideas to life, transforming your aspirations into reality.',
         influential:
-          'Your audience will be captivated by what you create together.',
+          'Your audience will be captivated by what you create together, as we design solutions that resonate and engage.',
         conscientious:
-          'Every detail is carefully crafted, ensuring excellence in every step.',
+          'Every detail is carefully crafted, ensuring excellence in every step to guarantee a successful outcome.',
       },
       // Add more levels as needed...
     } as Messages,

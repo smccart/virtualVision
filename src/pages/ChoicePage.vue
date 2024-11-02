@@ -1,10 +1,12 @@
 <template>
-  <q-page class="page-container">
+  <q-page class="row items-center justify-evenly">
     <div class="hero-section">
-      <p class="hero-message">{{ currentMessage.supportive }}</p>
-      <p class="hero-message">{{ currentMessage.dominant }}</p>
-      <p class="hero-message">{{ currentMessage.influential }}</p>
-      <p class="hero-message">{{ currentMessage.conscientious }}</p>
+      <div class="message-container">
+        <p class="hero-message">{{ currentMessage.supportive }}</p>
+        <p class="hero-message">{{ currentMessage.dominant }}</p>
+        <p class="hero-message">{{ currentMessage.influential }}</p>
+        <p class="hero-message">{{ currentMessage.conscientious }}</p>
+      </div>
     </div>
 
     <div class="choice-container">
@@ -52,25 +54,23 @@ function showChoice(choice: string) {
 <style scoped lang="scss">
 @import '/src/css/app.scss';
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh; /* Use full viewport height */
-  padding: 2rem;
-}
-
 .hero-section {
+  padding: 1rem 7rem 0;
   text-align: center;
   background-color: rgba($orangeLight, 0.01);
+  min-height: 300px;
   color: $blueDark;
   margin: 0 auto;
-  padding: 1rem 7rem;
-  flex: 1 0 55%; /* Take 55% of the height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.message-container {
+  display: flex; /* Use flexbox to arrange messages side by side */
+  flex-wrap: wrap; /* Allow messages to wrap */
+  justify-content: space-around; /* Space between messages */
 }
 
 .hero-message {
@@ -78,7 +78,8 @@ function showChoice(choice: string) {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.8;
-  margin: 0.5rem 0;
+  margin: 0.5rem;
+  max-width: 200px; /* Limit width for readability */
 }
 
 .choice-container {
@@ -86,17 +87,16 @@ function showChoice(choice: string) {
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
-  flex: 0 0 40%; /* Take 40% of the height */
-  align-items: center;
+  margin-top: 2rem;
 }
 
 .learn-more-btn,
 .explore-btn {
   border-radius: 999px;
-  padding: 1.5rem; /* Increase padding */
-  font-size: 1.8rem; /* Increase font size */
-  width: 450px; /* Make buttons wider */
-  height: 90px; /* Make buttons taller */
+  padding: 1rem;
+  font-size: 1.5rem;
+  width: 400px;
+  height: 80px;
   text-align: center;
   white-space: nowrap;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;

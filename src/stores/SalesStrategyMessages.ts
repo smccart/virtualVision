@@ -15,10 +15,14 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
     messages: {
       level1: {
-        supportive: 'We believe in your vision.',
-        dominant: 'Take action to make it happen.',
-        influential: 'Your audience will be captivated.',
-        conscientious: 'Every detail is carefully crafted.',
+        supportive:
+          'We believe in your vision, inspiring you to reach new heights.',
+        dominant:
+          'Let’s take the next step together and bring your ideas to life.',
+        influential:
+          'Your audience will be captivated by what you create together.',
+        conscientious:
+          'Every detail is carefully crafted, ensuring excellence in every step.',
       },
       // Add more levels as needed...
     } as Messages,

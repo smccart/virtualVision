@@ -26,7 +26,7 @@
   @import '/src/css/app.scss';
 
   .hero-section {
-    padding: 3rem 6rem 0;
+    padding: 1rem 6rem 0;
     text-align: center;
     background-color: rgba($orangeLight, 0.01);
     min-height: 300px;
@@ -52,7 +52,7 @@
     justify-content: center;
     gap: 4rem;
     padding: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0rem;
   }
 
   .learn-more-btn {

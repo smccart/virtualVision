@@ -5,6 +5,8 @@ interface Message {
   dominant: string;
   influential: string;
   conscientious: string;
+  SDC: string; // Add SDC message
+  SIC: string; // Add SIC message
 }
 
 interface Messages {
@@ -23,6 +25,8 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
           'Your audience will be captivated by what you create together, as we design solutions that resonate and engage.',
         conscientious:
           'Every detail is carefully crafted, ensuring excellence in every step to guarantee a successful outcome.',
+        SDC: 'Focus on functionality and structure.', // SDC button message
+        SIC: 'Enhance user engagement and interaction.', // SIC button message
       },
       // Add more levels as needed...
     } as Messages,

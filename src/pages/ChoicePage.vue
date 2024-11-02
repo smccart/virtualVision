@@ -25,12 +25,12 @@
       <q-btn
         @click="showChoice('SDC')"
         class="learn-more-btn"
-        :label="binaryChoices[0].title"
+        :label="currentMessage.SDC"
       />
       <q-btn
         @click="showChoice('SIC')"
         class="explore-btn"
-        :label="binaryChoices[1].title"
+        :label="currentMessage.SIC"
       />
     </div>
   </q-page>
@@ -49,17 +49,6 @@
 
   const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
   const currentMessage = getCurrentMessages;
-
-  const binaryChoices = [
-    {
-      title: 'Take Action',
-      description: 'Focus on functionality and structure.',
-    },
-    {
-      title: 'Inspire Change',
-      description: 'Enhance user engagement and interaction.',
-    },
-  ];
 
   function showChoice(choice: string) {
     setCurrentLevel(choice === 'SDC' ? 1 : 2);
@@ -96,9 +85,9 @@
     min-width: 17rem;
     padding: 1rem;
     padding-top: 2.5rem;
-    border: 15px solid; /* Add border style */
-    background-color: white; /* Set background to white */
-    color: $grayDark; /* Set text color to black */
+    border: 15px solid;
+    background-color: white;
+    color: $grayDark;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
@@ -132,23 +121,24 @@
   .explore-btn {
     border-radius: 999px;
     padding: 1rem;
-    font-size: 1.5rem;
-    width: 25rem;
+    font-size: 1.3rem;
+    width: 36rem;
     height: 10rem;
     text-align: center;
     white-space: nowrap;
     transition: transform 0.3s ease, box-shadow 0.3s ease,
-      background-color 0.3s ease;
+    background-color 0.3s ease;
+    flex-wrap: wrap;
   }
 
   .learn-more-btn {
     background-color: $redMid;
-    color:  $textWhite;
+    color: $textWhite;
   }
 
   .explore-btn {
     background-color: $blueDark;
-    color:  $textWhite;
+    color: $textWhite;
   }
 
   .q-btn:hover {

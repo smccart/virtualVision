@@ -136,6 +136,11 @@
     color: $textWhite;
   }
 
+  .learn-more-btn,
+.explore-btn {
+  text-transform: none; /* Disable text transformation */
+}
+
   .explore-btn {
     background-color: $blueDark;
     color: $textWhite;

@@ -1,18 +1,13 @@
 <template>
   <q-page class="flex-column">
     <div class="content-container">
-      <p class="integrated-paragraph">
-        {{ currentMessage.supportive }} {{ currentMessage.dominant }}
-        {{ currentMessage.influential }} {{ currentMessage.conscientious }}
+      <!-- Hero message with varied typography -->
+      <p class="hero-message">
+        <strong>{{ currentMessage.supportive }}</strong> {{ currentMessage.dominant }}
+        <em>{{ currentMessage.influential }}</em> {{ currentMessage.conscientious }}
       </p>
 
-      <!-- Simplified Prompt -->
-      <div class="prompt-container">
-        <p class="prompt-text">
-          Choose the statement that feels most like you.
-        </p>
-      </div>
-
+      <!-- Inner voice statements in a two-by-two grid layout -->
       <div class="choices-container">
         <q-btn
           @click="showChoice('supportive')"
@@ -24,6 +19,10 @@
           class="choice-btn dominant-btn"
           :label="currentMessage.dominantInnerVoice"
         />
+
+        <!-- Prompt placed in the middle of the grid -->
+        <p class="prompt-text">{{ promptText }}</p>
+
         <q-btn
           @click="showChoice('influential')"
           class="choice-btn influential-btn"
@@ -40,75 +39,82 @@
 </template>
 
 <script setup lang="ts">
-  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
 
-  // Fetch messages from the store
-  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-  const currentMessage = getCurrentMessages; // Access the getter as a property
+// Fetch messages from the store
+const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
+const currentMessage = getCurrentMessages; // Access the getter as a property
 
-  // Function to update the current level based on the chosen tone
-  function showChoice(choice: string) {
-    const levelMapping: { [key: string]: number } = {
-      supportive: 1,
-      dominant: 2,
-      influential: 3,
-      conscientious: 4,
-    };
-    setCurrentLevel(levelMapping[choice]);
-  }
+// Supportive prompt text stored in the store or defined dynamically
+const promptText = 'Choose the statement that reflects your inner voice the most.';
+
+// Function to update the current level based on the chosen tone
+function showChoice(choice: string) {
+  const levelMapping: { [key: string]: number } = {
+    supportive: 1,
+    dominant: 2,
+    influential: 3,
+    conscientious: 4,
+  };
+  setCurrentLevel(levelMapping[choice]);
+}
 </script>
 
 <style scoped lang="scss">
-  @import '/src/css/app.scss';
+@import '/src/css/app.scss';
 
-  .content-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-    padding-top: 8rem; /* Added padding to ensure it's not hidden by the navbar */
-    text-align: center;
-  }
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 8rem; /* Ensure it's not hidden by the navbar */
+  text-align: center;
+}
 
-  .integrated-paragraph {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-  }
+.hero-message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
 
-  .prompt-container {
-    background-color: #f0f0f0;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: $grayDark;
-    margin-bottom: 1.5rem;
-  }
+.choices-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: auto auto; /* Two rows */
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+}
 
-  .choices-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
-    gap: 1rem;
-    justify-items: center;
-  }
+.prompt-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: $grayDark;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  grid-column: span 2; /* Make the prompt span both columns */
+  margin: 1rem 0;
+}
 
-  .choice-btn {
-    border-radius: 2rem;
-    padding: 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    width: 100%; /* Adjust to fit within grid layout */
-    max-width: 340px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    border: 4px solid $grayDark;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+.choice-btn {
+  border-radius: 2rem;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 320px; /* Adjusted to fit within the layout */
+  text-align: center;
+  background-color: white;
+  color: black;
+  border: 4px solid $grayDark;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .choice-btn:hover {
-    border-color: $orangeMid;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
+.choice-btn:hover {
+  border-color: $orangeMid;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
 </style>

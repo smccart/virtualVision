@@ -9,6 +9,7 @@ interface Message {
   dominantInnerVoice: string;
   influentialInnerVoice: string;
   conscientiousInnerVoice: string;
+  prompt: string; // Added prompt for dynamic management
 }
 
 interface Messages {
@@ -35,6 +36,8 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
           'I’m inspired to create something extraordinary.',
         conscientiousInnerVoice:
           'I want to ensure everything is done with precision.',
+        prompt:
+          'Pick the statement that speaks to your heart and reflects your inner voice the most.', // Short and concise prompt
       },
       // Add more levels if needed...
     } as Messages,

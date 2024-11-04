@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
   import { ref, onMounted } from 'vue';
-  import NavBar from '../components/NavBar.vue';
+  import NavBar from './NavBar.vue';
   import LeftDrawer from '../components/LeftDrawer.vue';
 
   defineOptions({

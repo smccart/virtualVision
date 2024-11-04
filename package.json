@@ -11,7 +11,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
-    "tree": "tree -L 3 -I 'node_modules|.git|package-lock.json|dist|.DS_Store' --noreport -a",
+    "tree": "tree -L 7 -I 'node_modules|.git|package-lock.json|dist|.DS_Store' --noreport -a",
     "tree:dir": "tree -d -L 33 -I 'node_modules|.git|package-lock.json|dist|.DS_Store' --noreport -a",
     "gsd": "git status && echo '\n' && git diff --cached --unified=3 > staged_changes.txt"
   },

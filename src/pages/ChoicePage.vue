@@ -1,45 +1,34 @@
 <template>
   <q-page class="flex-column">
     <div class="content-container">
-      <!-- Hero message with varied typography -->
-      <p class="hero-message">
-        <strong>{{ currentMessage.supportive }}</strong> {{ currentMessage.dominant }}
-        <em>{{ currentMessage.influential }}</em> {{ currentMessage.conscientious }}
-      </p>
+      <!-- Hero message component -->
+      <HeroMessage
+        :supportive="currentMessage.supportive"
+        :dominant="currentMessage.dominant"
+        :influential="currentMessage.influential"
+        :conscientious="currentMessage.conscientious"
+      />
 
-      <!-- Inner voice statements in a two-by-two grid layout -->
-      <div class="choices-container">
-        <q-btn
-          @click="showChoice('supportive')"
-          class="choice-btn supportive-btn"
-          :label="currentMessage.supportiveInnerVoice"
-        />
-        <q-btn
-          @click="showChoice('dominant')"
-          class="choice-btn dominant-btn"
-          :label="currentMessage.dominantInnerVoice"
-        />
+      <!-- Inner voice choices in a two-by-two grid layout -->
+      <InnerVoiceChoices
+        :supportiveLabel="currentMessage.supportiveInnerVoice"
+        :dominantLabel="currentMessage.dominantInnerVoice"
+        :influentialLabel="currentMessage.influentialInnerVoice"
+        :conscientiousLabel="currentMessage.conscientiousInnerVoice"
+        @onChoose="showChoice"
+      />
 
-        <!-- Prompt placed in the middle of the grid -->
-        <p class="prompt-text">{{ promptText }}</p>
-
-        <q-btn
-          @click="showChoice('influential')"
-          class="choice-btn influential-btn"
-          :label="currentMessage.influentialInnerVoice"
-        />
-        <q-btn
-          @click="showChoice('conscientious')"
-          class="choice-btn conscientious-btn"
-          :label="currentMessage.conscientiousInnerVoice"
-        />
-      </div>
+      <!-- Prompt text in the center -->
+      <PromptText :text="promptText" />
     </div>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+import HeroMessage from '../components/shared/HeroMessage.vue';
+import InnerVoiceChoices from '../components/InnerVoiceChoices.vue';
+import PromptText from '../components/shared/PromptText.vue';
 
 // Fetch messages from the store
 const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
@@ -69,52 +58,5 @@ function showChoice(choice: string) {
   padding: 1rem;
   padding-top: 8rem; /* Ensure it's not hidden by the navbar */
   text-align: center;
-}
-
-.hero-message {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.choices-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-template-rows: auto auto; /* Two rows */
-  gap: 1.5rem;
-  justify-items: center;
-  align-items: center;
-}
-
-.prompt-text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: $grayDark;
-  text-align: center;
-  background-color: #f0f0f0;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  grid-column: span 2; /* Make the prompt span both columns */
-  margin: 1rem 0;
-}
-
-.choice-btn {
-  border-radius: 2rem;
-  padding: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  width: 100%;
-  max-width: 320px; /* Adjusted to fit within the layout */
-  text-align: center;
-  background-color: white;
-  color: black;
-  border: 4px solid $grayDark;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.choice-btn:hover {
-  border-color: $orangeMid;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
 }
 </style>

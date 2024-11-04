@@ -12,7 +12,7 @@ interface Message {
 }
 
 interface Messages {
-  [key: string]: Message; // Allows dynamic indexing based on levels
+  [key: string]: Message;
 }
 
 export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
@@ -28,29 +28,29 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
         conscientious:
           'Every project we craft is built with precision, ensuring a foundation that sets you up for long-term success.',
         supportiveInnerVoice:
-          'I feel reassured when I know I have support as I explore my ideas, making it easier to take the next step.',
+          'I feel confident when I have support exploring new ideas.',
         dominantInnerVoice:
-          'I need the tools to make a significant impact and want to take bold action to see results quickly.',
+          'I need tools to make a big impact and take bold action.',
         influentialInnerVoice:
-          'I’m inspired by the idea of creating something extraordinary that truly captivates my audience.',
+          'I’m inspired to create something extraordinary.',
         conscientiousInnerVoice:
-          'I want to ensure everything is done with precision, giving me confidence in long-term success.',
+          'I want to ensure everything is done with precision.',
       },
-      // Add more levels as needed...
+      // Add more levels if needed...
     } as Messages,
-    currentLevel: 1, // Track the current level
+    currentLevel: 1,
   }),
   actions: {
     setMessages(newMessages: Messages) {
-      this.messages = newMessages; // Accepts an object with messages for each level
+      this.messages = newMessages;
     },
     setCurrentLevel(level: number) {
-      this.currentLevel = level; // Updates the current level
+      this.currentLevel = level;
     },
   },
   getters: {
     getCurrentMessages: (state): Message => {
-      return state.messages[`level${state.currentLevel}`]; // Returns the current level messages correctly
+      return state.messages[`level${state.currentLevel}`];
     },
   },
 });

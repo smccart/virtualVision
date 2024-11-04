@@ -1,74 +1,52 @@
 <template>
   <q-page class="flex-column">
-    <div class="hero-section">
-      <div class="message-container">
-        <SupportiveMessageBox
-          :message="currentMessage.supportive"
-          class="message-box supportive"
+    <div class="content-container">
+      <p class="integrated-paragraph">
+        {{ currentMessage.supportive }} {{ currentMessage.dominant }}
+        {{ currentMessage.influential }} {{ currentMessage.conscientious }}
+      </p>
+
+      <!-- Simplified Prompt -->
+      <div class="prompt-container">
+        <p class="prompt-text">
+          Choose the statement that feels most like you.
+        </p>
+      </div>
+
+      <div class="choices-container">
+        <q-btn
+          @click="showChoice('supportive')"
+          class="choice-btn supportive-btn"
+          :label="currentMessage.supportiveInnerVoice"
         />
-        <DominantMessageBox
-          :message="currentMessage.dominant"
-          class="message-box dominant"
+        <q-btn
+          @click="showChoice('dominant')"
+          class="choice-btn dominant-btn"
+          :label="currentMessage.dominantInnerVoice"
         />
-        <InfluentialMessageBox
-          :message="currentMessage.influential"
-          class="message-box influential"
+        <q-btn
+          @click="showChoice('influential')"
+          class="choice-btn influential-btn"
+          :label="currentMessage.influentialInnerVoice"
         />
-        <ConscientiousMessageBox
-          :message="currentMessage.conscientious"
-          class="message-box conscientious"
+        <q-btn
+          @click="showChoice('conscientious')"
+          class="choice-btn conscientious-btn"
+          :label="currentMessage.conscientiousInnerVoice"
         />
       </div>
-    </div>
-
-    <!-- New Prompt -->
-    <div class="prompt-container">
-      <p class="prompt-text">
-        Honesty shapes the experience. Pick the statement that most genuinely
-        reflects your thoughts and feelings. Your choice will help us tailor our
-        approach to best support your vision.
-      </p>
-    </div>
-
-    <div class="choice-container">
-      <q-btn
-        @click="showChoice('supportive')"
-        class="choice-btn supportive-btn"
-        :label="currentMessage.supportiveInnerVoice"
-      />
-      <q-btn
-        @click="showChoice('dominant')"
-        class="choice-btn dominant-btn"
-        :label="currentMessage.dominantInnerVoice"
-      />
-      <q-btn
-        @click="showChoice('influential')"
-        class="choice-btn influential-btn"
-        :label="currentMessage.influentialInnerVoice"
-      />
-      <q-btn
-        @click="showChoice('conscientious')"
-        class="choice-btn conscientious-btn"
-        :label="currentMessage.conscientiousInnerVoice"
-      />
     </div>
   </q-page>
 </template>
 
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import SupportiveMessageBox from '../components/SupportiveMessageBox.vue';
-  import DominantMessageBox from '../components/DominantMessageBox.vue';
-  import InfluentialMessageBox from '../components/InfluentialMessageBox.vue';
-  import ConscientiousMessageBox from '../components/ConscientiousMessageBox.vue';
 
-  defineOptions({
-    name: 'ChoicePage',
-  });
-
+  // Fetch messages from the store
   const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
   const currentMessage = getCurrentMessages; // Access the getter as a property
 
+  // Function to update the current level based on the chosen tone
   function showChoice(choice: string) {
     const levelMapping: { [key: string]: number } = {
       supportive: 1,
@@ -83,78 +61,35 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .hero-section {
-    padding: 3rem;
-    margin-top: 4rem;
-    text-align: center;
-    background-color: rgba($grayLight, 0.99);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-
-  .message-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
+  .content-container {
     max-width: 800px;
-
-    margin-bottom: 0;
+    margin: 0 auto;
     padding: 1rem;
-    padding-bottom: 0rem;
-  }
-
-  .message-box {
-    flex: 1;
-    min-width: 19rem;
-    padding: 1rem;
-    padding-top: 2.5rem;
-    border: 15px solid;
-    background-color: white;
-    color: $grayDark;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-size: 1.2rem;
-    font-weight: 500;
-    word-wrap: break-word;
+    padding-top: 8rem; /* Added padding to ensure it's not hidden by the navbar */
     text-align: center;
   }
 
-  .supportive {
-    border-color: $blueMid;
-  }
-  .dominant {
-    border-color: $greenMid;
-  }
-  .influential {
-    border-color: $orangeMid;
-  }
-  .conscientious {
-    border-color: $redMid;
+  .integrated-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
   }
 
   .prompt-container {
-    text-align: center;
-    margin: 0;
-    padding: 1rem;
-    background-color: rgba($grayLight, 0.2);
+    background-color: #f0f0f0;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     font-size: 1.2rem;
     font-weight: 500;
     color: $grayDark;
+    margin-bottom: 1.5rem;
   }
 
-  .choice-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  .choices-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
+    gap: 1rem;
+    justify-items: center;
   }
 
   .choice-btn {
@@ -162,16 +97,13 @@
     padding: 1.5rem;
     font-size: 1.1rem;
     font-weight: 500;
-    width: 34rem;
-    height: auto;
+    width: 100%; /* Adjust to fit within grid layout */
+    max-width: 340px;
     text-align: center;
-    white-space: normal;
     background-color: white;
     color: black;
     border: 4px solid $grayDark;
-    transition: transform 0.3s ease, box-shadow 0.3s ease,
-      border-color 0.3s ease;
-    text-transform: none;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
 
   .choice-btn:hover {

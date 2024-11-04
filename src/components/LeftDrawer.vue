@@ -4,7 +4,7 @@
     @update:model-value="updateDrawerOpen"
     show-if-above
     bordered
-    :width="300"
+    :width="325"
   >
     <q-list class="journey-drawer-list">
       <q-item

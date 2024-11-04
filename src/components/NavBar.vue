@@ -12,18 +12,16 @@
         aria-label="Menu"
         @click="toggleLeftDrawer"
       />
-      <q-toolbar-title class="toolbar-title">{{
-        toolbarTitle
-      }}</q-toolbar-title>
-
-      <!-- Navigation Links -->
-      <div class="nav-links">
-        <q-btn
-          flat
-          :label="homeLabel"
+      <q-toolbar-title class="toolbar-title">
+        <router-link
           to="/"
-          class="nav-text"
-        />
+          class="home-link"
+          >{{ toolbarTitle }}</router-link
+        >
+      </q-toolbar-title>
+
+      <!-- Updated Navigation Links -->
+      <div class="nav-links">
         <q-btn
           flat
           :label="aboutLabel"
@@ -32,14 +30,14 @@
         />
         <q-btn
           flat
-          :label="servicesLabel"
-          to="/services"
+          :label="visionPlanningLabel"
+          to="/vision-planning"
           class="nav-text"
         />
         <q-btn
           flat
-          :label="portfolioLabel"
-          to="/portfolio"
+          :label="fullVisionLabel"
+          to="/full-vision-realization"
           class="nav-text"
         />
         <q-btn
@@ -58,14 +56,13 @@
 <script setup lang="ts">
   import { defineProps, defineEmits } from 'vue';
 
-  // Destructure props directly
+  // Destructure props and update labels
   const {
     toolbarTitle,
     tagline,
-    homeLabel,
     aboutLabel,
-    servicesLabel,
-    portfolioLabel,
+    visionPlanningLabel,
+    fullVisionLabel,
     contactLabel,
   } = defineProps({
     toolbarTitle: {
@@ -76,21 +73,17 @@
       type: String,
       required: true,
     },
-    homeLabel: {
-      type: String,
-      default: 'Home',
-    },
     aboutLabel: {
       type: String,
       default: 'About Us',
     },
-    servicesLabel: {
+    visionPlanningLabel: {
       type: String,
-      default: 'Services',
+      default: 'Vision Planning',
     },
-    portfolioLabel: {
+    fullVisionLabel: {
       type: String,
-      default: 'Portfolio',
+      default: 'Full Vision Realization',
     },
     contactLabel: {
       type: String,
@@ -123,6 +116,11 @@
     font-size: 2em;
     padding: 1rem;
     margin-left: 2rem;
+  }
+
+  .home-link {
+    color: $textWhite;
+    text-decoration: none;
   }
 
   .nav-links {

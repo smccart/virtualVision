@@ -1,56 +1,11 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header
-      class="custom-header"
-      elevated
-    >
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-        <q-toolbar-title class="toolbar-title">
-          {{ toolbarTitle }}
-        </q-toolbar-title>
-        <div class="nav-links">
-          <q-btn
-            flat
-            :label="homeLabel"
-            to="/"
-            class="nav-text"
-          />
-          <q-btn
-            flat
-            :label="aboutLabel"
-            to="/about"
-            class="nav-text"
-          />
-          <q-btn
-            flat
-            :label="servicesLabel"
-            to="/services"
-            class="nav-text"
-          />
-          <q-btn
-            flat
-            :label="portfolioLabel"
-            to="/portfolio"
-            class="nav-text"
-          />
-          <q-btn
-            flat
-            :label="contactLabel"
-            to="/contact"
-            class="nav-text"
-          />
-        </div>
-        <div class="tagline">{{ tagline }}</div>
-      </q-toolbar>
-    </q-header>
+    <!-- Use NavBar for the Navigation Bar -->
+    <NavBar
+      :toolbarTitle="toolbarTitle"
+      :tagline="tagline"
+      @toggleLeftDrawer="toggleLeftDrawer"
+    />
 
     <q-drawer
       v-model="leftDrawerOpen"
@@ -110,6 +65,7 @@
 
 <script setup lang="ts">
   import { ref, onMounted } from 'vue';
+  import NavBar from '../components/NavBar.vue';
 
   defineOptions({
     name: 'MainLayout',
@@ -137,42 +93,6 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
-
-  .custom-header {
-    background-color: $blueDark;
-    margin-bottom: 1rem;
-  }
-
-  .toolbar-title {
-    font-family: inherit;
-    font-weight: bold;
-    color: $textWhite;
-    font-size: 2em;
-    padding: 1rem;
-    margin-left: 2rem;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    flex: 2;
-    white-space: nowrap;
-  }
-
-  .nav-text {
-    color: $orangeVeryLight;
-
-    color: mix($textWhite, $orangeVeryLight, 99%);
-  }
-
-  .tagline {
-    color: $textWhite;
-    font-size: 1.3em;
-    font-weight: 500;
-    margin-left: auto;
-    padding-right: 3rem;
-    white-space: nowrap;
-  }
 
   .custom-drawer-list {
     padding: 2em !important;

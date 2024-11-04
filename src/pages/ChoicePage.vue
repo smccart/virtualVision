@@ -24,7 +24,9 @@
     <!-- New Prompt -->
     <div class="prompt-container">
       <p class="prompt-text">
-        Honesty shapes the experience. Pick the statement that most genuinely reflects your thoughts and feelings. Your choice will help us tailor our approach to best support your vision.
+        Honesty shapes the experience. Pick the statement that most genuinely
+        reflects your thoughts and feelings. Your choice will help us tailor our
+        approach to best support your vision.
       </p>
     </div>
 
@@ -54,124 +56,127 @@
 </template>
 
 <script setup lang="ts">
-import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-import SupportiveMessageBox from '../components/SupportiveMessageBox.vue';
-import DominantMessageBox from '../components/DominantMessageBox.vue';
-import InfluentialMessageBox from '../components/InfluentialMessageBox.vue';
-import ConscientiousMessageBox from '../components/ConscientiousMessageBox.vue';
+  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+  import SupportiveMessageBox from '../components/SupportiveMessageBox.vue';
+  import DominantMessageBox from '../components/DominantMessageBox.vue';
+  import InfluentialMessageBox from '../components/InfluentialMessageBox.vue';
+  import ConscientiousMessageBox from '../components/ConscientiousMessageBox.vue';
 
-defineOptions({
-  name: 'ChoicePage',
-});
+  defineOptions({
+    name: 'ChoicePage',
+  });
 
-const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-const currentMessage = getCurrentMessages; // Access the getter as a property
+  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
+  const currentMessage = getCurrentMessages; // Access the getter as a property
 
-function showChoice(choice: string) {
-  const levelMapping: { [key: string]: number } = {
-    supportive: 1,
-    dominant: 2,
-    influential: 3,
-    conscientious: 4,
-  };
-  setCurrentLevel(levelMapping[choice]);
-}
+  function showChoice(choice: string) {
+    const levelMapping: { [key: string]: number } = {
+      supportive: 1,
+      dominant: 2,
+      influential: 3,
+      conscientious: 4,
+    };
+    setCurrentLevel(levelMapping[choice]);
+  }
 </script>
 
 <style scoped lang="scss">
-@import '/src/css/app.scss';
+  @import '/src/css/app.scss';
 
-.hero-section {
-  padding: 3rem;
-  margin-top: 4rem;
-  text-align: center;
-  background-color: rgba($grayLight, 0.99);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
+  .hero-section {
+    padding: 3rem;
+    margin-top: 4rem;
+    text-align: center;
+    background-color: rgba($grayLight, 0.99);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 
-.message-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 3rem;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-}
+  .message-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
 
-.message-box {
-  flex: 1;
-  min-width: 19rem;
-  padding: 1rem;
-  padding-top: 2.5rem;
-  border: 15px solid;
-  background-color: white;
-  color: $grayDark;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1.2rem;
-  font-weight: 500;
-  word-wrap: break-word;
-  text-align: center;
-}
+    margin-bottom: 0;
+    padding: 1rem;
+    padding-bottom: 0rem;
+  }
 
-.supportive {
-  border-color: $blueMid;
-}
-.dominant {
-  border-color: $greenMid;
-}
-.influential {
-  border-color: $orangeMid;
-}
-.conscientious {
-  border-color: $redMid;
-}
+  .message-box {
+    flex: 1;
+    min-width: 19rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    border: 15px solid;
+    background-color: white;
+    color: $grayDark;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    word-wrap: break-word;
+    text-align: center;
+  }
 
-.prompt-container {
-  text-align: center;
-  margin: 2rem 0;
-  padding: 0.5rem 1rem;
-  background-color: rgba($grayLight, 0.2);
-  border-radius: 8px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: $grayDark;
-}
+  .supportive {
+    border-color: $blueMid;
+  }
+  .dominant {
+    border-color: $greenMid;
+  }
+  .influential {
+    border-color: $orangeMid;
+  }
+  .conscientious {
+    border-color: $redMid;
+  }
 
-.choice-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1em;
-}
+  .prompt-container {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba($grayLight, 0.2);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $grayDark;
+  }
 
-.choice-btn {
-  border-radius: 2rem;
-  padding: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  width: 36rem;
-  height: auto;
-  text-align: center;
-  white-space: normal;
-  background-color: white;
-  color: black;
-  border: 4px solid $grayDark;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  text-transform: none;
-}
+  .choice-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
 
-.choice-btn:hover {
-  border-color: $orangeMid;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
+  .choice-btn {
+    border-radius: 2rem;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 34rem;
+    height: auto;
+    text-align: center;
+    white-space: normal;
+    background-color: white;
+    color: black;
+    border: 4px solid $grayDark;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    text-transform: none;
+  }
+
+  .choice-btn:hover {
+    border-color: $orangeMid;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
 </style>

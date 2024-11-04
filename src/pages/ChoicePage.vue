@@ -21,6 +21,13 @@
       </div>
     </div>
 
+    <!-- New Prompt -->
+    <div class="prompt-container">
+      <p class="prompt-text">
+        Honesty shapes the experience. Pick the statement that most genuinely reflects your thoughts and feelings. Your choice will help us tailor our approach to best support your vision.
+      </p>
+    </div>
+
     <div class="choice-container">
       <q-btn
         @click="showChoice('supportive')"
@@ -58,7 +65,7 @@ defineOptions({
 });
 
 const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-const currentMessage = getCurrentMessages;
+const currentMessage = getCurrentMessages; // Access the getter as a property
 
 function showChoice(choice: string) {
   const levelMapping: { [key: string]: number } = {
@@ -123,6 +130,17 @@ function showChoice(choice: string) {
 }
 .conscientious {
   border-color: $redMid;
+}
+
+.prompt-container {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba($grayLight, 0.2);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $grayDark;
 }
 
 .choice-container {

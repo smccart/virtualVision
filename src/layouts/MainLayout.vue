@@ -7,55 +7,8 @@
       @toggleLeftDrawer="toggleLeftDrawer"
     />
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      :width="210"
-    >
-      <q-list class="custom-drawer-list">
-        <q-item
-          to="/"
-          class="custom-drawer-item"
-        >
-          <q-item-section class="custom-drawer-item-section">{{
-            homeLabel
-          }}</q-item-section>
-        </q-item>
-        <q-item
-          to="/about"
-          class="custom-drawer-item"
-        >
-          <q-item-section class="custom-drawer-item-section">{{
-            aboutLabel
-          }}</q-item-section>
-        </q-item>
-        <q-item
-          to="/services"
-          class="custom-drawer-item"
-        >
-          <q-item-section class="custom-drawer-item-section">{{
-            servicesLabel
-          }}</q-item-section>
-        </q-item>
-        <q-item
-          to="/portfolio"
-          class="custom-drawer-item"
-        >
-          <q-item-section class="custom-drawer-item-section">{{
-            portfolioLabel
-          }}</q-item-section>
-        </q-item>
-        <q-item
-          to="/contact"
-          class="custom-drawer-item"
-        >
-          <q-item-section class="custom-drawer-item-section">{{
-            contactLabel
-          }}</q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
+    <!-- Use LeftDrawer for the Drawer Menu -->
+    <LeftDrawer :drawerOpen="leftDrawerOpen" />
 
     <q-page-container>
       <router-view />
@@ -66,29 +19,28 @@
 <script setup lang="ts">
   import { ref, onMounted } from 'vue';
   import NavBar from '../components/NavBar.vue';
+  import LeftDrawer from '../components/LeftDrawer.vue';
 
   defineOptions({
     name: 'MainLayout',
   });
 
+  // State for controlling the left drawer
   const leftDrawerOpen = ref(false);
 
+  // Function to toggle the drawer
   function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value;
   }
 
+  // Close the drawer on mount to ensure it's closed by default
   onMounted(() => {
-    leftDrawerOpen.value = false; // Ensure the drawer is closed on mount
+    leftDrawerOpen.value = false;
   });
 
+  // Toolbar title and tagline
   const toolbarTitle = 'Vision 2 Virtual';
   const tagline = 'Bringing Your Vision to Life';
-
-  const homeLabel = 'Home';
-  const aboutLabel = 'About Us';
-  const servicesLabel = 'Services';
-  const portfolioLabel = 'Portfolio';
-  const contactLabel = 'Contact';
 </script>
 
 <style scoped lang="scss">

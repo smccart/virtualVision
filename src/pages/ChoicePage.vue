@@ -118,36 +118,27 @@
   }
 
   .learn-more-btn,
-.explore-btn {
-  border-radius: 35px;
-  padding: 2rem;
-  font-size: 1.4em;
-    font-weight: 600;
-  width: 36rem;
-  height: auto; /* Adjust height to fit wrapped content */
-  text-align: center;
-  white-space: normal; /* Allow text to wrap */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  flex-wrap: wrap;
-}
-
-  .learn-more-btn {
-    background-color: $redMid;
-    color: $textWhite;
-  }
-
-  .learn-more-btn,
-.explore-btn {
-  text-transform: none; /* Disable text transformation */
-}
-
   .explore-btn {
-    background-color: $blueDark;
-    color: $textWhite;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 36rem;
+    height: auto;
+    text-align: center;
+    white-space: normal;
+    background-color: white;
+    color: black;
+    border: 4px solid $grayDark;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-transform: none;
   }
 
-  .q-btn:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
+  .learn-more-btn:hover,
+  .explore-btn:hover {
+    border-color: $orangeMid;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    border: 4px solid $orangeMid;
   }
 </style>

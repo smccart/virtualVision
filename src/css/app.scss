@@ -54,3 +54,7 @@ $grayLight: #E0E0E0;
 .q-page-container {
   padding-top: 0 !important;
 }
+
+.q-btn:hover .q-focus-helper {
+  background-color: transparent !important;
+}

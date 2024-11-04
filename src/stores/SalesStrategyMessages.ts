@@ -5,8 +5,10 @@ interface Message {
   dominant: string;
   influential: string;
   conscientious: string;
-  SDC: string; // Add SDC message
-  SIC: string; // Add SIC message
+  supportiveInnerVoice: string;
+  dominantInnerVoice: string;
+  influentialInnerVoice: string;
+  conscientiousInnerVoice: string;
 }
 
 interface Messages {
@@ -25,8 +27,14 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
           'Imagine captivating your audience with something extraordinary, something only you can bring to life.',
         conscientious:
           'Every project we craft is built with precision, ensuring a foundation that sets you up for long-term success.',
-        SDC: 'I would feel more confident knowing I have support as I explore my next big idea, and it’s comforting to know there’s a strong foundation I can trust.', // SDC button message
-        SIC: 'I would like having the comfort of knowing I can create something impactful, and I feel inspired by the thought of crafting something that truly resonates, all while keeping the details in check.', // SIC button message
+        supportiveInnerVoice:
+          'I feel reassured when I know I have support as I explore my ideas, making it easier to take the next step.',
+        dominantInnerVoice:
+          'I need the tools to make a significant impact and want to take bold action to see results quickly.',
+        influentialInnerVoice:
+          'I’m inspired by the idea of creating something extraordinary that truly captivates my audience.',
+        conscientiousInnerVoice:
+          'I want to ensure everything is done with precision, giving me confidence in long-term success.',
       },
       // Add more levels as needed...
     } as Messages,

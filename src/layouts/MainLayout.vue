@@ -8,7 +8,7 @@
     />
 
     <!-- Use LeftDrawer for the Drawer Menu -->
-    <LeftDrawer :drawerOpen="leftDrawerOpen" />
+    <LeftDrawer :drawerOpen="leftDrawerOpen" @update:drawerOpen="value => leftDrawerOpen = value" />
 
     <q-page-container>
       <router-view />
@@ -26,7 +26,7 @@
   });
 
   // State for controlling the left drawer
-  const leftDrawerOpen = ref(false);
+  const leftDrawerOpen = ref(false); // Set to false by default to keep the drawer closed on load
 
   // Function to toggle the drawer
   function toggleLeftDrawer() {

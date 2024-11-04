@@ -25,7 +25,7 @@
         <q-btn
           flat
           :label="aboutLabel"
-          to="/about"
+          to="/about-us"
           class="nav-text"
         />
         <q-btn
@@ -54,7 +54,6 @@
 </template>
 
 <script setup lang="ts">
-
   // Destructure props and update labels
   const {
     toolbarTitle,

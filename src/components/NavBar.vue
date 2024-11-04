@@ -54,7 +54,6 @@
 </template>
 
 <script setup lang="ts">
-  import { defineProps, defineEmits } from 'vue';
 
   // Destructure props and update labels
   const {

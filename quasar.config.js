@@ -1,4 +1,5 @@
-/* Updated quasar.config.js */
+/* eslint-env node */
+/* eslint-disable @typescript-eslint/no-require-imports, no-undef */
 
 const { configure } = require('quasar/wrappers');
 

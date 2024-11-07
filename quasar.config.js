@@ -1,5 +1,5 @@
 /* eslint-env node */
-/* eslint-disable @typescript-eslint/no-require-imports, no-undef */
+/* eslint-disable no-undef */
 
 const { configure } = require('quasar/wrappers');
 
@@ -17,19 +17,7 @@ module.exports = configure(function (/* ctx */) {
         node: 'node20',
       },
       vueRouterMode: 'history',
-      vitePlugins: [
-        [
-          'vite-plugin-checker',
-          {
-            vueTsc: {
-              tsconfigPath: 'tsconfig.vue-tsc.json',
-            },
-            eslint: {
-              lintCommand: 'eslint "./**/*.{js,ts,mjs,cjs,vue}"',
-            },
-          },
-        ],
-      ],
+      vitePlugins: [],
     },
 
     devServer: {

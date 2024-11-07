@@ -8,8 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
 // Props for button label and click handling
 const { label, choice } = defineProps<{
   label: string;

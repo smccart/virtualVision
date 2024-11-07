@@ -25,8 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
 // Define props for the inner voice labels
 const {
   supportiveLabel,

@@ -7,8 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 // Define props for the hero message
 const { supportive, dominant, influential, conscientious } = defineProps<{
   supportive: string;

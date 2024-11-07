@@ -4,8 +4,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 // Define props for the prompt text
 const { text } = defineProps<{ text: string }>();
 </script>

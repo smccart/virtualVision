@@ -94,12 +94,12 @@
 
   .supportive-btn {
     background-color: $yellowVeryLight;
-    color: $blueDark;
-    border-color: $blueDark;
+    color: $purpleDark;
+    border-color: $purpleDark;
   }
 
   .supportive-btn:hover {
-    background-color: $blueDark;
+    background-color: $purpleDark;
     color: $yellowVeryLight;
     border-color: $yellowVeryLight;
   }
@@ -111,9 +111,9 @@
   }
 
   .dominant-btn:hover {
-    background-color: $purpleDark;
-    color: $yellowVeryLight; /* Purple text for better contrast */
-    border-color: $yellowVeryLight; /* Border matches text color */
+    background-color: $blueDark;
+    color: $orangeVeryLight; /* Purple text for better contrast */
+    border-color: $orangeVeryLight; /* Border matches text color */
   }
 
   .influential-btn {
@@ -130,12 +130,12 @@
 
   .conscientious-btn {
     background-color: $blueDark;
-    color: $yellowVeryLight; /* Light yellow text for better contrast */
-    border-color: $yellowVeryLight; /* Border matches text color */
+    color: $orangeVeryLight; /* Light yellow text for better contrast */
+    border-color: $orangeVeryLight; /* Border matches text color */
   }
 
   .conscientious-btn:hover {
-    background-color: $yellowVeryLight; /* Invert colors on hover */
+    background-color: $orangeVeryLight; /* Invert colors on hover */
     color: $blueDark; /* Blue text */
     border-color: $blueDark; /* Border matches text color */
   }

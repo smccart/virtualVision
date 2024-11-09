@@ -46,18 +46,6 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .custom-drawer-list {
-    padding: 2em !important;
-    margin: 0 !important;
-  }
-
-  .custom-drawer-item {
-    padding: 0.5rem 3rem !important;
-  }
-
-  .custom-drawer-item-section {
-    max-width: 180px !important;
-    overflow: hidden;
-    white-space: nowrap;
-  }
+  // Removed individual styles for consistency
+  // The following styles have been moved to app.scss for global reuse
 </style>

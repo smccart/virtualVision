@@ -11,16 +11,15 @@
 
       <!-- Inner voice choices in a two-by-two grid layout -->
       <InnerVoiceChoices
-        :supportiveLabel="currentMessage.supportiveInnerVoice"
-        :dominantLabel="currentMessage.dominantInnerVoice"
-        :influentialLabel="currentMessage.influentialInnerVoice"
-        :conscientiousLabel="currentMessage.conscientiousInnerVoice"
+        :supportiveLabel="currentMessage.innerVoices.sdc.supportive"
+        :dominantLabel="currentMessage.innerVoices.sdc.dominant"
+        :influentialLabel="currentMessage.innerVoices.sic.influential"
+        :conscientiousLabel="currentMessage.innerVoices.sdc.conscientious"
         @onChoose="showChoice"
       />
 
       <!-- Prompt text in the center -->
-      <PromptText :text="promptText" />
-    </div>
+          </div>
   </q-page>
 </template>
 
@@ -33,9 +32,6 @@ import PromptText from '../components/shared/PromptText.vue';
 // Fetch messages from the store
 const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
 const currentMessage = getCurrentMessages; // Access the getter as a property
-
-// Supportive prompt text stored in the store or defined dynamically
-const promptText = 'Choose the statement that reflects your inner voice the most.';
 
 // Function to update the current level based on the chosen tone
 function showChoice(choice: string) {

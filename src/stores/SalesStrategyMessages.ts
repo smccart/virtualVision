@@ -1,50 +1,30 @@
+import { defineStore } from 'pinia';
+
 interface Message {
   supportive: string;
   dominant: string;
   influential: string;
   conscientious: string;
   supportiveWrapUp: string;
+  supportiveInnerVoice: string;
+  dominantInnerVoice: string;
+  influentialInnerVoice: string;
+  conscientiousInnerVoice: string;
   prompt: string;
-  innerVoices: {
-    sdc: {
-      supportive: string;
-      dominant: string;
-      conscientious: string;
-    };
-    sic: {
-      supportive: string;
-      influential: string;
-      conscientious: string;
-    };
-  };
-  pathTransitions: {
-    sdc: {
-      dominant: string;
-    };
-    sic: {
-      influential: string;
-    };
-  };
+  feedbackSegueSupportive: string;
+  feedbackSegueDominant: string;
+  feedbackSegueInfluential: string;
+  feedbackSegueConscientious: string;
 }
 
 interface Messages {
   [key: string]: Message;
 }
 
-import { defineStore } from 'pinia';
-
-interface SalesStrategyState {
-  messages: Messages;
-  currentLevel: number;
-}
-
 export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
     messages: {
       level1: {
-        /* Hero's Journey Step: Introduce the current situation, acknowledging the user's challenges.
-           Sales Step: Take immediate control and establish a sense of support and readiness to help. */
-
         supportive:
           'We understand that managing a do-it-yourself website all by yourself can be overwhelming, especially when you have countless other responsibilities.',
         dominant:
@@ -56,45 +36,30 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
 
         supportiveWrapUp:
           "Whether you're exploring your options or ready to take your website to the next level, we're here to help you make it happen. This is your journey, and it's your choice.",
+
+        supportiveInnerVoice:
+          'I feel confident when I have support exploring new ideas.',
+        dominantInnerVoice:
+          'I need tools to make a big impact and take bold action.',
+        influentialInnerVoice:
+          'I’m inspired to create something extraordinary.',
+        conscientiousInnerVoice:
+          'I want to ensure everything is done with precision.',
         prompt:
-          'Choose the path that feels closest to where you are right now.',
-
-        innerVoices: {
-          sdc: {
-            supportive: 'I can feel that my website has untapped potential.',
-            dominant:
-              'It looks like the right time to take meaningful steps to improve it.',
-            conscientious:
-              'I want to make sure it works well, with the right support guiding me.',
-          },
-          sic: {
-            supportive:
-              'I am interested in exploring how enhancing my website can help my business grow.',
-            influential:
-              'It sounds like taking these thoughtful steps will make a positive difference.',
-            conscientious:
-              'I want everything to work smoothly, with expert guidance ensuring that each part fits well.',
-          },
-        },
-
-        pathTransitions: {
-          sdc: {
-            supportive:
-              'We are excited to guide you as you take this significant step to enhance your website.',
-            dominant:
-              'Your proactive choice shows you are ready to make impactful improvements and take meaningful action.',
-          },
-          sic: {
-            supportive:
-              'We are here to support you as you begin making thoughtful changes to improve your website.',
-            influential:
-              'With thoughtful progress, your vision will start to take shape step by step, aligning with your goals.',
-          },
-        },
+          'Pick the statement that speaks to your heart and reflects your inner voice the most.',
+        feedbackSegueSupportive:
+          'We understand the importance of having the right support, and we’ll continue to be by your side every step of the way.',
+        feedbackSegueDominant:
+          'We’re excited to help you make bold moves and achieve the impact you desire.',
+        feedbackSegueInfluential:
+          'We love your passion for creating something extraordinary, and we’re here to help make it happen.',
+        feedbackSegueConscientious:
+          'We appreciate your dedication to precision, and we’re committed to ensuring every detail aligns perfectly with your vision.',
       },
-      // Add more levels as needed...
+      // Removed level2 to focus on level1 for now
     } as Messages,
     currentLevel: 1,
+    selectedInnerVoice: 'supportive', // Added this line to track the user's selected inner voice
   }),
   actions: {
     setMessages(newMessages: Messages) {
@@ -103,10 +68,35 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     setCurrentLevel(level: number) {
       this.currentLevel = level;
     },
+    setSelectedInnerVoice(innerVoice: string) {
+      // Added action to update selectedInnerVoice
+      this.selectedInnerVoice = innerVoice;
+    },
   },
   getters: {
-    getCurrentMessages: (state: SalesStrategyState): Message => {
+    getCurrentMessages: (state): Message => {
       return state.messages[`level${state.currentLevel}`];
+    },
+    getFeedbackSegue: (state): string => {
+      const currentMessages = state.messages[`level${state.currentLevel}`];
+      switch (state.selectedInnerVoice) {
+        case 'supportive':
+          return currentMessages.feedbackSegueSupportive;
+        case 'dominant':
+          return currentMessages.feedbackSegueDominant;
+        case 'influential':
+          return currentMessages.feedbackSegueInfluential;
+        case 'conscientious':
+          return currentMessages.feedbackSegueConscientious;
+        default:
+          return '';
+      }
     },
   },
 });
+
+// DIY Website Limitations and Solutions in the Hero's Journey Framework
+//
+// We will integrate the core problems and solutions into the 12-Step Hero's Journey framework for users who are either using do-it-yourself websites or considering upgrading. Each level will focus on guiding them from their current limitations to embracing a professional, comprehensive solution.
+//
+// Level 1: Take Immediate Control / The Ordinary World

@@ -1,25 +1,24 @@
 <!-- src/components/HeroMessage.vue -->
 <template>
   <p class="hero-message">
-    <strong>{{ supportive }}</strong> {{ dominant }}
-    <em>{{ influential }}</em> {{ conscientious }}
+    {{ supportive }} {{ dominant }} {{ influential }} {{ conscientious }}
   </p>
 </template>
 
 <script setup lang="ts">
-// Define props for the hero message
-const { supportive, dominant, influential, conscientious } = defineProps<{
-  supportive: string;
-  dominant: string;
-  influential: string;
-  conscientious: string;
-}>();
+  // Define props for the hero message
+  const { supportive, dominant, influential, conscientious } = defineProps<{
+    supportive: string;
+    dominant: string;
+    influential: string;
+    conscientious: string;
+  }>();
 </script>
 
 <style scoped lang="scss">
-.hero-message {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
+  .hero-message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
 </style>

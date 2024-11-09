@@ -1,4 +1,3 @@
-<!-- src/components/InnerVoiceChoices.vue -->
 <template>
   <div class="choices-container">
     <q-btn
@@ -25,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue';
+
 // Define props for the inner voice labels
 const {
   supportiveLabel,
@@ -46,9 +47,22 @@ const emit = defineEmits<{
 function handleChoice(choice: string) {
   emit('choose', choice);
 }
+
+// Define hover state for dynamic style adjustments
+const isHovered = ref<string | null>(null);
+
+const handleMouseOver = (tone: string) => {
+  isHovered.value = tone;
+};
+
+const handleMouseLeave = () => {
+  isHovered.value = null;
+};
 </script>
 
 <style scoped lang="scss">
+@import '/src/css/app.scss';
+
 .choices-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
@@ -66,14 +80,51 @@ function handleChoice(choice: string) {
   width: 100%;
   max-width: 320px;
   text-align: center;
-  background-color: white;
-  color: black;
-  border: 4px solid #777; /* Example color */
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+  border: 4px solid;
+}
+
+.supportive-btn {
+  background-color: $blueVeryLight;
+  color: $blueDark;
+  border-color: $blueMid;
+}
+
+.supportive-btn:hover {
+  background-color: color.adjust($orangeLight, $lightness: 20%);
+}
+
+.dominant-btn {
+  background-color: $orangeLight;
+  color: $orangeDark;
+  border-color: $orangeMid;
+}
+
+.dominant-btn:hover {
+  background-color: color.adjust($yellowLight, $lightness: 20%);
+}
+
+.influential-btn {
+  background-color: $yellowLight;
+  color: darken($yellowLight, 20%);
+  border-color: $orangeMid;
+}
+
+.influential-btn:hover {
+  background-color: color.adjust($blueMid, $lightness: 20%);
+}
+
+.conscientious-btn {
+  background-color: $blueMid;
+  color: $blueDark;
+  border-color: $blueDark;
+}
+
+.conscientious-btn:hover {
+  background-color: color.adjust($blueDark, $lightness: 10%);
 }
 
 .choice-btn:hover {
-  border-color: #ffa500; /* Example hover color */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }

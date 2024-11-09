@@ -55,7 +55,7 @@ const onLeave = () => {
     color: $blueDark;
   }
   &.tone-supportive-hover {
-    background-color: lighten($orangeLight, 20%); // Gentle transition towards dominant
+    background-color: color.adjust($orangeLight, $lightness: 20%); // Gentle transition towards dominant
   }
 
   &.tone-dominant {
@@ -63,7 +63,7 @@ const onLeave = () => {
     color: $orangeDark;
   }
   &.tone-dominant-hover {
-    background-color: lighten($yellowLight, 20%); // Hint towards influential
+    background-color: color.adjust($yellowLight, $lightness: 20%); // Hint towards influential
   }
 
   &.tone-influential {
@@ -71,7 +71,7 @@ const onLeave = () => {
     color: darken($yellowLight, 20%);
   }
   &.tone-influential-hover {
-    background-color: lighten($blueMid, 20%); // Progression towards conscientious
+    background-color: color.adjust($blueMid, $lightness: 20%); // Progression towards conscientious
   }
 
   &.tone-conscientious {
@@ -79,7 +79,7 @@ const onLeave = () => {
     color: $blueDark;
   }
   &.tone-conscientious-hover {
-    background-color: lighten($blueDark, 10%); // Subtle transition
+    background-color: color.adjust($blueDark, $lightness: 10%); // Subtle transition
   }
 
   &:hover {

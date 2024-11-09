@@ -22,35 +22,56 @@ body {
 // Text colors for buttons
 $textWhite: #ffffff;
 
-// Primary color variations
-$blueMid: #0b2545; // Mid-tone Blue
-$blueDark: #08182d; // Directly assigned darker shade
-$blueLight: #4c6bb0; // Directly assigned lighter shade
-$blueVeryLight: #e6f0fa; // Explicitly defined very light shade
+// Primary color variations (Blue)
+$blueVeryLight: #e6f0fa; // Very light blue (almost white)
+$blueLight: #b3c7e0; // Light blue
+$blueMid: #4c6bb0; // Mid-tone blue
+$blueDark: #08182d; // Dark blue
+$blueVeryDark: #02080e; // Very dark blue (almost black)
 
-// Highlight color variations
-$greenMid: #58AF50;
-$greenDark: #3e7e3c;
-$greenLight: #9cdb8f;
-$greenVeryLight: #d5f5dc;
+// Highlight color variations (Green)
+$greenVeryLight: #d5f5dc; // Very light green (almost white)
+$greenLight: #9cdb8f; // Light green
+$greenMid: #58af50; // Mid-tone green
+$greenDark: #3e7e3c; // Dark green
+$greenVeryDark: #1a3a1e; // Very dark green (almost black)
 
-// Accent color variations
-$orangeMid: #FFA500;
-$orangeDark: #c67c00;
-$orangeLight: #ff9f4c;
-$orangeVeryLight: #ffebc4;
+// Accent color variations (Orange)
+$orangeVeryLight: #ffebc4; // Very light orange (almost white)
+$orangeLight: #ffb366; // Light orange
+$orangeMid: #ffa500; // Mid-tone orange
+$orangeDark: #c67c00; // Dark orange
+$orangeVeryDark: #5a3f00; // Very dark orange (almost black)
 
-// Support color variations
-$redMid: #ac0020;
-$redDark: #7a0015;
-$redLight: #de4254;
-$redVeryLight: #f2c5cf;
+// Yellow color variations
+$yellowVeryLight: #fffdd0; // Very light yellow (almost white)
+$yellowLight: #fff08a; // Light yellow
+$yellowMid: #ffd700; // Mid-tone yellow
+$yellowDark: #d4b300; // Dark yellow
+$yellowVeryDark: #7a5f00; // Very dark yellow (almost black)
+
+// Support color variations (Red)
+$redVeryLight: #f2c5cf; // Very light red (almost white)
+$redLight: #de4254; // Light red
+$redMid: #ac0020; // Mid-tone red
+$redDark: #7a0015; // Dark red
+$redVeryDark: #4d000c; // Very dark red (almost black)
 
 // Neutral grays
-$grayDark: #1D1D1D;
-$grayMid: #777777;
-$grayLight: #E0E0E0;
+$grayVeryLight: #f8f8f8; // Very light gray (almost white)
+$grayLight: #e0e0e0; // Light gray
+$grayMid: #777777; // Mid-tone gray
+$grayDark: #1d1d1d; // Dark gray
+$grayVeryDark: #0a0a0a; // Very dark gray (almost black)
 
+// Purple variations for influential button
+$purpleVeryLight: #f3e9fa; // Very light purple (almost white)
+$purpleLight: #b091d4; // Light purple
+$purpleMid: #9171b9; // Mid-tone purple
+$purpleDark: #5d3c8c; // Dark purple
+$purpleVeryDark: #2e1d48; // Very dark purple (almost black)
+
+// General page container
 .q-page-container {
   padding-top: 0 !important;
 }

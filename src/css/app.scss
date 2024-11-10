@@ -79,3 +79,67 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 .q-btn:hover .q-focus-helper {
   background-color: transparent !important;
 }
+
+// Centralized Tone Item Styling
+
+.tone-item {
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, font-size 0.3s;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  width: 100%;
+  max-width: 30rem;
+  cursor: pointer;
+}
+
+.tone-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.21rem;
+}
+
+// Supportive Tone Styling
+.tone-supportive {
+  background-color: $blueVeryLight;
+  color: $blueVeryDark;
+}
+
+.tone-supportive:hover {
+  border: $blueVeryDark;
+}
+
+// Dominant Tone Styling
+.tone-dominant {
+  background-color: $orangeVeryLight;
+  color: $blueDark;
+
+}
+
+.tone-dominant:hover {
+  border: 4px solid $blueDark;
+  border-color: $blueDark;
+}
+
+// Influential Tone Styling
+.tone-influential {
+  color: $yellowVeryLight;
+}
+
+.tone-influential:hover {
+  border: 4px solid $purpleDark;
+  border-color: $purpleDark;
+}
+
+// Conscientious Tone Styling
+.tone-conscientious {
+  background-color: $blueMid;
+  color: $yellowVeryLight;
+  border: 4px solid $yellowVeryLight;
+
+}
+
+.tone-conscientious:hover {
+  border: 4px solid $yellowLight;
+}

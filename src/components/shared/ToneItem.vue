@@ -21,22 +21,22 @@
   const isHovered = ref(false);
 
   // Dynamic CSS class based on tone prop
-  const toneClass = computed(() => {
-    switch (props.tone) {
-      case 'supportive':
-        return isHovered.value ? 'tone-supportive:hover' : 'tone-supportive';
-      case 'dominant':
-        return isHovered.value ? 'tone-dominant:hover' : 'tone-dominant';
-      case 'influential':
-        return isHovered.value ? 'tone-influential:hover' : 'tone-influential';
-      case 'conscientious':
-        return isHovered.value
-          ? 'tone-conscientious:hover'
-          : 'tone-conscientious';
-      default:
-        return '';
-    }
-  });
+  // const toneClass = computed(() => {
+  //   switch (props.tone) {
+  //     case 'supportive':
+  //       return isHovered.value ? 'tone-supportive:hover' : 'tone-supportive';
+  //     case 'dominant':
+  //       return isHovered.value ? 'tone-dominant:hover' : 'tone-dominant';
+  //     case 'influential':
+  //       return isHovered.value ? 'tone-influential:hover' : 'tone-influential';
+  //     case 'conscientious':
+  //       return isHovered.value
+  //         ? 'tone-conscientious:hover'
+  //         : 'tone-conscientious';
+  //     default:
+  //       return '';
+  //   }
+  // });
 
   // Methods to handle hover state
   const onHover = () => {
@@ -53,18 +53,21 @@
 
   // Styling for each tone
   .tone-message-box {
-    padding: 1rem;
+    padding: 2rem 3rem 1.5rem;
     border-radius: 16px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s,
       font-size 0.3s;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin-bottom: 1.5rem;
 
     &.tone-supportive {
       background-color: $blueVeryLight;
       color: $blueVeryDark;
     }
     &.tone-supportive:hover {
-      background-color: $orangeLight; // Predefined lighter orange variant
+      border-color: $blueVeryDark;
     }
 
     &.tone-dominant {
@@ -72,7 +75,7 @@
       color: $blueVeryDark;
     }
     &.tone-dominant:hover {
-      background-color: $yellowVeryLight; // Predefined lighter yellow variant
+      border: 0cap;
     }
 
     &.tone-influential {
@@ -80,8 +83,7 @@
       color: $purpleVeryDark;
     }
     &.tone-influential:hover {
-      background-color: $purpleDark;
-    color: $yellowVeryLight; // Predefined lighter yellow variant
+    border: $purpleVeryDark;
     }
 
     &.tone-conscientious {
@@ -89,13 +91,13 @@
       color: $yellowVeryLight;
     }
     &.tone-conscientious:hover {
-      background-color: $blueDark; // Predefined lighter blue dark variant
+      border: yellowVeryLight;
     }
 
     &:hover {
       transform: translateY(-5px);
       box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-      font-size: 1.01rem; // Slightly increase the font size on hover
+      font-size: 1.21rem; // Slightly increase the font size on hover
     }
   }
 </style>

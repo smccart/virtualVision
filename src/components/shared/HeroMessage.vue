@@ -1,49 +1,66 @@
-<!-- src/components/HeroMessage.vue -->
 <template>
   <div class="hero-message-container">
-    <ToneMessageBox
+    <ToneItem
+      :tone="'supportive'"
       :message="supportive"
       class="tone-supportive"
     />
-    <ToneMessageBox
+    <ToneItem
+      :tone="'dominant'"
       :message="dominant"
       class="tone-dominant"
     />
-    <ToneMessageBox
+    <ToneItem
+      :tone="'influential'"
       :message="influential"
       class="tone-influential"
     />
-    <ToneMessageBox
+    <ToneItem
+      :tone="'conscientious'"
       :message="conscientious"
       class="tone-conscientious"
     />
   </div>
+  <div class="supportive-wrapup">
+    <p>{{ supportiveWrapUp }}</p>
+  </div>
 </template>
 
 <script setup lang="ts">
-  import ToneMessageBox from './ToneMessageBox.vue';
+  import ToneItem from './ToneItem.vue';
+  import { useSalesStrategyMessages } from '../../stores/SalesStrategyMessages';
+  import { computed } from 'vue';
+
+  // Define the store to access messages
+  const salesStrategyMessages = useSalesStrategyMessages();
+
+  // Extract the current messages from the store
+  const currentMessages = computed(
+    () => salesStrategyMessages.getCurrentMessages
+  );
 
   // Define props for the hero message
-  const { supportive, dominant, influential, conscientious } = defineProps<{
-    supportive: string;
-    dominant: string;
-    influential: string;
-    conscientious: string;
-  }>();
+  const supportive = currentMessages.value.supportive;
+  const dominant = currentMessages.value.dominant;
+  const influential = currentMessages.value.influential;
+  const conscientious = currentMessages.value.conscientious;
+  const supportiveWrapUp = currentMessages.value.supportiveWrapUp;
 </script>
 
 <style scoped lang="scss">
+  @import '../../css/app.scss';
+
   .hero-message-container {
-  display: flex;
+  //   display: flex;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
-  // .tone-supportive,
-  // .tone-dominant,
-  // .tone-influential,
-  // .tone-conscientious {
-  //   font-size: 1.2rem;
-  //   line-height: 1.5rem;
-  // }
+  .supportive-wrapup {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: $blueVeryDark;
+    margin-bottom: 3rem;
+  }
 </style>

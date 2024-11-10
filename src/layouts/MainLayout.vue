@@ -13,13 +13,17 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <!-- Add Footer here -->
+    <Footer />
   </q-layout>
 </template>
 
 <script setup lang="ts">
   import { ref, onMounted } from 'vue';
   import NavBar from './NavBar.vue';
-  import LeftDrawer from '../components/LeftDrawer.vue';
+  import LeftDrawer from '../layouts/LeftDrawer.vue';
+  import Footer from '../layouts/Footer.vue';
 
   defineOptions({
     name: 'MainLayout',

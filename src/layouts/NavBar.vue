@@ -1,6 +1,6 @@
 <template>
   <q-header
-    class="custom-header"
+    class="custom-header glossy"
     elevated
   >
     <q-toolbar>
@@ -40,12 +40,6 @@
           to="/full-vision-realization"
           class="nav-text"
         />
-        <q-btn
-          flat
-          :label="contactLabel"
-          to="/contact"
-          class="nav-text"
-        />
       </div>
 
       <div class="tagline">{{ tagline }}</div>
@@ -61,7 +55,6 @@
     aboutLabel,
     visionPlanningLabel,
     fullVisionLabel,
-    contactLabel,
   } = defineProps({
     toolbarTitle: {
       type: String,
@@ -82,10 +75,6 @@
     fullVisionLabel: {
       type: String,
       default: 'Full Vision Realization',
-    },
-    contactLabel: {
-      type: String,
-      default: 'Contact',
     },
   });
 

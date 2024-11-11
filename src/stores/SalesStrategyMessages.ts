@@ -26,17 +26,15 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     messages: {
       level1: {
         supportive:
-          'We understand that managing a do-it-yourself website all by yourself can be overwhelming, especially when you have countless other responsibilities.',
+          "We understand that managing a do-it-yourself website can be overwhelming, especially when you're already juggling countless responsibilities.",
         dominant:
-          'You deserve a website that actively supports your business growth instead of holding you back, helping you connect with customers more effectively.',
+          'You deserve a website that positions you as an authority in your industry, actively supporting your business growth and helping you connect with customers more effectively.',
         influential:
-          'Imagine a website that represents your brand beautifully and works seamlessly to attract new customers and simplify your day-to-day.',
+          'Imagine a website that represents your brand beautifully, attracts new customers seamlessly, and simplifies your daily operations.',
         conscientious:
-          'A well-crafted, professional website isn’t just another item on your list; it’s a strategic business tool designed to help you grow and succeed.',
-
+          "A well-crafted, professional website isn't just another item on your checklist; it's a strategic business tool that ensures your growth and success with precision.",
         supportiveWrapUp:
-          "Whether you're exploring your options or ready to take your website to the next level, we're here to help you make it happen. This is your journey, and it's your choice.",
-
+          "Whether you're exploring your options or ready to elevate your website to the next level, we're here to make it happen alongside you. This is your journey, and it's your choice.",
         supportiveInnerVoice:
           'I feel confident when I have support exploring new ideas.',
         dominantInnerVoice:
@@ -94,9 +92,3 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     },
   },
 });
-
-// DIY Website Limitations and Solutions in the Hero's Journey Framework
-//
-// We will integrate the core problems and solutions into the 12-Step Hero's Journey framework for users who are either using do-it-yourself websites or considering upgrading. Each level will focus on guiding them from their current limitations to embracing a professional, comprehensive solution.
-//
-// Level 1: Take Immediate Control / The Ordinary World

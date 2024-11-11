@@ -37,6 +37,7 @@
     "vite-plugin-checker": "^0.8.0",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "~2.1.6",
+    "webpack-visualizer-plugin": "^0.1.11",
     "workbox-build": "^7.0.0"
   },
   "overrides": {

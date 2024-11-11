@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 
 const { configure } = require('quasar/wrappers');
+const Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -18,6 +19,13 @@ module.exports = configure(function (/* ctx */) {
       },
       vueRouterMode: 'history',
       vitePlugins: [],
+      extendWebpack(cfg) {
+        cfg.plugins.push(
+          new Visualizer({
+            filename: './statistics.html',
+          })
+        );
+      },
     },
 
     devServer: {

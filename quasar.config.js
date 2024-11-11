@@ -2,7 +2,6 @@
 /* eslint-disable no-undef */
 
 const { configure } = require('quasar/wrappers');
-const { visualizer } = require('rollup-plugin-visualizer');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -18,12 +17,7 @@ module.exports = configure(function (/* ctx */) {
         node: 'node20',
       },
       vueRouterMode: 'history',
-      vitePlugins: [
-        visualizer({
-          filename: './statistics.html',
-          open: true,
-        }),
-      ],
+      vitePlugins: [],
     },
 
     devServer: {

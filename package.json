@@ -5,17 +5,19 @@
   "productName": "virtualVision",
   "author": "Abe Reyes <abe.raise@gmail.com>",
   "private": true,
+  "type": "module",
   "scripts": {
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
     "lint": "eslint \"./**/*.{js,ts,mjs,cjs,vue}\"",
-    "tree": "tree -L 7 -I 'node_modules|.git|package-lock.json|dist|.DS_Store' --noreport -a",
+    "tree": "tree -I 'node_modules|.git|dist|.DS_Store|package-lock.json|.quasar|*.map|*.log' --noreport -a",
     "tree:dir": "tree -d -L 33 -I 'node_modules|.git|package-lock.json|dist|.DS_Store' --noreport -a",
     "gsd": "git status && echo '\n' && git diff --cached --unified=3 > staged_changes.txt"
   },
   "dependencies": {
+    "@quasar/app-vite": "^1.9.0",
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
     "pinia": "^2.0.11",

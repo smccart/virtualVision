@@ -103,43 +103,60 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 // Supportive Tone Styling
 .tone-supportive {
   background-color: $blueVeryLight;
-  color: $blueVeryDark;
+  border: 4px solid $blueLight;
+  color: $blueDark;
 }
 
 .tone-supportive:hover {
-  border: $blueVeryDark;
+  border: 5px solid $blueMid;
+
 }
 
 // Dominant Tone Styling
 .tone-dominant {
   background-color: $orangeVeryLight;
+  border: 4px solid $orangeLight;
   color: $blueDark;
 
 }
 
 .tone-dominant:hover {
-  border: 4px solid $blueDark;
-  border-color: $blueDark;
+  border: 4px solid $orangeMid;
 }
 
 // Influential Tone Styling
 .tone-influential {
-  color: $yellowVeryLight;
+  background-color: $yellowLight;
+  border: 4px solid $yellowMid;
+  color: $purpleDark;
 }
 
 .tone-influential:hover {
-  border: 4px solid $purpleDark;
-  border-color: $purpleDark;
+  border: 4px solid $yellowVeryDark;
+
 }
 
 // Conscientious Tone Styling
 .tone-conscientious {
-  background-color: $blueMid;
-  color: $yellowVeryLight;
-  border: 4px solid $yellowVeryLight;
+  background-color: $blueDark;
+  color: $orangeVeryLight;
+  border: 4px solid $blueMid;
 
 }
 
 .tone-conscientious:hover {
-  border: 4px solid $yellowLight;
+  border: 4px solid $blueVeryDark;
 }
+
+
+    .tone-message-box {
+      padding: 2rem 3rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s,
+        font-size 0.3s;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      margin-bottom: 1.5rem;
+
+    }

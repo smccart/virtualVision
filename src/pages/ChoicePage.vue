@@ -2,7 +2,7 @@
   <q-page class="flex-column">
     <div class="content-container">
       <!-- Hero message component -->
-      <HeroMessage
+      <ToneMessageCard
         :supportive="currentMessage.supportive"
         :dominant="currentMessage.dominant"
         :influential="currentMessage.influential"
@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import HeroMessage from '../components/shared/HeroMessage.vue';
+  import ToneMessageCard from '../components/shared/ToneMessageCard.vue';
   import InnerVoiceChoices from '../components/InnerVoiceChoices.vue';
   import PromptText from '../components/shared/PromptText.vue';
 

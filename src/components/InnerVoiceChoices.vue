@@ -85,7 +85,7 @@
 }
 
 .choice-btn:hover {
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
   font-size: 1.11rem; // Slightly increase the font size
   font-weight: 600; // Increase font weight for emphasis

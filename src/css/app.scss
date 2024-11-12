@@ -80,35 +80,15 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
   background-color: transparent !important;
 }
 
-// Centralized Tone Item Styling
-
-.tone-item {
-  padding: 1.5rem;
-  border-radius: 16px;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, font-size 0.3s;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  text-align: center;
-  width: 100%;
-  max-width: 30rem;
-  cursor: pointer;
-}
-
-.tone-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  font-size: 1.21rem;
-}
-
 // Supportive Tone Styling
 .tone-supportive {
   background-color: $blueVeryLight;
-  border: 4px solid $blueLight;
+  border: 4px solid $blueMid;
   color: $blueDark;
 }
 
 .tone-supportive:hover {
-  border: 5px solid $blueMid;
+  border: 5px solid $blueLight;
 
 }
 
@@ -126,13 +106,14 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 
 // Influential Tone Styling
 .tone-influential {
-  background-color: $yellowLight;
-  border: 4px solid $yellowMid;
+  background-color: $yellowVeryLight;
+  border: 4px solid $yellowLight;
   color: $purpleDark;
 }
 
 .tone-influential:hover {
-  border: 4px solid $yellowVeryDark;
+  border: 4px solid $yellowMid;
+
 
 }
 
@@ -149,14 +130,21 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 }
 
 
-    .tone-message-box {
-      padding: 2rem 3rem 1.5rem;
-      border-radius: 16px;
-      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s,
-        font-size 0.3s;
-      font-size: 1.3rem;
-      line-height: 1.6rem;
-      margin-bottom: 1.5rem;
+.tone-message-box {
+  padding: 2rem 3rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s,
+    font-size 0.3s;
+  font-size: 1.11rem;
+  line-height: 1.6rem;
+  margin-bottom: 1.5rem;
 
-    }
+}
+
+.tone-message-box:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.11);
+  font-size: 1.111rem;
+  transition: all 1s ease-in-out;
+}

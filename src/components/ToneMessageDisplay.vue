@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useSalesStrategyMessages } from '../../stores/SalesStrategyMessages';
+import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
 
 const props = defineProps<{
   ToneMessageDisplay?: string;

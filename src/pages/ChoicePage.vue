@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import ToneMessageDisplay from '../components/shared/ToneMessageDisplay.vue';
+  import ToneMessageDisplay from '../components/ToneMessageDisplay.vue';
   import InnerVoiceChoices from '../components/InnerVoiceChoices.vue';
 
   // Fetch messages from the store

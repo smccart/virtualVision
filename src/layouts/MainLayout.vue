@@ -8,7 +8,10 @@
     />
 
     <!-- Use LeftDrawer for the Drawer Menu -->
-    <LeftDrawer :drawerOpen="leftDrawerOpen" @update:drawerOpen="value => leftDrawerOpen = value" />
+    <LeftDrawer
+      :drawerOpen="leftDrawerOpen"
+      @update:drawerOpen="(value) => (leftDrawerOpen = value)"
+    />
 
     <q-page-container>
       <router-view />
@@ -49,7 +52,4 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
-
-  // Removed individual styles for consistency
-  // The following styles have been moved to app.scss for global reuse
 </style>

@@ -91,42 +91,4 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .custom-header {
-    background-color: $blueDark;
-    margin-bottom: 1rem;
-  }
-
-  .toolbar-title {
-    font-family: inherit;
-    font-weight: bold;
-    color: $textWhite;
-    font-size: 2em;
-    padding: 1rem;
-    margin-left: 2rem;
-  }
-
-  .home-link {
-    color: $textWhite;
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    flex: 2;
-    white-space: nowrap;
-  }
-
-  .nav-text {
-    color: mix($textWhite, $orangeVeryLight, 99%);
-  }
-
-  .tagline {
-    color: $textWhite;
-    font-size: 1.3em;
-    font-weight: 500;
-    margin-left: auto;
-    padding-right: 3rem;
-    white-space: nowrap;
-  }
 </style>

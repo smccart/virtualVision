@@ -33,42 +33,4 @@ defineOptions({
 <style scoped lang="scss">
 @import '/src/css/app.scss';
 
-.about-us-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.cta-container {
-  margin-top: 2rem;
-}
-
-.cta-btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-}
 </style>

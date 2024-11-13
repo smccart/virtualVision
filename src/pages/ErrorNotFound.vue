@@ -11,6 +11,3 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Add any custom styles for your 404 page */
-</style>

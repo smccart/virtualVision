@@ -35,45 +35,4 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .footer {
-    background-color: $blueVeryDark;
-    color: $textWhite;
-    padding: 1rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    @media (min-width: 600px) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  .footer-link {
-    color: $textWhite;
-    text-decoration: none;
-    transition: font-size 0.3s ease-in-out;
-    &:hover {
-      font-size: 1.001rem; // Increase font size by 1% on hover
-    }
-  }
-
-  .footer-contact {
-    .contact-link {
-      color: $textWhite;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: font-size 0.3s ease-in-out;
-      &:hover {
-        font-size: 1.01rem; // Increase font size by 1% on hover
-      }
-    }
-  }
 </style>

@@ -54,19 +54,4 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .journey-drawer-list {
-    padding: 0.1em !important;
-    padding-top: 2em !important;
-    margin: 0 !important;
-  }
-
-  .journey-drawer-item {
-    padding: 0.5rem 3rem !important;
-  }
-
-  .journey-drawer-item-section {
-    max-width: 230px !important; /* Adjusted to fit within the increased drawer width */
-    overflow: hidden;
-    white-space: nowrap;
-  }
 </style>

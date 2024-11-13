@@ -21,6 +21,7 @@
     </div>
 
 
+    <p v-if="prompt" class="prompt-text">{{ prompt }}</p>
 
     <!-- Choice buttons for each tone -->
     <div class="choices-container">
@@ -35,7 +36,6 @@
       />
     </div>
 
-    <p v-if="prompt" class="prompt-text">{{ prompt }}</p>
 
   </div>
 </template>

@@ -44,7 +44,7 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
         conscientiousInnerVoice:
           'I want to ensure everything is done with precision.',
         prompt:
-          'Pick the statement that speaks to your heart and reflects your inner voice the most.',
+          'Choose the statement that feels right to you and best captures your inner voice.',
         feedbackSegueSupportive:
           'We understand the importance of having the right support, and we’ll continue to be by your side every step of the way.',
         feedbackSegueDominant:

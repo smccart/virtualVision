@@ -38,24 +38,23 @@ body {
 // Hero message container spacing
 .hero-message-container {
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 // Supportive wrap-up text styling
 .supportive-wrapup {
-  margin-top: 3rem;
+  margin: 3rem 5rem;
   font-size: 1rem;
   text-align: center;
   color: $blueVeryDark;
-  margin-bottom: 3rem;
+
 }
 
 .content-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-  padding-top: 8rem;
-  /* Ensure it's not hidden by the navbar */
+  padding-top: 6rem;  /* Ensure it's not hidden by the navbar */
   text-align: center;
 }
 
@@ -120,18 +119,13 @@ body {
   white-space: nowrap;
 }
 
-.custom-header {
-  background-color: $blueDark;
-  margin-bottom: 1rem;
-}
-
 .toolbar-title {
   font-family: inherit;
   font-weight: bold;
   color: $textWhite;
   font-size: 2em;
   padding: 1rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 .home-link {
@@ -141,7 +135,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex: 2;
   white-space: nowrap;
 }
@@ -154,8 +148,8 @@ body {
   color: $textWhite;
   font-size: 1.3em;
   font-weight: 500;
-  margin-left: auto;
-  padding-right: 3rem;
+  margin-right: 1rem;
+  padding-right: 1rem;
   white-space: nowrap;
 }
 
@@ -189,7 +183,7 @@ body {
 }
 
 .cta-container {
-  margin-top: 2rem;
+  margin-top: 22rem;
 }
 
 .cta-btn {
@@ -201,5 +195,6 @@ body {
 .choices-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }

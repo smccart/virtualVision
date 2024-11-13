@@ -12,12 +12,17 @@
     <div class="supportive-wrapup">
       <p>{{ supportiveWrapUp }}</p>
     </div>
+    <p v-if="ToneMessageDisplay" class="prompt-text">{{ ToneMessageDisplay }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useSalesStrategyMessages } from '../../stores/SalesStrategyMessages';
+
+const props = defineProps<{
+  ToneMessageDisplay?: string;
+}>();
 
 // Define the store to access messages
 const salesStrategyMessages = useSalesStrategyMessages();
@@ -44,4 +49,5 @@ const messages = {
   conscientious: currentMessages.value.conscientious
 };
 const supportiveWrapUp = currentMessages.value.supportiveWrapUp;
+const ToneMessageDisplay = props.ToneMessageDisplay;
 </script>

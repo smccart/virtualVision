@@ -19,7 +19,7 @@
       />
 
       <!-- Prompt text in the center -->
-      <PromptText :text="currentMessage.prompt" />
+      <ToneMessageDisplay :text="currentMessage.prompt" />
     </div>
   </q-page>
 </template>
@@ -28,7 +28,6 @@
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
   import ToneMessageDisplay from '../components/shared/ToneMessageDisplay.vue';
   import InnerVoiceChoices from '../components/InnerVoiceChoices.vue';
-  import PromptText from '../components/shared/PromptText.vue';
 
   // Fetch messages from the store
   const {

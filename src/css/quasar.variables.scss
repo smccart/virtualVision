@@ -1,6 +1,3 @@
-// Quasar SCSS (& Sass) Variables
-// --------------------------------------------------
-
 // Quasar Default Variable Overrides
 $primary: #0b2545; // Dark Muted Blue
 $secondary: #5dbb63; // Dark Muted Green
@@ -11,4 +8,54 @@ $negative: #680c07; // Dark Muted Red
 $info: #0b2545; // Blue for informational elements
 $warning: #FFAE1A; // Mid-tone Orange for warnings
 
-// Additional Custom Variables (if needed)
+// Custom Color Definitions
+$textWhite: #ffffff;
+
+// Primary color variations (Blue)
+$blueVeryLight: #e6f0fa;
+$blueLight: #b3c7e0;
+$blueMid: #4c6bb0;
+$blueDark: #08182d;
+$blueVeryDark: #02080e;
+
+// Highlight color variations (Green)
+$greenVeryLight: #d5f5dc;
+$greenLight: #9cdb8f;
+$greenMid: #58af50;
+$greenDark: #3e7e3c;
+$greenVeryDark: #1a3a1e;
+
+// Accent color variations (Orange)
+$orangeVeryLight: #ffebc4;
+$orangeLight: #ffb366;
+$orangeMid: #ffa500;
+$orangeDark: #c67c00;
+$orangeVeryDark: #5a3f00;
+
+// Yellow color variations
+$yellowVeryLight: #fffdd0;
+$yellowLight: #fff08a;
+$yellowMid: #ffd700;
+$yellowDark: #d4b300;
+$yellowVeryDark: #7a5f00;
+
+// Support color variations (Red)
+$redVeryLight: #f2c5cf;
+$redLight: #de4254;
+$redMid: #ac0020;
+$redDark: #7a0015;
+$redVeryDark: #4d000c;
+
+// Neutral grays
+$grayVeryLight: #f8f8f8;
+$grayLight: #e0e0e0;
+$grayMid: #777777;
+$grayDark: #1d1d1d;
+$grayVeryDark: #0a0a0a;
+
+// Purple variations for influential button
+$purpleVeryLight: #f3e9fa;
+$purpleLight: #b091d4;
+$purpleMid: #9171b9;
+$purpleDark: #5d3c8c;
+$purpleVeryDark: #2e1d48;

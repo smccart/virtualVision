@@ -84,3 +84,7 @@
   // Hover state
   const isHovered = ref<string | null>;
 </script>
+
+<style scoped lang="scss">
+  @import '/src/css/app.scss';
+</style>

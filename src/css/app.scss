@@ -83,36 +83,38 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 // Supportive Tone Styling
 .tone-supportive {
   background-color: $blueVeryLight;
-  border: 4px solid $blueMid;
-  color: $blueDark;
+  border: 1px solid $blueLight;
+  color: $blueVeryDark;
 }
 
 .tone-supportive:hover {
-  border: 5px solid $blueLight;
+  border: 1px solid $blueMid;
 
 }
 
 // Dominant Tone Styling
 .tone-dominant {
   background-color: $orangeVeryLight;
-  border: 4px solid $orangeLight;
-  color: $blueDark;
+  border: 1px solid $orangeLight;
+  color: $blueVeryDark;
 
 }
 
 .tone-dominant:hover {
-  border: 4px solid $orangeMid;
+  border: 1px solid $orangeMid;
+
+
 }
 
 // Influential Tone Styling
 .tone-influential {
   background-color: $yellowVeryLight;
-  border: 4px solid $yellowLight;
-  color: $purpleDark;
+  border: 1px solid $yellowLight;
+  color: $purpleVeryDark;
 }
 
 .tone-influential:hover {
-  border: 4px solid $yellowMid;
+  border: 1px solid $yellowMid;
 
 
 }
@@ -120,13 +122,15 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 // Conscientious Tone Styling
 .tone-conscientious {
   background-color: $blueDark;
-  color: $orangeVeryLight;
-  border: 4px solid $blueMid;
+  color: $textWhite;
+  border: 1px solid $blueLight;
 
 }
 
 .tone-conscientious:hover {
-  border: 4px solid $blueVeryDark;
+  border: 1px solid $blueMid;
+  background-color: $blueVeryLight;
+  color: $blueVeryDark;
 }
 
 
@@ -146,5 +150,19 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
   transform: translateY(-1px);
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.11);
   font-size: 1.111rem;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
+
+    .hero-message-container {
+      //   display: flex;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .supportive-wrapup {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+      color: $blueVeryDark;
+      margin-bottom: 3rem;
+    }

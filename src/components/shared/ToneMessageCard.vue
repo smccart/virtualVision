@@ -50,17 +50,5 @@
 <style scoped lang="scss">
   @import '../../css/app.scss';
 
-  .hero-message-container {
-  //   display: flex;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
 
-  .supportive-wrapup {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    text-align: center;
-    color: $blueVeryDark;
-    margin-bottom: 3rem;
-  }
 </style>

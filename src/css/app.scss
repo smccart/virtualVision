@@ -1,5 +1,6 @@
 // Import your custom Quasar variables
 @import './quasar.variables.scss';
+@import './shared-styles.scss';
 
 // Import the STIX Two Text font from Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
@@ -19,8 +20,6 @@ body {
   font-style: italic;
 }
 
-
-
 // General page container
 .q-page-container {
   padding-top: 0 !important;
@@ -30,88 +29,19 @@ body {
   background-color: transparent !important;
 }
 
-// Supportive Tone Styling
-.tone-supportive {
-  background-color: $blueVeryLight;
-  border: 1px solid $blueLight;
-  color: $blueVeryDark;
+// Tone message boxes and choice buttons apply shared hover and tone styles
+.tone-message-box,
+.choice-btn {
+  @extend .shared-hover;
 }
 
-.tone-supportive:hover {
-  border: 1px solid $blueMid;
-
-}
-
-// Dominant Tone Styling
-.tone-dominant {
-  background-color: $orangeVeryLight;
-  border: 1px solid $orangeLight;
-  color: $blueVeryDark;
-
-}
-
-.tone-dominant:hover {
-  border: 1px solid $orangeMid;
-
-
-}
-
-// Influential Tone Styling
-.tone-influential {
-  background-color: $yellowVeryLight;
-  border: 1px solid $yellowLight;
-  color: $purpleVeryDark;
-}
-
-.tone-influential:hover {
-  border: 1px solid $yellowMid;
-
-
-}
-
-// Conscientious Tone Styling
-.tone-conscientious {
-  background-color: $blueDark;
-  color: $textWhite;
-  border: 1px solid $blueLight;
-
-}
-
-.tone-conscientious:hover {
-  border: 1px solid $blueMid;
-  background-color: $blueVeryLight;
-  color: $blueVeryDark;
-}
-
-
-.prompt-text {
-  padding-top: 1.1rem;
-  font-size: small;
-}
-.tone-message-box {
-  padding: 2rem 3rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s, transform 0.3s, box-shadow 0.3s,
-  font-size 0.3s;
-  font-size: 1.01rem;
-  line-height: 1.6rem;
-  margin-bottom: 1.5rem;
-
-}
-
-.tone-message-box:hover {
-  transform: translateY(-1px);
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.11);
-  font-size: 1.011rem;
-  transition: all 0.3s ease-in-out;
-}
-
+// Hero message container spacing
 .hero-message-container {
   gap: 1rem;
   margin-bottom: 3rem;
 }
 
+// Supportive wrap-up text styling
 .supportive-wrapup {
   margin-top: 3rem;
   font-size: 1rem;
@@ -132,7 +62,7 @@ body {
 .footer {
   background-color: $blueDark;
   color: $textWhite;
-  padding: 1rem 1rem;
+  padding: 1rem;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -155,7 +85,7 @@ body {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    font-size: 1.001rem; // Increase font size by 1% on hover
+    font-size: 1.001rem;
   }
 }
 
@@ -169,7 +99,7 @@ body {
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      font-size: 1.01rem; // Increase font size by 1% on hover
+      font-size: 1.01rem;
     }
   }
 }
@@ -186,7 +116,6 @@ body {
 
 .journey-drawer-item-section {
   max-width: 230px !important;
-  /* Adjusted to fit within the increased drawer width */
   overflow: hidden;
   white-space: nowrap;
 }

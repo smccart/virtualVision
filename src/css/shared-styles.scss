@@ -1,0 +1,63 @@
+// Shared transition and hover effects
+.shared-hover {
+  transition: all 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s, font-size 0.3s;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.11);
+  }
+}
+
+// Tone-specific styles
+.tone-supportive,
+.tone-dominant,
+.tone-influential,
+.tone-conscientious {
+  padding: 2rem 3rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+// Specific tone color adjustments (refers to `quasar.variables.scss` colors)
+.tone-supportive {
+  background-color: $blueVeryLight;
+  border: 1px solid $blueLight;
+  color: $blueVeryDark;
+
+  &:hover {
+    border-color: $blueMid;
+  }
+}
+
+.tone-dominant {
+  background-color: $orangeVeryLight;
+  border: 1px solid $orangeLight;
+  color: $blueVeryDark;
+
+  &:hover {
+    border-color: $orangeMid;
+  }
+}
+
+.tone-influential {
+  background-color: $yellowVeryLight;
+  border: 1px solid $yellowLight;
+  color: $purpleVeryDark;
+
+  &:hover {
+    border-color: $yellowMid;
+  }
+}
+
+.tone-conscientious {
+  background-color: $blueDark;
+  color: $textWhite;
+  border: 1px solid $blueLight;
+
+  &:hover {
+    border-color: $blueMid;
+    background-color: $blueVeryLight;
+    color: $blueVeryDark;
+  }
+}

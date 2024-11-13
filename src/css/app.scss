@@ -153,16 +153,25 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
   transition: all 0.3s ease-in-out;
 }
 
-    .hero-message-container {
-      //   display: flex;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
+.hero-message-container {
+  //   display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
 
-    .supportive-wrapup {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      text-align: center;
-      color: $blueVeryDark;
-      margin-bottom: 3rem;
-    }
+.supportive-wrapup {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: $blueVeryDark;
+  margin-bottom: 3rem;
+}
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 8rem;
+  /* Ensure it's not hidden by the navbar */
+  text-align: center;
+}

@@ -31,17 +31,17 @@ const salesStrategyMessages = useSalesStrategyMessages();
 const currentMessages = computed(() => salesStrategyMessages.getCurrentMessages);
 
 // Define hover state for dynamic style adjustments
-const isHovered = ref(false);
+// const isHovered = ref(false);
 
-const onHover = () => {
-  isHovered.value = true;
-};
+// const onHover = () => {
+//   isHovered.value = true;
+// };
 
-const onLeave = () => {
-  isHovered.value = false;
-};
+// const onLeave = () => {
+//   isHovered.value = false;
+// };
 
-// Define the messages and tone mapping
+// This controls, the SDICS messaging
 const messages = {
   supportive: currentMessages.value.supportive,
   dominant: currentMessages.value.dominant,

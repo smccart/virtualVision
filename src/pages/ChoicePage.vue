@@ -61,11 +61,5 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .content-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-    padding-top: 8rem; /* Ensure it's not hidden by the navbar */
-    text-align: center;
-  }
+
 </style>

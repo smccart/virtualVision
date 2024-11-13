@@ -18,8 +18,7 @@
         @onChoose="showChoice"
       />
 
-      <!-- Prompt text in the center -->
-      <ToneMessageDisplay :text="currentMessage.prompt" />
+      
     </div>
   </q-page>
 </template>

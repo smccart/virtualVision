@@ -2,31 +2,21 @@
   <q-page class="flex-column">
     <div class="content-container">
       <!-- Hero message component -->
-      <ToneMessageDisplay
-        :supportive="currentMessage.supportive"
-        :dominant="currentMessage.dominant"
-        :influential="currentMessage.influential"
-        :conscientious="currentMessage.conscientious"
-      />
 
-      <!-- Inner voice choices in a two-by-two grid layout -->
-      <InnerVoiceChoices
+      <ToneMessageChoices
         :supportiveLabel="currentMessage.supportiveInnerVoice"
         :dominantLabel="currentMessage.dominantInnerVoice"
         :influentialLabel="currentMessage.influentialInnerVoice"
         :conscientiousLabel="currentMessage.conscientiousInnerVoice"
         @onChoose="showChoice"
       />
-
-      
     </div>
   </q-page>
 </template>
 
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import ToneMessageDisplay from '../components/ToneMessageDisplay.vue';
-  import InnerVoiceChoices from '../components/InnerVoiceChoices.vue';
+  import ToneMessageChoices from '../components/ToneMessageChoices.vue';
 
   // Fetch messages from the store
   const {
@@ -59,6 +49,4 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
-
-
 </style>

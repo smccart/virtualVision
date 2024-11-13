@@ -3,7 +3,7 @@
     <div class="content-container">
       <!-- Hero message component -->
 
-      <ToneMessageChoices
+      <ToneMsgChoices
         :supportiveLabel="currentMessage.supportiveInnerVoice"
         :dominantLabel="currentMessage.dominantInnerVoice"
         :influentialLabel="currentMessage.influentialInnerVoice"
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import ToneMessageChoices from '../components/ToneMessageChoices.vue';
+  import ToneMsgChoices from '../components/ToneMsgChoices.vue';
 
   // Fetch messages from the store
   const {

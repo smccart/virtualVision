@@ -138,7 +138,7 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
   padding: 2rem 3rem 1.5rem;
   border-radius: 16px;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s,
+  transition: all 0.3s, transform 0.3s, box-shadow 0.3s,
     font-size 0.3s;
   font-size: 1.11rem;
   line-height: 1.6rem;
@@ -150,7 +150,7 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
   transform: translateY(-1px);
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.11);
   font-size: 1.111rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .hero-message-container {
@@ -199,7 +199,7 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
 .footer-link {
   color: $textWhite;
   text-decoration: none;
-  transition: font-size 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     font-size: 1.001rem; // Increase font size by 1% on hover
@@ -213,7 +213,7 @@ $purpleVeryDark: #2e1d48; // Very dark purple (almost black)
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: font-size 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       font-size: 1.01rem; // Increase font size by 1% on hover

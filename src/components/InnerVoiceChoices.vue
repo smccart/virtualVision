@@ -37,6 +37,7 @@
     dominantLabel: string;
     influentialLabel: string;
     conscientiousLabel: string;
+    prompt: string;
   }>();
 
   // Emit event to signal a choice has been made

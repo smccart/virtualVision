@@ -8,6 +8,7 @@
         :dominantLabel="currentMessage.dominantInnerVoice"
         :influentialLabel="currentMessage.influentialInnerVoice"
         :conscientiousLabel="currentMessage.conscientiousInnerVoice"
+        :prompt="currentMessage.prompt"
         @onChoose="showChoice"
       />
     </div>

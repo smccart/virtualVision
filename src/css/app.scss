@@ -25,14 +25,16 @@ body {
   padding-top: 0 !important;
 }
 
-.q-btn:hover .q-focus-helper {
-  background-color: transparent !important;
-}
+
 
 // Tone message boxes and choice buttons apply shared hover and tone styles
 .tone-message-box,
 .choice-btn {
   @extend .shared-hover;
+}
+
+.choice-btn {
+  margin-bottom: 0 !important; // Remove bottom margin for all choice-btn buttons
 }
 
 // Hero message container spacing
@@ -41,21 +43,74 @@ body {
   margin-bottom: 1rem;
 }
 
-// Supportive wrap-up text styling
-.supportive-wrapup {
-  margin: 3rem 5rem;
-  font-size: 1rem;
-  text-align: center;
-  color: $blueVeryDark;
-
+// Content container for centered content SDICS
+.content-container {
+  max-width: 665px;
+  margin: 6rem auto;
+  /* Ensure it's not hidden by the navbar */
+  text-align: left;
 }
 
-.content-container {
+// Supportive wrap-up text styling
+.supportive-wrapup {
+
+  font-size: 1.1em;
+  text-align: center;
+  color: $blueVeryDark;
+  padding: 1rem 4rem 0rem;
+}
+
+
+.hero-section {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-  padding-top: 6rem;  /* Ensure it's not hidden by the navbar */
-  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-container {
+  margin-top: 22rem;
+}
+
+.cta-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.choices-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5em;
+}
+
+.journey-drawer-list {
+  padding: 0.1em !important;
+  padding-top: 2em !important;
+  margin: 0 !important;
+}
+
+.journey-drawer-item {
+  padding: 0.5rem 3rem !important;
+}
+
+.journey-drawer-item-section {
+  max-width: 230px !important;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .footer {
@@ -103,22 +158,6 @@ body {
   }
 }
 
-.journey-drawer-list {
-  padding: 0.1em !important;
-  padding-top: 2em !important;
-  margin: 0 !important;
-}
-
-.journey-drawer-item {
-  padding: 0.5rem 3rem !important;
-}
-
-.journey-drawer-item-section {
-  max-width: 230px !important;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 .toolbar-title {
   font-family: inherit;
   font-weight: bold;
@@ -160,41 +199,4 @@ body {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-}
-
-.hero-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.cta-container {
-  margin-top: 22rem;
-}
-
-.cta-btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.choices-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
 }

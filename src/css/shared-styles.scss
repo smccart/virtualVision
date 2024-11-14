@@ -8,14 +8,14 @@
   }
 }
 
-// Tone-specific styles
+// Spacing and box shadow for SDICS message boxes
 .tone-supportive,
 .tone-dominant,
 .tone-influential,
 .tone-conscientious {
-  padding: 2rem 3rem 1.5rem;
+  padding: 1rem 5rem 0rem;
   border-radius: 16px;
-  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 0.5rem;
 }
 
@@ -60,4 +60,8 @@
     background-color: $blueVeryLight;
     color: $blueVeryDark;
   }
+}
+
+.q-btn:hover .q-focus-helper {
+  background-color: transparent !important;
 }

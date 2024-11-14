@@ -6,7 +6,7 @@ interface Message {
   influential: string;
   conscientious: string;
   supportiveWrapUp: string;
-  prompt: string; // New prompt displayed after the supportive wrap-up
+  prompt: string;
   binaryChoiceReady: string; // Binary choice for visitors ready to move forward
   binaryChoiceExplore: string; // Binary choice for visitors wanting to explore
 }
@@ -20,26 +20,27 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     messages: {
       level1: {
         supportive:
-          "We understand that managing a do-it-yourself website can be overwhelming, especially when you're already juggling countless responsibilities.",
+          'Running a business means managing so many moving parts. Often, a website alone isn’t enough—you need to handle social media, payments, scheduling, and follow-ups across multiple tools. We bring everything together in one place.',
         dominant:
-          'You deserve a website that positions you as an authority in your industry, actively supporting your business growth and helping you connect with customers more effectively.',
+          'Imagine a site that does more than look good. It’s your all-in-one platform for telling your story, letting clients book sessions, and making sales—all from a single, easy-to-use hub.',
         influential:
-          'Imagine a website that represents your brand beautifully, attracts new customers seamlessly, and simplifies your daily operations.',
+          "We help you create an experience that keeps your customers engaged, answers their questions, and lets them take action—whether it's learning more about what you do or booking a session right away.",
         conscientious:
-          "A well-crafted, professional website isn't just another item on your checklist; it's a strategic business tool that ensures your growth and success with precision.",
+          'This isn’t just a basic website. It’s a thoughtfully designed tool that supports your business, handling everything from scheduling to payments smoothly and simply.',
         supportiveWrapUp:
-          "Whether you're exploring your options or ready to elevate your website to the next level, we're here to make it happen alongside you. This is your journey, and it's your choice.",
+          'We’re here to make business easier by giving you one simple platform instead of a bunch of disconnected tools. Let’s turn your website into a place where your customers can connect and take action.',
         prompt:
-          'Choose the statement below that feels right to you and best captures your inner voice.',
-        binaryChoiceReady:
-          'I’m ready to see what the next step would look like.',
+          'Ready to explore what a truly connected site can do for you? Choose the path that feels right for your next step.',
+
+        // These two existing fields will be used for the button labels
+        binaryChoiceReady: 'I’m ready to see what’s possible.',
         binaryChoiceExplore:
-          'I want to explore more to see if this is the right fit.',
+          'I’d like to learn more and see if we’re a good fit.',
       },
       // Additional levels can be added similarly if needed
     } as Messages,
     currentLevel: 1,
-    selectedInnerVoice: 'supportive', // Tracks the user's selected tone
+    selectedInnerVoice: 'supportive',
   }),
   actions: {
     setMessages(newMessages: Messages) {

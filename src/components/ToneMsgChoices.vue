@@ -19,13 +19,6 @@
     <div class="supportive-wrapup">
       <p>{{ supportiveWrapUp }}</p>
     </div>
-
-    <p
-      v-if="prompt"
-      class="prompt-text"
-    >
-      {{ prompt }}
-    </p>
   </div>
 </template>
 

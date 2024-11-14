@@ -15,16 +15,16 @@
 
       <!-- Binary choice prompt added below ToneMsgChoices -->
       <div class="binary-choice">
-        <p>{{ currentMessage.promptBinary }}</p>
+        <p>{{ currentMessage.prompt }}</p>
         <div class="action-buttons">
           <q-btn
-            label="Learn About Our Process"
+            :label="currentMessage.binaryChoiceReady"
             @click="navigateToPage('process')"
             color="primary"
             class="q-mb-md"
           />
           <q-btn
-            label="Explore More"
+            :label="currentMessage.binaryChoiceExplore"
             @click="navigateToPage('explore')"
             color="secondary"
             class="q-mb-md"
@@ -41,15 +41,14 @@
   import { useRouter } from 'vue-router';
 
   // Fetch messages and functions from the store
-  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice, getFeedbackSegue } = useSalesStrategyMessages();
+  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice } =
+    useSalesStrategyMessages();
   const currentMessage = getCurrentMessages; // Access the getter as a property
   const router = useRouter(); // Access Vue router for page navigation
 
   // Function to handle tone-specific choices
   function showChoice(choice: string) {
     setSelectedInnerVoice(choice); // Track inner voice selection
-    const feedback = getFeedbackSegue();
-    console.log(feedback); // For debugging, replace with modal display if needed
     setCurrentLevel(1); // Keep current level for simplicity in this binary scenario
   }
 
@@ -74,10 +73,6 @@
   .action-buttons {
     display: flex;
     justify-content: center;
-    gap: 1em;
+    gap: 0.4em;
   }
-
-
-
-
 </style>

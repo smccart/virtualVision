@@ -22,8 +22,8 @@
 // Specific tone color adjustments (refers to `quasar.variables.scss` colors)
 .tone-supportive {
   background-color: $blueVeryLight;
-  border: 1px solid $blueLight;
-  color: $blueVeryDark;
+  border: 2px solid $blueLight;
+  color: $blueDark;
 
   &:hover {
     border-color: $blueMid;
@@ -32,8 +32,8 @@
 
 .tone-dominant {
   background-color: $orangeVeryLight;
-  border: 1px solid $orangeLight;
-  color: $blueVeryDark;
+  border: 2px solid $orangeLight;
+  color: $blueDark;
 
   &:hover {
     border-color: $orangeMid;
@@ -42,8 +42,8 @@
 
 .tone-influential {
   background-color: $yellowVeryLight;
-  border: 1px solid $yellowLight;
-  color: $purpleVeryDark;
+  border: 2px solid $yellowLight;
+  color: $purpleDark;
 
   &:hover {
     border-color: $yellowMid;
@@ -53,12 +53,12 @@
 .tone-conscientious {
   background-color: $blueDark;
   color: $textWhite;
-  border: 1px solid $blueLight;
+  border: 2px solid $blueMid;
 
   &:hover {
     border-color: $blueMid;
     background-color: $blueVeryLight;
-    color: $blueVeryDark;
+    color: $blueDark;
   }
 }
 

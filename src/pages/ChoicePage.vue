@@ -67,7 +67,7 @@
 
   .binary-choice {
     text-align: center;
-    margin: 2em 5em;
+    margin: 1.2em 5em;
   }
 
   .action-buttons {

@@ -3,6 +3,7 @@
     <div class="content-container">
       <!-- Hero message component -->
 
+      <!-- Tone message choices component remains intact -->
       <ToneMsgChoices
         :supportiveLabel="currentMessage.supportiveInnerVoice"
         :dominantLabel="currentMessage.dominantInnerVoice"
@@ -11,6 +12,25 @@
         :prompt="currentMessage.prompt"
         @onChoose="showChoice"
       />
+
+      <!-- Binary choice prompt added below ToneMsgChoices -->
+      <div class="binary-choice">
+        <p>{{ currentMessage.promptBinary }}</p>
+        <div class="action-buttons">
+          <q-btn
+            label="Learn About Our Process"
+            @click="navigateToPage('process')"
+            color="primary"
+            class="q-mb-md"
+          />
+          <q-btn
+            label="Explore More"
+            @click="navigateToPage('explore')"
+            color="secondary"
+            class="q-mb-md"
+          />
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -18,36 +38,46 @@
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
   import ToneMsgChoices from '../components/ToneMsgChoices.vue';
+  import { useRouter } from 'vue-router';
 
-  // Fetch messages from the store
-  const {
-    getCurrentMessages,
-    setCurrentLevel,
-    setSelectedInnerVoice,
-    getFeedbackSegue,
-  } = useSalesStrategyMessages();
+  // Fetch messages and functions from the store
+  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice, getFeedbackSegue } = useSalesStrategyMessages();
   const currentMessage = getCurrentMessages; // Access the getter as a property
+  const router = useRouter(); // Access Vue router for page navigation
 
-  // Function to update the current level and set selected inner voice based on the chosen tone
+  // Function to handle tone-specific choices
   function showChoice(choice: string) {
-    // Set the selected inner voice in the store
-    setSelectedInnerVoice(choice);
-
-    // Optionally display feedback segue statement here or perform any additional logic
+    setSelectedInnerVoice(choice); // Track inner voice selection
     const feedback = getFeedbackSegue();
-    console.log(feedback); // Example output, replace with actual UI integration if needed
+    console.log(feedback); // For debugging, replace with modal display if needed
+    setCurrentLevel(1); // Keep current level for simplicity in this binary scenario
+  }
 
-    // Update the current level (if advancing to a new level is required)
-    const levelMapping: { [key: string]: number } = {
-      supportive: 1,
-      dominant: 2,
-      influential: 3,
-      conscientious: 4,
-    };
-    setCurrentLevel(levelMapping[choice]);
+  // Function to handle binary navigation based on the visitor’s choice
+  function navigateToPage(choice: string) {
+    if (choice === 'process') {
+      router.push({ name: 'processPage' }); // Route name for the process explanation page
+    } else if (choice === 'explore') {
+      router.push({ name: 'heroJourney' }); // Route name for the Hero’s Journey funnel
+    }
   }
 </script>
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
+
+  .binary-choice {
+    text-align: center;
+    margin: 2em 5em;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+
+
+
+
 </style>

@@ -8,27 +8,32 @@
 
       <!-- Tone message choices in a 2x2 grid layout -->
       <div class="tone-message-grid">
-        <!-- Each tone message box uses globally defined styles -->
         <div class="tone-supportive tone-message-box">
-          <p>{{ currentMessage.supportive }}</p>
+          <p>{{ currentMessage.supportiveIntro }}</p>
+          <p>{{ currentMessage.supportiveMain }}</p>
         </div>
         <div class="tone-dominant tone-message-box">
-          <p>{{ currentMessage.dominant }}</p>
+          <p>{{ currentMessage.dominantIntro }}</p>
+          <p>{{ currentMessage.dominantMain }}</p>
         </div>
         <div class="tone-influential tone-message-box">
-          <p>{{ currentMessage.influential }}</p>
+          <p>{{ currentMessage.influentialIntro }}</p>
+          <p>{{ currentMessage.influentialMain }}</p>
         </div>
         <div class="tone-conscientious tone-message-box">
-          <p>{{ currentMessage.conscientious }}</p>
+          <p>{{ currentMessage.conscientiousIntro }}</p>
+          <p>{{ currentMessage.conscientiousMain }}</p>
         </div>
       </div>
 
       <!-- Supportive wrap-up and binary choice prompt below -->
       <div class="supportive-wrapup">
-        <p>{{ currentMessage.supportiveWrapUp }}</p>
+        <p>{{ currentMessage.supportiveWrapUpIntro }}</p>
+        <p>{{ currentMessage.supportiveWrapUpMain }}</p>
       </div>
       <div class="binary-choice">
-        <p>{{ currentMessage.prompt }}</p>
+        <p>{{ currentMessage.promptInfluential }}</p>
+        <p>{{ currentMessage.promptSupportive }}</p>
         <div class="action-buttons">
           <q-btn
             :label="currentMessage.binaryChoiceReady"
@@ -92,6 +97,13 @@
     gap: 1.5rem;
     width: 100%;
     margin-bottom: 2rem;
+  }
+
+  .tone-message-box {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
 
   .supportive-wrapup {

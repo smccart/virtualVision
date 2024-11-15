@@ -1,33 +1,39 @@
 <template>
   <q-page class="flex-column">
     <div class="content-container">
-      <!-- Hero message component -->
+      <!-- Tone message choices in a 2x2 grid layout -->
+      <div class="tone-message-grid">
+        <!-- Each tone message box uses globally defined styles -->
+        <div class="tone-supportive tone-message-box">
+          <p>{{ currentMessage.supportive }}</p>
+        </div>
+        <div class="tone-dominant tone-message-box">
+          <p>{{ currentMessage.dominant }}</p>
+        </div>
+        <div class="tone-influential tone-message-box">
+          <p>{{ currentMessage.influential }}</p>
+        </div>
+        <div class="tone-conscientious tone-message-box">
+          <p>{{ currentMessage.conscientious }}</p>
+        </div>
+      </div>
 
-      <!-- Tone message choices component remains intact -->
-      <ToneMsgChoices
-        :supportiveLabel="currentMessage.supportiveInnerVoice"
-        :dominantLabel="currentMessage.dominantInnerVoice"
-        :influentialLabel="currentMessage.influentialInnerVoice"
-        :conscientiousLabel="currentMessage.conscientiousInnerVoice"
-        :prompt="currentMessage.prompt"
-        @onChoose="showChoice"
-      />
-
-      <!-- Binary choice prompt added below ToneMsgChoices -->
+      <!-- Supportive wrap-up and binary choice prompt below -->
+      <div class="supportive-wrapup">
+        <p>{{ currentMessage.supportiveWrapUp }}</p>
+      </div>
       <div class="binary-choice">
         <p>{{ currentMessage.prompt }}</p>
         <div class="action-buttons">
           <q-btn
             :label="currentMessage.binaryChoiceReady"
             @click="navigateToPage('process')"
-            color="primary"
-            class="q-mb-md"
+            class="choice-btn q-mb-md"
           />
           <q-btn
             :label="currentMessage.binaryChoiceExplore"
             @click="navigateToPage('explore')"
-            color="secondary"
-            class="q-mb-md"
+            class="choice-btn q-mb-md"
           />
         </div>
       </div>
@@ -37,20 +43,13 @@
 
 <script setup lang="ts">
   import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import ToneMsgChoices from '../components/ToneMsgChoices.vue';
+  import { computed } from 'vue';
   import { useRouter } from 'vue-router';
 
   // Fetch messages and functions from the store
-  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice } =
-    useSalesStrategyMessages();
+  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice } = useSalesStrategyMessages();
   const currentMessage = getCurrentMessages; // Access the getter as a property
   const router = useRouter(); // Access Vue router for page navigation
-
-  // Function to handle tone-specific choices
-  function showChoice(choice: string) {
-    setSelectedInnerVoice(choice); // Track inner voice selection
-    setCurrentLevel(1); // Keep current level for simplicity in this binary scenario
-  }
 
   // Function to handle binary navigation based on the visitor’s choice
   function navigateToPage(choice: string) {
@@ -64,6 +63,28 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
+  @import '/src/css/shared-styles.scss';
+
+  .content-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 6rem auto;
+  }
+
+  .tone-message-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .supportive-wrapup {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 1.1em;
+    color: $blueDark;
+  }
 
   .binary-choice {
     text-align: center;

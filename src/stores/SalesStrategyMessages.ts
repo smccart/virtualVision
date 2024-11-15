@@ -56,7 +56,7 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
         promptInfluential: 'Ready to take the first step?', // Influential part of the prompt
         promptSupportive: 'Let’s explore what’s next.', // Supportive part of the prompt
 
-        binaryChoiceReady: 'Sounds interesting. How could we start?',
+        binaryChoiceReady: 'Sounds interesting. How would we start?',
         binaryChoiceExplore:
           'I’m not even sure I need this. Let me learn more.',
       },

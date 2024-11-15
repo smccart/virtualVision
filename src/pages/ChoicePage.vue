@@ -1,6 +1,11 @@
 <template>
   <q-page class="flex-column">
     <div class="content-container">
+      <!-- Tagline for the page or section -->
+      <div class="tagline">
+        <h2>{{ currentMessage.tagline }}</h2>
+      </div>
+
       <!-- Tone message choices in a 2x2 grid layout -->
       <div class="tone-message-grid">
         <!-- Each tone message box uses globally defined styles -->
@@ -69,6 +74,16 @@
     width: 100%;
     max-width: 1000px;
     margin: 6rem auto;
+  }
+
+  .tagline {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      color: $blueDark;
+    }
   }
 
   .tone-message-grid {

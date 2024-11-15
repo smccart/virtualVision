@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 
 interface Message {
+  tagline: string; // Tagline for the page or section
   supportive: string;
   dominant: string;
   influential: string;
@@ -19,25 +20,21 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
     messages: {
       level1: {
+        tagline: 'All Your Business Needs, United in One Powerful Website',
         supportive:
-          'Running a business means managing so many moving parts. Often, a website alone isn’t enough—you need to handle social media, payments, scheduling, and follow-ups across multiple tools. We bring everything together in one place.',
+          'We simplify your business tools, connecting everything in one place.',
         dominant:
-          'Imagine a site that does more than look good. It’s your all-in-one platform for telling your story, letting clients book sessions, and making sales—all from a single, easy-to-use hub.',
+          'Imagine a platform that sells, schedules, and showcases—all in one hub.',
         influential:
-          "We help you create an experience that keeps your customers engaged, answers their questions, and lets them take action—whether it's learning more about what you do or booking a session right away.",
+          'Engage your customers with an experience that invites them to act.',
         conscientious:
-          'This isn’t just a basic website. It’s a thoughtfully designed tool that supports your business, handling everything from scheduling to payments smoothly and simply.',
+          'This isn’t just a website; it’s a tool crafted for smooth, efficient growth.',
         supportiveWrapUp:
-          'We’re here to make business easier by giving you one simple platform instead of a bunch of disconnected tools. Let’s turn your website into a place where your customers can connect and take action.',
-        prompt:
-          'Ready to explore what a truly connected site can do for you? Choose the path that feels right for your next step.',
-
-        // These two existing fields will be used for the button labels
-        binaryChoiceReady: 'I’m ready to see what’s possible.',
-        binaryChoiceExplore:
-          'I’d like to learn more and see if we’re a good fit.',
+          'Let’s make business simpler, with a website that empowers connection and action.',
+        prompt: 'Ready to explore a connected site? Choose your next step.',
+        binaryChoiceReady: "I'm ready to see what’s possible.",
+        binaryChoiceExplore: 'I’d like to explore more options.',
       },
-      // Additional levels can be added similarly if needed
     } as Messages,
     currentLevel: 1,
     selectedInnerVoice: 'supportive',

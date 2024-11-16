@@ -66,6 +66,7 @@ onUnmounted(() => {
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Parallax effect */
+    filter: grayscale(100%) brightness(100%) opacity(0.22); /* Start with full grayscale */
 }
 
 /* Supportive image */

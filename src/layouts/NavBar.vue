@@ -4,6 +4,7 @@
     elevated
   >
     <q-toolbar>
+      <!-- Menu Button -->
       <q-btn
         flat
         dense
@@ -12,15 +13,18 @@
         aria-label="Menu"
         @click="toggleLeftDrawer"
       />
+
+      <!-- Title -->
       <q-toolbar-title class="toolbar-title">
         <router-link
           to="/"
           class="home-link"
-          >{{ toolbarTitle }}</router-link
         >
+          {{ toolbarTitle }}
+        </router-link>
       </q-toolbar-title>
 
-      <!-- Updated Navigation Links -->
+      <!-- Navigation Links -->
       <div class="nav-links">
         <q-btn
           flat
@@ -42,53 +46,57 @@
         />
       </div>
 
+      <!-- Tagline -->
       <div class="tagline">{{ tagline }}</div>
     </q-toolbar>
   </q-header>
 </template>
 
 <script setup lang="ts">
-  // Destructure props and update labels
-  const {
-    toolbarTitle,
-    tagline,
-    aboutLabel,
-    visionPlanningLabel,
-    fullVisionLabel,
-  } = defineProps({
-    toolbarTitle: {
-      type: String,
-      required: true,
-    },
-    tagline: {
-      type: String,
-      required: true,
-    },
-    aboutLabel: {
-      type: String,
-      default: 'About Us',
-    },
-    visionPlanningLabel: {
-      type: String,
-      default: 'Vision Planning',
-    },
-    fullVisionLabel: {
-      type: String,
-      default: 'Full Vision Realization',
-    },
-  });
+const {
+  toolbarTitle,
+  tagline,
+  aboutLabel,
+  visionPlanningLabel,
+  fullVisionLabel,
+} = defineProps({
+  toolbarTitle: {
+    type: String,
+    required: true,
+  },
+  tagline: {
+    type: String,
+    required: true,
+  },
+  aboutLabel: {
+    type: String,
+    default: 'About Us',
+  },
+  visionPlanningLabel: {
+    type: String,
+    default: 'Vision Planning',
+  },
+  fullVisionLabel: {
+    type: String,
+    default: 'Full Vision Realization',
+  },
+});
 
-  // Define and type the emit function
-  const emit = defineEmits<{
-    (event: 'toggleLeftDrawer'): void;
-  }>();
+const emit = defineEmits<{
+  (event: 'toggleLeftDrawer'): void;
+}>();
 
-  function toggleLeftDrawer() {
-    emit('toggleLeftDrawer');
-  }
+function toggleLeftDrawer() {
+  emit('toggleLeftDrawer');
+}
 </script>
 
 <style scoped lang="scss">
-  @import '/src/css/app.scss';
+@import '/src/css/app.scss';
 
+.custom-header {
+  height: 4rem; /* Fixed header height */
+  z-index: 10; /* Ensure header stays above content */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
 </style>

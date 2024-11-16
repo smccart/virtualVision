@@ -76,10 +76,11 @@
   @import '/src/css/shared-styles.scss';
 
   .content-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 6rem auto;
-  }
+  width: 100%;
+  max-width: 1000px;
+  padding-top: calc(var(--navbar-height, 4rem) + 2rem); /* Navbar height + some spacing */
+  margin: 0 auto;
+}
 
   .tagline {
     text-align: center;

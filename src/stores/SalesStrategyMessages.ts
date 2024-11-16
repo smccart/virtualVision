@@ -29,32 +29,32 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
         tagline: 'All Your Business Needs, United in One Powerful Website',
 
         supportiveIntro:
-          'We understand the challenges of juggling multiple tools for your business.',
+          'We know how overwhelming it feels to juggle tools for scheduling, payments, and customer management.',
         supportiveMain:
-          'Let’s simplify everything into one platform that works for you.',
+          'Let’s simplify everything into one seamless platform, so you can focus on growing your business.',
 
         dominantIntro:
-          'Your business deserves a professional site that does more than look good.',
+          'Your business deserves more than a good-looking website—it needs a powerful, professional tool.',
         dominantMain:
-          'Imagine a hub that sells, schedules, and builds your authority.',
+          'Imagine a hub that not only sells and schedules but also positions you as a leader in your field.',
 
         influentialIntro:
-          'Your customers want more than a website; they want an engaging experience.',
+          'Your customers want more than information—they want an experience that keeps them coming back.',
         influentialMain:
-          'Let’s create something that invites them to connect and take action.',
+          'Let’s create a site that invites them to connect, explore, and take action with confidence.',
 
         conscientiousIntro:
-          'A connected platform isn’t just convenient—it’s strategic.',
+          'Building a connected platform isn’t just convenient—it’s a smarter way to grow.',
         conscientiousMain:
-          'We’ll craft a tool to help your business grow smoothly and efficiently.',
+          'We’ll design a tool that supports your goals, keeps your processes smooth, and drives long-term success.',
 
         supportiveWrapUpIntro:
           'Your business deserves simplicity and growth in one package.',
         supportiveWrapUpMain:
-          'Let’s build a site that inspires connection and drives action.',
+          'Let’s build a site that inspires connection, streamlines your tools, and drives action.',
 
-        promptInfluential: 'Ready to take the first step?', // Influential part of the prompt
-        promptSupportive: 'Let’s explore what’s next.', // Supportive part of the prompt
+        promptInfluential: 'Curious to see what’s possible?', // Influential part of the prompt
+        promptSupportive: 'Let’s take the first step together.', // Supportive part of the prompt
 
         binaryChoiceReady: 'Sounds interesting. How would we start?',
         binaryChoiceExplore:

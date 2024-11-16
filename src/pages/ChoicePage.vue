@@ -83,33 +83,33 @@
 
   .tagline {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
 
     h2 {
       font-size: 2rem;
       color: $blueDark;
-    }
+    } // Tagline
   }
 
   .tone-message-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 0.5rem;
     width: 100%;
-    margin-bottom: 2rem;
-  }
+  } // Tone message grid layout
 
   .tone-message-box {
-    padding: 1rem;
     border-radius: 8px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: justify;
+    padding: 2rem 2rem 1rem 2rem;
+    font-size: 1.2em;
   }
 
   .supportive-wrapup {
     text-align: center;
-    margin: 1.5rem 0;
-    font-size: 1.1em;
+    margin: 2rem auto 1.5rem;
+    font-size: 1.5em;
     color: $blueDark;
   }
 

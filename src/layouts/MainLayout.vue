@@ -14,6 +14,10 @@
     />
 
     <q-page-container>
+      <!-- Add BackgroundImages component -->
+      <BackgroundImages />
+
+      <!-- Main content -->
       <router-view />
     </q-page-container>
 
@@ -27,13 +31,14 @@
   import NavBar from './NavBar.vue';
   import LeftDrawer from '../layouts/LeftDrawer.vue';
   import Footer from '../layouts/Footer.vue';
+  import BackgroundImages from '../components/BackgroundImages.vue';
 
   defineOptions({
     name: 'MainLayout',
   });
 
   // State for controlling the left drawer
-  const leftDrawerOpen = ref(false); // Set to false by default to keep the drawer closed on load
+  const leftDrawerOpen = ref(false);
 
   // Function to toggle the drawer
   function toggleLeftDrawer() {

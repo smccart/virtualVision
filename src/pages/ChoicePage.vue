@@ -57,7 +57,8 @@
   import { useRouter } from 'vue-router';
 
   // Fetch messages and functions from the store
-  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice } = useSalesStrategyMessages();
+  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice } =
+    useSalesStrategyMessages();
   const currentMessage = getCurrentMessages; // Access the getter as a property
   const router = useRouter(); // Access Vue router for page navigation
 
@@ -76,23 +77,37 @@
   @import '/src/css/shared-styles.scss';
 
   .content-container {
-  width: 100%;
-  max-width: 1000px;
-  padding-top: calc(var(--navbar-height, 4rem) + 2rem); /* Navbar height + some spacing */
-  margin: 0 auto;
-}
+    width: 100%;
+    max-width: 1000px;
+    padding-top: calc(
+      var(--navbar-height, 4rem) + 2rem
+    ); /* Navbar height + some spacing */
+    margin: 0 auto;
+  }
 
   .tagline {
     text-align: center;
     margin-bottom: 0rem;
+    z-index: 1;
 
-    h2 {
-      font-size: 2rem;
-      color: $grayVeryDark;
-      font-weight: 500;
-      margin: 0.2rem auto 2rem;
-    } // Tagline
+    &::before {
+    content: ''; /* Necessary for pseudo-element */
+    position: absolute; /* Position relative to the .tagline */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($textWhite, 0.2);
+    z-index: -1; /* Place behind the text */
   }
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: $grayVeryDark;
+    font-weight: 500;
+    margin: 0.2rem auto 2rem;
+  } // Tagline - All Your Business Needs, United in One Powerful Website
 
   .tone-message-grid {
     display: grid;
@@ -112,9 +127,10 @@
 
   .supportive-wrapup {
     text-align: center;
-    margin: 2rem auto 1.5rem;
-    font-size: 1.5em;
-    color: $blueDark;
+    margin: 0.6rem auto 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $grayVeryDark;
   }
 
   .binary-choice {

@@ -98,7 +98,7 @@
     height: 4rem; /* Fixed header height */
     z-index: 10; /* Ensure header stays above content */
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    opacity: 0.99;
+    opacity: 0.98;
     transition: background-color 0.3s ease-in-out; /* Smooth transition */
   }
 

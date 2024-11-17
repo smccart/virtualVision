@@ -40,7 +40,7 @@
     background-position: center 18.5%;
   }
   100% {
-    background-position: center 58%; /* End at 58% */
+    background-position: center 57.7%; /* End at 58% */
   }
 }
 </style>

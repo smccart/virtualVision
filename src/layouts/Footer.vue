@@ -41,6 +41,8 @@
     padding: 0.1rem;
     text-align: center;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0.99;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
   }
 
   .footer-content {

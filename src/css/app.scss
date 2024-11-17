@@ -107,30 +107,14 @@ body {
 }
 
 
-.toolbar-title {
-  font-family: inherit;
-  font-weight: bold;
-  color: $textWhite;
-  font-size: 1.75em;
-  padding: 1rem;
-  margin-left: 1rem;
-}
+
 
 .home-link {
   color: $textWhite;
   text-decoration: none;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  flex: 2;
-  white-space: nowrap;
-}
 
-.nav-text {
-  color: mix($textWhite, $orangeVeryLight, 99%);
-}
 
 
 

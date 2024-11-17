@@ -88,14 +88,16 @@
 
     h2 {
       font-size: 2rem;
-      color: $blueDark;
+      color: $grayVeryDark;
+      font-weight: 500;
+      margin: 0.2rem auto 2rem;
     } // Tagline
   }
 
   .tone-message-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: 1rem;
     width: 100%;
   } // Tone message grid layout
 
@@ -105,6 +107,7 @@
     text-align: justify;
     padding: 2rem 2rem 1rem 2rem;
     font-size: 1.2em;
+    // opacity: 0.3;
   }
 
   .supportive-wrapup {

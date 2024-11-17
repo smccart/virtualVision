@@ -99,4 +99,13 @@ function toggleLeftDrawer() {
   z-index: 10; /* Ensure header stays above content */
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
+.tagline {
+  color: $textWhite;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-right: 0rem;
+  padding-right: 1rem;
+  white-space: nowrap;
+}
 </style>

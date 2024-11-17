@@ -17,48 +17,48 @@
   border-radius: 16px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 0rem; // Spacing between top row and bottom row of sdic message boxes
+
 }
 
-// Specific tone color adjustments (refers to `quasar.variables.scss` colors)
+// Specific tone color adjustments with RGBA (opacity control)
 .tone-supportive {
-  background-color: $blueVeryLight;
-  border: 2px solid $blueLight;
-  color: $blueDark;
+  background-color: rgba($blueVeryLight, 0.6);
+  border: 1px solid $blueVeryLight;
+  color: $grayVeryDark;
 
   &:hover {
-    border-color: $blueMid;
+    background-color: rgba($blueVeryLight, 0.7);
   }
 }
 
 .tone-dominant {
-  background-color: $orangeVeryLight;
-  border: 2px solid $orangeLight;
-  color: $blueDark;
+  background-color: rgba($orangeVeryLight, 0.49);
+  border: 1px solid $orangeVeryLight;
+  color: $grayVeryDark;
 
   &:hover {
-    border-color: $orangeMid;
+    background-color: rgba($orangeVeryLight, 0.59);
   }
 }
 
 .tone-influential {
-  background-color: $yellowVeryLight;
-  border: 2px solid $yellowLight;
-  color: $purpleDark;
+  background-color: rgba($yellowVeryLight, 0.4);
+  color: $grayVeryDark;
 
   &:hover {
-    border-color: $yellowMid;
+    background-color: rgba($yellowVeryLight, 0.5);
   }
 }
 
 .tone-conscientious {
-  background-color: $blueDark;
-  color: $textWhite;
-  border: 2px solid $blueMid;
+  background-color: rgba($greenVeryLight, 0.35);
+  color: $grayVeryDark;
+  border: 2px solid $greenVeryLight;
 
   &:hover {
-    border-color: $blueMid;
-    background-color: $blueVeryLight;
-    color: $blueDark;
+
+    background-color: rgba($greenVeryLight, 0.35);
+
   }
 }
 

@@ -37,7 +37,7 @@
 /* Keyframes for smooth background scroll */
 @keyframes scrollBackground {
   0% {
-    background-position: center 16%;
+    background-position: center 18.5%;
   }
   100% {
     background-position: center 58%; /* End at 58% */

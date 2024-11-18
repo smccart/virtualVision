@@ -39,7 +39,7 @@
     background-position: center 20%;
   }
   50% {
-    background-position: center 62%; /* End at 57.7% */
+    background-position: center 60%; /* End at 57.7% */
   }
   100% {
     background-position: center 20%; /* Return to start */

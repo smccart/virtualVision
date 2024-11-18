@@ -45,12 +45,12 @@
           <q-btn
             :label="currentMessage.binaryChoiceReady"
             @click="navigateToPage('process')"
-            class="choice-btn q-mb-md"
+            class="choice-btn q-mb-md enhanced-btn"
           />
           <q-btn
             :label="currentMessage.binaryChoiceExplore"
             @click="navigateToPage('explore')"
-            class="choice-btn q-mb-md"
+            class="choice-btn q-mb-md enhanced-btn"
           />
         </div>
       </div>
@@ -161,9 +161,9 @@
       justify-content: center;
       gap: 0.5em;
       font-size: 1.2rem;
-      font-weight: 600;
+      font-weight: 500;
       color: $grayVeryDark;
-      margin-bottom: 1.5em;
+      margin-bottom: 0.1em;
     }
   }
 
@@ -171,5 +171,35 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+
+    .enhanced-btn {
+      width: 35%; /* Wider button */
+      height: 6rem; /* Taller button */
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.5
+      ); /* Soft white background with opacity */
+      color: $grayDark; /* Text color */
+      font-size: 1.1rem; /* Slightly larger text */
+      font-weight: 600; /* Bold text */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+      padding: 0.5rem 0.5rem 0.3rem; /* Padding for better spacing */
+
+      &:hover {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.6
+        ); /* Soft white background with opacity */
+
+        box-shadow: 2px 4px 8px rgba($grayVeryDark, 0.50); /* Enhanced shadow */
+        transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+      }
+    }
   }
 </style>

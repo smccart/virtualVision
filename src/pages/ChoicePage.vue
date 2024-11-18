@@ -28,12 +28,19 @@
 
       <!-- Supportive wrap-up and binary choice prompt below -->
       <div class="supportive-wrapup">
-        <p>{{ currentMessage.supportiveWrapUpIntro }}</p>
-        <p>{{ currentMessage.supportiveWrapUpMain }}</p>
+        <p class="supportive-wrapup-intro">
+          {{ currentMessage.supportiveWrapUpIntro }}
+        </p>
+        <p class="supportive-wrapup-main">
+          {{ currentMessage.supportiveWrapUpMain }}
+        </p>
       </div>
+
       <div class="binary-choice">
-        <p>{{ currentMessage.promptInfluential }}</p>
-        <p>{{ currentMessage.promptSupportive }}</p>
+        <div class="choice-prompts">
+          <p>{{ currentMessage.promptInfluential }}</p>
+          <p>{{ currentMessage.promptSupportive }}</p>
+        </div>
         <div class="action-buttons">
           <q-btn
             :label="currentMessage.binaryChoiceReady"
@@ -91,22 +98,22 @@
     z-index: 1;
 
     &::before {
-    content: ''; /* Necessary for pseudo-element */
-    position: absolute; /* Position relative to the .tagline */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba($textWhite, 0.2);
-    z-index: -1; /* Place behind the text */
-  }
+      content: ''; /* Necessary for pseudo-element */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($textWhite, 0.25);
+      z-index: -1; /* Place behind the text */
+    }
   }
 
   h2 {
-    font-size: 2rem;
-    color: $grayVeryDark;
-    font-weight: 500;
-    margin: 0.2rem auto 2rem;
+    font-size: xx-large;
+    color: $grayDark;
+    font-weight: 600;
+    margin: 1rem auto 2rem;
   } // Tagline - All Your Business Needs, United in One Powerful Website
 
   .tone-message-grid {
@@ -122,25 +129,47 @@
     text-align: justify;
     padding: 2rem 2rem 1rem 2rem;
     font-size: 1.2em;
-    // opacity: 0.3;
   }
 
   .supportive-wrapup {
     text-align: center;
-    margin: 0.6rem auto 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    margin: 1.5rem auto 2rem;
+    width: 80%;
+  }
+
+  .supportive-wrapup-intro {
+    font-size: x-large; /* Slightly larger for emphasis */
+    margin-bottom: 0.5rem; /* Adjust spacing below */
     color: $grayVeryDark;
+    font-weight: 600;
+    padding-top: 0.5rem;
+  }
+
+  .supportive-wrapup-main {
+    font-size: large; /* Slightly smaller for contrast */
+    font-weight: 400;
+    color: $grayVeryDark;
+    margin: 0.5rem 0 3rem;
   }
 
   .binary-choice {
     text-align: center;
-    margin: 1.2em 5em;
+    margin: 4em 5em;
+
+    .choice-prompts {
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $grayVeryDark;
+      margin-bottom: 1.5em;
+    }
   }
 
   .action-buttons {
     display: flex;
     justify-content: center;
-    gap: 0.4em;
+    gap: 1rem;
   }
 </style>

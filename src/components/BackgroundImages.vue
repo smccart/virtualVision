@@ -30,19 +30,19 @@
 
   /* Automatic scrolling animation */
   background-image: url('/src/assets/influential_bottom_left.webp');
-  animation: scrollBackground 60s ease-in-out infinite; /* Animate for 50 seconds */
+  animation: scrollBackground 60s ease-in-out infinite;
 }
 
 /* Extended Keyframes for smooth background scroll */
 @keyframes scrollBackground {
   0% {
-    background-position: center 21%;
+    background-position: center 20%;
   }
   50% {
-    background-position: center 57.7%; /* End at 57.7% */
+    background-position: center 62%; /* End at 57.7% */
   }
   100% {
-    background-position: center 21%; /* Return to start */
+    background-position: center 20%; /* Return to start */
   }
 }
 </style>

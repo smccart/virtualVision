@@ -164,6 +164,7 @@
       font-weight: 500;
       color: $grayVeryDark;
       margin-bottom: 0.1em;
+      padding-left: 0.25rem;
     }
   }
 

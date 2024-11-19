@@ -1,20 +1,32 @@
 <template>
   <q-footer class="footer glossy">
     <div class="footer-content">
+      <!-- Footer Links -->
       <div class="footer-links">
+        <q-btn
+          flat
+          label="About Us"
+          to="/about-us"
+          class="footer-link"
+          aria-label="About Us"
+        />
         <q-btn
           flat
           label="Privacy Policy"
           to="/privacy-policy"
           class="footer-link"
+          aria-label="Privacy Policy"
         />
         <q-btn
           flat
           label="Terms of Service"
           to="/terms-of-service"
           class="footer-link"
+          aria-label="Terms of Service"
         />
       </div>
+
+      <!-- Contact Button -->
       <div class="footer-contact">
         <q-btn
           flat
@@ -22,6 +34,7 @@
           label="Contact Us"
           to="/contact"
           class="contact-link"
+          aria-label="Contact Us"
         />
       </div>
     </div>
@@ -38,11 +51,11 @@
   .footer {
     background-color: $blueDark;
     color: $textWhite;
-    padding: 0.1rem;
+    padding: 0.5rem 1.5rem;
     text-align: center;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 0.98;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    transition: background-color 0.3s ease-in-out;
   }
 
   .footer-content {
@@ -57,13 +70,23 @@
     }
   }
 
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
+
   .footer-link {
     color: $textWhite;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      font-size: 1.001rem;
+      text-decoration: underline;
     }
   }
 
@@ -74,10 +97,15 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      border: 1px solid transparent;
+      box-shadow: 0em 0em 0.1em rgba(255, 255, 255, 0.43); /* Adds a subtle glow */
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        font-size: 1.01rem;
+        background-color: $textWhite;
+        color: $blueDark;
       }
     }
   }

@@ -14,10 +14,10 @@
         @click="toggleLeftDrawer"
       />
 
-      <!-- Title -->
+      <!-- Title (Vision2Virtual links to About Us) -->
       <q-toolbar-title class="toolbar-title">
         <router-link
-          to="/"
+          to="/about-us"
           class="home-link"
         >
           {{ toolbarTitle }}
@@ -28,20 +28,20 @@
       <div class="nav-links">
         <q-btn
           flat
-          :label="aboutLabel"
-          to="/about-us"
-          class="nav-text"
-        />
-        <q-btn
-          flat
           :label="visionPlanningLabel"
-          to="/vision-planning"
+          to="/talk-to-developer"
           class="nav-text"
         />
         <q-btn
           flat
           :label="fullVisionLabel"
-          to="/full-vision-realization"
+          to="/focused-strategy-sessions"
+          class="nav-text"
+        />
+        <q-btn
+          flat
+          label="Complete Website Build"
+          to="/complete-website-build"
           class="nav-text"
         />
       </div>
@@ -53,34 +53,25 @@
 </template>
 
 <script setup lang="ts">
-  const {
-    toolbarTitle,
-    tagline,
-    aboutLabel,
-    visionPlanningLabel,
-    fullVisionLabel,
-  } = defineProps({
-    toolbarTitle: {
-      type: String,
-      required: true,
-    },
-    tagline: {
-      type: String,
-      required: true,
-    },
-    aboutLabel: {
-      type: String,
-      default: 'About Us',
-    },
-    visionPlanningLabel: {
-      type: String,
-      default: 'Vision Planning',
-    },
-    fullVisionLabel: {
-      type: String,
-      default: 'Full Vision Realization',
-    },
-  });
+  const { toolbarTitle, tagline, visionPlanningLabel, fullVisionLabel } =
+    defineProps({
+      toolbarTitle: {
+        type: String,
+        required: true,
+      },
+      tagline: {
+        type: String,
+        required: true,
+      },
+      visionPlanningLabel: {
+        type: String,
+        default: 'Talk to a Developer',
+      },
+      fullVisionLabel: {
+        type: String,
+        default: 'Focused Strategy Sessions',
+      },
+    });
 
   const emit = defineEmits<{
     (event: 'toggleLeftDrawer'): void;
@@ -116,20 +107,22 @@
     color: $textWhite;
     font-size: 1.75em;
     font-weight: 600;
-    padding: 1rem;
-    margin-left: 1rem;
+    padding: 1rem 0rem 1rem 2rem;
+    justify-content: space-evenly;
   }
 
   .nav-links {
-  display: flex;
-  gap: 0.1rem;
-  flex: 2;
-  white-space: nowrap;
-}
+    display: flex;
+    gap: 0.9rem;
+    flex: 2;
+    white-space: nowrap;
+    justify-content: space-evenly;
+    padding-right: 15.5rem;
+  }
 
-.nav-text {
+  .nav-text {
     color: $textWhite;
     font-size: 1.1em;
     font-weight: 600;
-}
+  }
 </style>

@@ -20,6 +20,7 @@
         <router-link
           to="/about-us"
           class="home-link"
+          active-class="active-link"
         >
           {{ toolbarTitle }}
         </router-link>

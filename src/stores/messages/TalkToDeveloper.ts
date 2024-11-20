@@ -1,25 +1,36 @@
 export const TalkToDeveloper = {
-  tagline: 'Talk to a Developer for Expert Solutions',
+  tagline: 'Expert Guidance for Your Unique Business Needs',
 
-  supportiveIntro: 'Collaborate with a developer who understands your goals.',
+  supportiveIntro:
+    'Working with a knowledgeable partner can make all the difference in achieving your goals.',
   supportiveMain:
-    'Let’s tailor a solution that solves your problem effectively.',
+    'Collaborate with a full-stack developer to create a solution tailored to your vision.',
 
-  dominantIntro: 'Need quick and reliable support from a developer?',
-  dominantMain: 'Book a session today to get professional guidance.',
+  dominantSupportiveIntro:
+    'Your business deserves support from someone who can deliver results.',
+  dominantMain:
+    'Partner with a professional who creates tools designed for your success.',
 
-  influentialIntro: 'Your ideas deserve expert attention.',
-  influentialMain: 'Work with a developer who can bring your vision to life.',
+  influentialSupportiveIntro:
+    'Your ideas are worth more than just talk—they need expert execution.',
+  influentialMain:
+    'Together, we’ll craft a solution that turns your vision into reality and inspires action.',
 
-  conscientiousIntro: 'Ensure your project is done the right way.',
-  conscientiousMain: 'Let’s discuss your needs in detail and create a plan.',
+  conscientiousSupportiveIntro:
+    'Attention to detail is critical when building the right solution.',
+  conscientiousMain:
+    'We’ll develop a plan that ensures every requirement is met, setting you up for long-term success.',
 
-  supportiveWrapUpIntro: 'Get personalized developer support today.',
-  supportiveWrapUpMain: 'Take the first step toward resolving your challenges.',
+  supportiveWrapUpIntro:
+    'The right solution can transform how you achieve your goals.',
+  supportiveWrapUpMain:
+    'Take the next step toward working with someone who understands your unique needs.',
 
-  promptInfluential: 'Want to collaborate and solve problems together?',
-  promptSupportive: 'Let’s talk and make things happen.',
+  promptInfluential: 'Excited to explore how we can work together?',
+  promptSupportive: 'Let’s take the first step toward your success.',
 
-  binaryChoiceReady: 'Book a session now for $49.',
-  binaryChoiceExplore: 'Learn more about our services before committing.',
+  binaryChoiceReadySupportiveInfluential:
+    'This sounds perfect. How do we begin?',
+  binaryChoiceExploreSupportiveConscientious:
+    'Can I learn more about what’s involved first?',
 };

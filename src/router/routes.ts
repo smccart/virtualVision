@@ -10,7 +10,15 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'talk-to-developer',
         component: () => import('pages/TalkToDeveloper.vue'),
-      }, // Added Talk to a Developer route
+      },
+      {
+        path: 'focused-strategy-sessions',
+        component: () => import('pages/FocusedStrategySessions.vue'),
+      },
+      {
+        path: 'complete-website-build',
+        component: () => import('pages/CompleteWebsiteBuild.vue'),
+      },
     ],
   },
 

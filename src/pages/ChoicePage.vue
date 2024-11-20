@@ -44,12 +44,12 @@
         <div class="action-buttons">
           <q-btn
             :label="currentMessage.binaryChoiceReadySupportiveInfluential"
-            @click="router.push('/talk-to-developer')"
+            @click="navigateToPage('talkToDeveloper')"
             class="choice-btn q-mb-md enhanced-btn"
           />
           <q-btn
             :label="currentMessage.binaryChoiceExploreSupportiveConscientious"
-            @click="router.push('/focused-strategy-sessions')"
+            @click="navigateToPage('focusedStrategySessions')"
             class="choice-btn q-mb-md enhanced-btn"
           />
         </div>
@@ -70,10 +70,10 @@
 
   // Function to handle binary navigation based on the visitor’s choice
   function navigateToPage(choice: string) {
-    if (choice === 'process') {
-      router.push({ name: 'processPage' }); // Route name for the process explanation page
-    } else if (choice === 'explore') {
-      router.push({ name: 'heroJourney' }); // Route name for the Hero’s Journey funnel
+    if (choice === 'talkToDeveloper') {
+      router.push('/talk-to-developer'); // Navigate to the Talk to a Developer page
+    } else if (choice === 'focusedStrategySessions') {
+      router.push('/focused-strategy-sessions'); // Navigate to the Focused Strategy Sessions page
     }
   }
 </script>

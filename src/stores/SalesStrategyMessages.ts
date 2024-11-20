@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { Level1 } from './messages/Level1'; // Import Level 1 messages
+import { LandingPage } from './messages/LandingPage'; // Import Level 1 messages
 import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to Developer messages
 
 // Define the structure for individual message sets
@@ -30,17 +30,17 @@ interface Messages {
 export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
     messages: {
-      level1: Level1,
+      LandingPage: LandingPage,
       talkToDeveloper: TalkToDeveloper,
     } as Messages, // Enforce type safety
-    currentLevel: 'level1', // Default to level 1
+    currentLevel: 'LandingPage', // Default to level 1
   }),
   actions: {
     // Update the current set of messages
     setMessages(newMessages: Messages) {
       this.messages = newMessages;
     },
-    // Update the current level (e.g., level1, talkToDeveloper)
+    // Update the current level (e.g., LandingPage, talkToDeveloper)
     setCurrentLevel(level: string) {
       this.currentLevel = level;
     },

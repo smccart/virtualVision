@@ -1,6 +1,6 @@
 import { Message } from '../SalesStrategyMessages';
 
-export const Level1: Message = {
+export const LandingPage: Message = {
   tagline: 'All Your Business Needs, United in One Powerful Website',
 
   supportiveIntro:

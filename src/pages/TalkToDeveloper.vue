@@ -2,9 +2,10 @@
   <MainLayout>
     <div class="talk-to-developer">
       <h1>{{ messages.tagline }}</h1>
-      <!-- Safely access dynamic keys -->
-      <p>{{ messages[`${selectedInnerVoice}Intro` as keyof Message] }}</p>
-      <p>{{ messages[`${selectedInnerVoice}Main` as keyof Message] }}</p>
+
+      <!-- Use static keys since we no longer need selectedInnerVoice -->
+      <p>{{ messages.supportiveIntro }}</p>
+      <p>{{ messages.supportiveMain }}</p>
 
       <div class="cta-buttons">
         <q-btn flat label="{{ messages.binaryChoiceReady }}" to="/book" class="cta-book" />
@@ -17,11 +18,9 @@
 <script setup lang="ts">
 import { useSalesStrategyMessages } from 'src/stores/SalesStrategyMessages';
 
-const salesMessages = useSalesStrategyMessages();
-salesMessages.setCurrentLevel('talkToDeveloper');
-
-const selectedInnerVoice = salesMessages.selectedInnerVoice;
-const messages = salesMessages.getCurrentMessages;
+// Get current messages from the store
+const { getCurrentMessages } = useSalesStrategyMessages();
+const messages = getCurrentMessages;
 </script>
 
 <style scoped>

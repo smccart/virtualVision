@@ -34,7 +34,6 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
       talkToDeveloper: TalkToDeveloper,
     } as Messages, // Enforce type safety
     currentLevel: 'level1', // Default to level 1
-    selectedInnerVoice: 'supportive', // Default to supportive tone
   }),
   actions: {
     // Update the current set of messages
@@ -44,10 +43,6 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     // Update the current level (e.g., level1, talkToDeveloper)
     setCurrentLevel(level: string) {
       this.currentLevel = level;
-    },
-    // Update the selected tone (e.g., supportive, dominant, etc.)
-    setSelectedInnerVoice(innerVoice: string) {
-      this.selectedInnerVoice = innerVoice;
     },
   },
   getters: {

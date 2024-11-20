@@ -64,8 +64,7 @@
   import { useRouter } from 'vue-router';
 
   // Fetch messages and functions from the store
-  const { getCurrentMessages, setCurrentLevel, setSelectedInnerVoice } =
-    useSalesStrategyMessages();
+  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
   const currentMessage = getCurrentMessages; // Access the getter as a property
   const router = useRouter(); // Access Vue router for page navigation
 

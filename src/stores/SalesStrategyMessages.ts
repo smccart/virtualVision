@@ -1,25 +1,24 @@
 import { defineStore } from 'pinia';
-import { LandingPage } from './messages/LandingPage'; // Import Level 1 messages
+import { LandingPage } from './messages/LandingPage'; // Import Landing Page messages
 import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to Developer messages
 
 // Define the structure for individual message sets
 export interface Message {
-  [key: string]: string; // Allow any string key to access a string value
   tagline: string;
   supportiveIntro: string;
   supportiveMain: string;
-  dominantIntro: string;
+  dominantSupportiveIntro: string;
   dominantMain: string;
-  influentialIntro: string;
+  influentialSupportiveIntro: string;
   influentialMain: string;
-  conscientiousIntro: string;
+  conscientiousSupportiveIntro: string;
   conscientiousMain: string;
   supportiveWrapUpIntro: string;
   supportiveWrapUpMain: string;
   promptInfluential: string;
   promptSupportive: string;
-  binaryChoiceReady: string;
-  binaryChoiceExplore: string;
+  binaryChoiceReadySupportiveInfluential: string;
+  binaryChoiceExploreSupportiveConscientious: string;
 }
 
 // Define the structure for the collection of messages
@@ -33,7 +32,7 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
       LandingPage: LandingPage,
       talkToDeveloper: TalkToDeveloper,
     } as Messages, // Enforce type safety
-    currentLevel: 'LandingPage', // Default to level 1
+    currentLevel: 'LandingPage', // Default to Landing Page
   }),
   actions: {
     // Update the current set of messages

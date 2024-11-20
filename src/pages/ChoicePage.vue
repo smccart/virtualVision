@@ -13,15 +13,15 @@
           <p>{{ currentMessage.supportiveMain }}</p>
         </div>
         <div class="tone-dominant tone-message-box">
-          <p>{{ currentMessage.dominantIntro }}</p>
+          <p>{{ currentMessage.dominantSupportiveIntro }}</p>
           <p>{{ currentMessage.dominantMain }}</p>
         </div>
         <div class="tone-influential tone-message-box">
-          <p>{{ currentMessage.influentialIntro }}</p>
+          <p>{{ currentMessage.influentialSupportiveIntro }}</p>
           <p>{{ currentMessage.influentialMain }}</p>
         </div>
         <div class="tone-conscientious tone-message-box">
-          <p>{{ currentMessage.conscientiousIntro }}</p>
+          <p>{{ currentMessage.conscientiousSupportiveIntro }}</p>
           <p>{{ currentMessage.conscientiousMain }}</p>
         </div>
       </div>
@@ -43,12 +43,12 @@
         </div>
         <div class="action-buttons">
           <q-btn
-            :label="currentMessage.binaryChoiceReady"
+            :label="currentMessage.binaryChoiceReadySupportiveInfluential"
             @click="navigateToPage('process')"
             class="choice-btn q-mb-md enhanced-btn"
           />
           <q-btn
-            :label="currentMessage.binaryChoiceExplore"
+            :label="currentMessage.binaryChoiceExploreSupportiveConscientious"
             @click="navigateToPage('explore')"
             class="choice-btn q-mb-md enhanced-btn"
           />
@@ -187,7 +187,8 @@
       border-radius: 8px; /* Rounded corners */
       box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
       transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-      padding: 0.5rem 0.5rem 0.3rem; /* Padding for better spacing */
+      text-align: justify; /* Ensure button text is justified */
+      padding: 0.5rem 1rem 0.3rem; /* Padding for better spacing */
 
       &:hover {
         background-color: rgba(
@@ -197,7 +198,7 @@
           0.6
         ); /* Soft white background with opacity */
 
-        box-shadow: 2px 4px 8px rgba($grayVeryDark, 0.50); /* Enhanced shadow */
+        box-shadow: 2px 4px 8px rgba($grayVeryDark, 0.5); /* Enhanced shadow */
         transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
       }
     }

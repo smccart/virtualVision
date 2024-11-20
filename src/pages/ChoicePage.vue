@@ -44,12 +44,12 @@
         <div class="action-buttons">
           <q-btn
             :label="currentMessage.binaryChoiceReadySupportiveInfluential"
-            @click="navigateToPage('process')"
+            @click="router.push('/talk-to-developer')"
             class="choice-btn q-mb-md enhanced-btn"
           />
           <q-btn
             :label="currentMessage.binaryChoiceExploreSupportiveConscientious"
-            @click="navigateToPage('explore')"
+            @click="router.push('/focused-strategy-sessions')"
             class="choice-btn q-mb-md enhanced-btn"
           />
         </div>

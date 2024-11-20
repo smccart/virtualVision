@@ -34,5 +34,5 @@ export const LandingPage: Message = {
   binaryChoiceReadySupportiveInfluential:
     'Sounds interesting. How would we start?',
   binaryChoiceExploreSupportiveConscientious:
-    'Let me understand this better first.',
+    'Help me understand what I might be missing.',
 };

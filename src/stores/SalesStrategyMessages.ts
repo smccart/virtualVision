@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia';
+import { Level1 } from './messages/Level1'; // Import Level 1 messages
+import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to Developer messages
 
-interface Message {
+// Define the structure for individual message sets
+export interface Message {
   tagline: string; // Tagline for the page or section
   supportiveIntro: string;
   supportiveMain: string;
@@ -18,6 +21,7 @@ interface Message {
   binaryChoiceExplore: string; // Binary choice for visitors wanting to explore
 }
 
+// Define the structure for the collection of messages
 interface Messages {
   [key: string]: Message;
 }
@@ -25,59 +29,30 @@ interface Messages {
 export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
     messages: {
-      level1: {
-        tagline: 'All Your Business Needs, United in One Powerful Website',
-
-        supportiveIntro:
-          'We know how overwhelming it feels to juggle tools for scheduling, payments, and customer management.',
-        supportiveMain:
-          'Let’s simplify everything into one seamless platform, so you can focus on growing your business.',
-
-        dominantIntro:
-          'Your business deserves more than a good-looking website—it needs a powerful, professional tool.',
-        dominantMain:
-          'Imagine a hub that not only sells and schedules but also positions you as a leader in your field.',
-
-        influentialIntro:
-          'Your customers want more than information—they want an experience that keeps them coming back.',
-        influentialMain:
-          'Let’s create a site that invites them to connect, explore, and take action with confidence.',
-
-        conscientiousIntro:
-          'Building a connected platform isn’t just convenient—it’s a smarter way to grow.',
-        conscientiousMain:
-          'We’ll design a tool that supports your goals, keeps your processes smooth, and drives long-term success.',
-
-        supportiveWrapUpIntro:
-          'Your business deserves simplicity and growth in one package.',
-        supportiveWrapUpMain:
-          'Let’s build a site that inspires connection, streamlines your tools, and drives action.',
-
-        promptInfluential: 'Curious to see what’s possible?', // Influential part of the prompt
-        promptSupportive: 'Let’s take the first step together.', // Supportive part of the prompt
-
-        binaryChoiceReady: 'Sounds interesting. How would we start?',
-        binaryChoiceExplore:
-          'I’m not even sure I need this. Let me learn more.',
-      },
-    } as Messages,
-    currentLevel: 1,
-    selectedInnerVoice: 'supportive',
+      level1: Level1,
+      talkToDeveloper: TalkToDeveloper,
+    } as Messages, // Enforce type safety
+    currentLevel: 'level1', // Default to level 1
+    selectedInnerVoice: 'supportive', // Default to supportive tone
   }),
   actions: {
+    // Update the current set of messages
     setMessages(newMessages: Messages) {
       this.messages = newMessages;
     },
-    setCurrentLevel(level: number) {
+    // Update the current level (e.g., level1, talkToDeveloper)
+    setCurrentLevel(level: string) {
       this.currentLevel = level;
     },
+    // Update the selected tone (e.g., supportive, dominant, etc.)
     setSelectedInnerVoice(innerVoice: string) {
       this.selectedInnerVoice = innerVoice;
     },
   },
   getters: {
+    // Dynamically retrieve the current set of messages based on state
     getCurrentMessages: (state): Message => {
-      return state.messages[`level${state.currentLevel}`];
+      return state.messages[state.currentLevel];
     },
   },
 });

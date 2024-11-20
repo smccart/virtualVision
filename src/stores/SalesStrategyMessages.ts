@@ -4,7 +4,8 @@ import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to 
 
 // Define the structure for individual message sets
 export interface Message {
-  tagline: string; // Tagline for the page or section
+  [key: string]: string; // Allow any string key to access a string value
+  tagline: string;
   supportiveIntro: string;
   supportiveMain: string;
   dominantIntro: string;
@@ -15,10 +16,10 @@ export interface Message {
   conscientiousMain: string;
   supportiveWrapUpIntro: string;
   supportiveWrapUpMain: string;
-  promptInfluential: string; // First part of the prompt with influential tone
-  promptSupportive: string; // Second part of the prompt with supportive tone
-  binaryChoiceReady: string; // Binary choice for visitors ready to move forward
-  binaryChoiceExplore: string; // Binary choice for visitors wanting to explore
+  promptInfluential: string;
+  promptSupportive: string;
+  binaryChoiceReady: string;
+  binaryChoiceExplore: string;
 }
 
 // Define the structure for the collection of messages

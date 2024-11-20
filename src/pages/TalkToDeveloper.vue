@@ -2,8 +2,9 @@
   <MainLayout>
     <div class="talk-to-developer">
       <h1>{{ messages.tagline }}</h1>
-      <p>{{ messages[`${selectedInnerVoice}Intro`] }}</p>
-      <p>{{ messages[`${selectedInnerVoice}Main`] }}</p>
+      <!-- Safely access dynamic keys -->
+      <p>{{ messages[`${selectedInnerVoice}Intro` as keyof Message] }}</p>
+      <p>{{ messages[`${selectedInnerVoice}Main` as keyof Message] }}</p>
 
       <div class="cta-buttons">
         <q-btn flat label="{{ messages.binaryChoiceReady }}" to="/book" class="cta-book" />

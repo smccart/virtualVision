@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { LandingPage } from './messages/LandingPage'; // Import Landing Page messages
 import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to Developer messages
+import { FocusedStrategySessions } from './messages/FocusedStrategySessions';
 
 // Define the structure for individual message sets
 export interface Message {
@@ -31,6 +32,7 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     messages: {
       LandingPage: LandingPage, // Ensure key matches usage in other files
       talkToDeveloper: TalkToDeveloper,
+      focusedStrategySessions: FocusedStrategySessions,
     } as Messages, // Enforce type safety
     currentLevel: 'LandingPage', // Default to Landing Page
   }),
@@ -41,6 +43,7 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     },
     // Update the current level (e.g., LandingPage, talkToDeveloper)
     setCurrentLevel(level: string) {
+      console.log(`Setting level to: ${level}`); // Debugging message
       if (this.messages[level]) {
         this.currentLevel = level; // Only set if the level exists
       } else {

@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex-column">
-    <div class="content-container">
+  <q-page class="flex-column" v-if="messages">
+    <div class="content-container" key="talktodeveloper">
       <div class="tagline">
         <h2>{{ messages.tagline }}</h2>
       </div>
@@ -56,11 +56,9 @@
 </template>
 
 <script setup lang="ts">
-  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-
-  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-  setCurrentLevel('talkToDeveloper');
-  const messages = getCurrentMessages;
+// import messages directly
+import { TalkToDeveloper } from '../stores/messages/TalkToDeveloper';
+const messages = TalkToDeveloper;
 </script>
 
 <style scoped lang="scss">

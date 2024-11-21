@@ -59,13 +59,11 @@
 </template>
 
 <script setup lang="ts">
+// import messages from store
 import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-import { computed } from 'vue';
-
-// Fetch messages and functions from the store
-const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-setCurrentLevel('focusedStrategySessions'); // Ensure the correct level is set
-const currentMessage = computed(() => getCurrentMessages); // Access the getter as a property
+const store = useSalesStrategyMessages();
+store.setCurrentLevel('focusedStrategySessions');
+const currentMessage = store.getCurrentMessages
 </script>
 
 <style scoped lang="scss">

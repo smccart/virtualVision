@@ -18,7 +18,7 @@
       <BackgroundImages />
 
       <!-- Main content -->
-      <router-view />
+      <router-view :key="route.name" />
     </q-page-container>
 
     <!-- Add Footer here -->
@@ -28,11 +28,12 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
-import { useRoute, useRouter } from 'vue-router'; // Import useRoute and useRouter
+import { useRoute } from 'vue-router'; // Import useRoute
 import NavBar from './NavBar.vue';
 import LeftDrawer from '../layouts/LeftDrawer.vue';
 import Footer from '../layouts/Footer.vue';
 import BackgroundImages from '../components/BackgroundImages.vue';
+import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages'; // Import the store
 
 defineOptions({
   name: 'MainLayout',
@@ -55,21 +56,17 @@ onMounted(() => {
 const toolbarTitle = 'Vision 2 Virtual';
 const tagline = 'Bringing Your Vision to Life';
 
-// Use route and router for navigation logic
+// Use route for navigation logic
 const route = useRoute();
-const router = useRouter();
 
-// Detect navigation to Talk to Developer
+// Watch for route changes and update store
 watch(
-  () => route.path,
-  (newPath) => {
-    console.log('Route changed:', newPath);
-
-    if (newPath === '/talk-to-developer') {
-      console.log('Redirecting via back button simulation...');
-      setTimeout(() => {
-        router.back(); // Simulate the "back button"
-      }, 100); // Delay to ensure the correct route renders
+  () => route.name,
+  (newRouteName) => {
+    if (typeof newRouteName === 'string') {
+      useSalesStrategyMessages().setCurrentLevel(newRouteName);
+    } else {
+      console.warn(`Invalid route name type: ${typeof newRouteName}`);
     }
   }
 );

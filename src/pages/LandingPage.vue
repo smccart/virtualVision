@@ -65,7 +65,8 @@
 
   // Fetch messages and functions from the store
   const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-  const currentMessage = getCurrentMessages; // Access the getter as a property
+  setCurrentLevel('LandingPage'); // Ensure the correct level is set
+  const currentMessage = computed(() => getCurrentMessages); // Access the getter as a property
   const router = useRouter(); // Access Vue router for page navigation
 
   // Function to handle binary navigation based on the visitor’s choice
@@ -113,14 +114,14 @@
     color: $grayDark;
     font-weight: 600;
     margin: 1rem auto 2rem;
-  } // Tagline - All Your Business Needs, United in One Powerful Website
+  }
 
   .tone-message-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     width: 100%;
-  } // Tone message grid layout
+  }
 
   .tone-message-box {
     border-radius: 8px;

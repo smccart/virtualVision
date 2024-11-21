@@ -29,7 +29,7 @@ interface Messages {
 export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
   state: () => ({
     messages: {
-      LandingPage: LandingPage,
+      LandingPage: LandingPage, // Ensure key matches usage in other files
       talkToDeveloper: TalkToDeveloper,
     } as Messages, // Enforce type safety
     currentLevel: 'LandingPage', // Default to Landing Page
@@ -41,13 +41,17 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     },
     // Update the current level (e.g., LandingPage, talkToDeveloper)
     setCurrentLevel(level: string) {
-      this.currentLevel = level;
+      if (this.messages[level]) {
+        this.currentLevel = level; // Only set if the level exists
+      } else {
+        console.warn(`Invalid level: ${level}`); // Debugging message
+      }
     },
   },
   getters: {
     // Dynamically retrieve the current set of messages based on state
     getCurrentMessages: (state): Message => {
-      return state.messages[state.currentLevel];
+      return state.messages[state.currentLevel] || {}; // Fallback for invalid levels
     },
   },
 });

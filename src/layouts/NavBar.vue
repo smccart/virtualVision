@@ -1,8 +1,5 @@
 <template>
-  <q-header
-    class="custom-header glossy"
-    elevated
-  >
+  <q-header class="custom-header glossy" elevated>
     <q-toolbar>
       <!-- Menu Button -->
       <q-btn
@@ -31,19 +28,19 @@
         <q-btn
           flat
           :label="visionPlanningLabel"
-          to="/talk-to-developer"
+          :to="{ name: 'talk-to-developer' }"
           class="nav-text"
         />
         <q-btn
           flat
           :label="fullVisionLabel"
-          to="/focused-strategy-sessions"
+          :to="{ name: 'focused-strategy-sessions' }"
           class="nav-text"
         />
         <q-btn
           flat
           label="Complete Website Build"
-          to="/complete-website-build"
+          :to="{ name: 'complete-website-build' }"
           class="nav-text"
         />
       </div>
@@ -55,33 +52,30 @@
 </template>
 
 <script setup lang="ts">
-  const { toolbarTitle, tagline, visionPlanningLabel, fullVisionLabel } =
-    defineProps({
-      toolbarTitle: {
-        type: String,
-        required: true,
-      },
-      tagline: {
-        type: String,
-        required: true,
-      },
-      visionPlanningLabel: {
-        type: String,
-        default: 'Talk to a Developer',
-      },
-      fullVisionLabel: {
-        type: String,
-        default: 'Focused Strategy Sessions',
-      },
-    });
+const props = defineProps({
+  toolbarTitle: {
+    type: String,
+    required: true,
+  },
+  tagline: {
+    type: String,
+    required: true,
+  },
+  visionPlanningLabel: {
+    type: String,
+    default: 'Talk to a Developer',
+  },
+  fullVisionLabel: {
+    type: String,
+    default: 'Focused Strategy Sessions',
+  },
+});
 
-  const emit = defineEmits<{
-    (event: 'toggleLeftDrawer'): void;
-  }>();
+const emit = defineEmits(['toggleLeftDrawer']);
 
-  function toggleLeftDrawer() {
-    emit('toggleLeftDrawer');
-  }
+function toggleLeftDrawer() {
+  emit('toggleLeftDrawer');
+}
 </script>
 
 <style scoped lang="scss">
